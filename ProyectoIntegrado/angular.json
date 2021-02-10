@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "ProyectoIntegrado"
+  "defaultProject": "ProyectoIntegrado",
+  "cli": {
+    "analytics": "c5674e71-409a-4239-aa7a-6eb28230e1bb"
+  }
 }
