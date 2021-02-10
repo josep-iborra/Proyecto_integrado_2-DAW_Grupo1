@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { IndexComponent } from './componentes/index/index.component';
 import { ServicioComponent } from './componentes/servicio/servicio.component';
 import { PerfilComponent } from './componentes/perfil/perfil.component';
+import { RegistroComponent } from './componentes/registro/registro.component';
+import { InicioComponent } from './componentes/inicio/inicio.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     IndexComponent, 
     ServicioComponent,
-    PerfilComponent
+    PerfilComponent,
+    RegistroComponent,
+    InicioComponent
   ],
   imports: [
     BrowserModule,
