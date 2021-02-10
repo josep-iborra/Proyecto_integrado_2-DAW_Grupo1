@@ -8,6 +8,7 @@ import { ServicioComponent } from './componentes/servicio/servicio.component';
 import { PerfilComponent } from './componentes/perfil/perfil.component';
 import { RegistroComponent } from './componentes/registro/registro.component';
 import { InicioComponent } from './componentes/inicio/inicio.component';
+import { AddServicioComponent } from './componentes/add-servicio/add-servicio.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { InicioComponent } from './componentes/inicio/inicio.component';
     ServicioComponent,
     PerfilComponent,
     RegistroComponent,
-    InicioComponent
+    InicioComponent,
+    AddServicioComponent
   ],
   imports: [
     BrowserModule,
