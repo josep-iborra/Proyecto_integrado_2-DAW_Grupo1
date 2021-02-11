@@ -4,13 +4,12 @@ namespace App\Entity;
 
 use App\Repository\ProductosRepository;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * Productos
  *
  * @ORM\Table(name="productos", indexes={@ORM\Index(name="Autor_id", columns={"Autor_id"})})
- * @ORM\Entity(repositoryClass=ProductosRepository::class)
+ * @ORM\Entity(repositoryClass=UsuariosRepository::class)
  */
 class Productos
 {
