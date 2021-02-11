@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-02-2021 a las 10:39:31
+-- Tiempo de generación: 11-02-2021 a las 09:45:35
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 7.4.15
 
@@ -20,6 +20,21 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `pi`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `mensajes`
+--
+
+CREATE TABLE `mensajes` (
+  `ID` int(100) NOT NULL,
+  `asunto` varchar(255) NOT NULL,
+  `mensaje` varchar(255) NOT NULL,
+  `fecha` datetime NOT NULL,
+  `IDEmisor` int(100) NOT NULL,
+  `IDReceptor` int(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -55,6 +70,14 @@ CREATE TABLE `usuarios` (
 --
 
 --
+-- Indices de la tabla `mensajes`
+--
+ALTER TABLE `mensajes`
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `IDEmisor` (`IDEmisor`),
+  ADD KEY `IDReceptor` (`IDReceptor`);
+
+--
 -- Indices de la tabla `productos`
 --
 ALTER TABLE `productos`
@@ -70,6 +93,13 @@ ALTER TABLE `usuarios`
 --
 -- Restricciones para tablas volcadas
 --
+
+--
+-- Filtros para la tabla `mensajes`
+--
+ALTER TABLE `mensajes`
+  ADD CONSTRAINT `mensajes_ibfk_1` FOREIGN KEY (`IDEmisor`) REFERENCES `usuarios` (`ID`),
+  ADD CONSTRAINT `mensajes_ibfk_2` FOREIGN KEY (`IDReceptor`) REFERENCES `usuarios` (`ID`);
 
 --
 -- Filtros para la tabla `productos`
