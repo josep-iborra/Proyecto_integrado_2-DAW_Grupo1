@@ -5,26 +5,26 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { IndexComponent } from './componentes/index/index.component';
 import { PerfilComponent } from './componentes/perfil/perfil.component';
-import { RegistroComponent } from './componentes/registro/registro.component';
 import { InicioComponent } from './componentes/inicio/inicio.component';
 import { AddServicioComponent } from './componentes/add-servicio/add-servicio.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ProductosComponent } from './componentes/productos/productos.component';
+import { RegisterComponent } from './componentes/formularios/register/register.component';
+import { MensajesComponent } from './componentes/formularios/mensajes/mensajes.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    IndexComponent, 
+    IndexComponent,
     PerfilComponent,
-    RegistroComponent,
     InicioComponent,
-    AddServicioComponent
+    AddServicioComponent,
+    ProductosComponent,
+    RegisterComponent,
+    MensajesComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgbModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, NgbModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
