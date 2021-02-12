@@ -4,6 +4,7 @@
 --
 -- Servidor: 127.0.0.1
 -- Tiempo de generación: 12-02-2021 a las 11:45:56
+
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 7.4.15
 
@@ -62,9 +63,6 @@ CREATE TABLE `mensajes` (
   `IDReceptor` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `productos`
 --
 
@@ -90,9 +88,6 @@ CREATE TABLE `subcategorias` (
   `ID_categoria` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `usuarios`
 --
 
@@ -104,6 +99,7 @@ CREATE TABLE `usuarios` (
   `apellidos` varchar(255) DEFAULT NULL,
   `telefono` varchar(255) DEFAULT NULL,
   `id_empresa` varchar(11) DEFAULT NULL
+
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -125,7 +121,6 @@ ALTER TABLE `mensajes`
   ADD KEY `IDEmisor` (`IDEmisor`),
   ADD KEY `IDReceptor` (`IDReceptor`);
 
---
 -- Indices de la tabla `productos`
 --
 ALTER TABLE `productos`
@@ -140,7 +135,6 @@ ALTER TABLE `subcategorias`
   ADD UNIQUE KEY `Nombre` (`Nombre`),
   ADD KEY `ID_categoria` (`ID_categoria`);
 
---
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
@@ -151,13 +145,14 @@ ALTER TABLE `usuarios`
 --
 
 --
+
 -- Filtros para la tabla `mensajes`
 --
 ALTER TABLE `mensajes`
   ADD CONSTRAINT `mensajes_ibfk_1` FOREIGN KEY (`IDEmisor`) REFERENCES `usuarios` (`ID`),
   ADD CONSTRAINT `mensajes_ibfk_2` FOREIGN KEY (`IDReceptor`) REFERENCES `usuarios` (`ID`);
 
---
+
 -- Filtros para la tabla `productos`
 --
 ALTER TABLE `productos`
@@ -168,6 +163,7 @@ ALTER TABLE `productos`
 --
 ALTER TABLE `subcategorias`
   ADD CONSTRAINT `subcategorias_ibfk_1` FOREIGN KEY (`ID_categoria`) REFERENCES `categorias` (`ID`);
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
