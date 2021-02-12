@@ -1,11 +1,57 @@
+/* Header */
+.navegador {
+    background-color: #acaba8;
+    padding: 1em;
+}
+
+.navegador>a{
+    text-decoration: none;
+    color: black;
+}
+
+.logo-header {
+    width: 45px;
+    margin-left: 1em;
+}
+
+.w-about-us {
+    width: 11em;
+    margin-left: 1.5em;
+}
+
+.w-servicies{
+    width: 7.5em;
+}
+
+.w-contact{
+    width: 8em;
+}
+
+.search {
+    width: 16.5em;
+}
+
+.size-menu-text {
+    font-size: 18px;
+}
+
+.btn-user{
+    background-color: transparent;
+    border: 0;
+}
+
+.icon-user {
+    font-size: 35px;
+}
+
 /*  Footer */
 .box-footer {
     background-color: #3e4143;
 }
 
 .logo-footer {
-    width: 5em;
-    height: 5em;
+    width: 2.813em;
+    height: 2.813em;
 }
 
 .nav-menu {

@@ -13,6 +13,7 @@ import { ProductosComponent } from './componentes/productos/productos.component'
 import { RegisterComponent } from './componentes/formularios/register/register.component';
 import { MensajesComponent } from './componentes/formularios/mensajes/mensajes.component';
 import { EditarPerfilComponent } from './componentes/formularios/editar-perfil/editar-perfil.component';
+import { AboutComponent } from './componentes/about/about.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { EditarPerfilComponent } from './componentes/formularios/editar-perfil/e
     RegisterComponent,
     MensajesComponent,
     EditarPerfilComponent,
+    AboutComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule, ReactiveFormsModule, HttpClientModule],
   providers: [],
