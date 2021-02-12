@@ -1,7 +1,7 @@
 /* Header */
 .navegador {
     background-color: #acaba8;
-    padding: 1em;
+    padding: 0.75em;
 }
 
 .navegador>a{
@@ -10,7 +10,7 @@
 }
 
 .logo-header {
-    width: 45px;
+    width: 65px;
     margin-left: 1em;
 }
 
@@ -47,14 +47,42 @@
 /*  Footer */
 .box-footer {
     background-color: #3e4143;
+    padding-top: 0.5em;
+    padding-bottom: 1.25em;
 }
 
 .logo-footer {
     width: 2.813em;
     height: 2.813em;
+    margin-left: 0.75em;
 }
 
 .nav-menu {
     display: flex;
     flex-direction: row;
+}
+
+.m-top-menu-footer {
+    margin-top: 0.75em
+}
+
+.m-left-menu-footer {
+    margin-left: 2em;
+}
+
+.w-about-us-footer, .w-servicies-footer, .w-contact-footer {
+    margin-right: 1.5em;
+}
+
+.mr-left-policy {
+    margin-left: -24em;
+}
+
+.icon-instagram {
+    margin-left: 1.5em;
+}
+
+.icon-instagram, .icon-facebook, .icon-twitter, .icon-linkedin {
+    font-size: 19px;
+    margin-top: 0.875em;
 }

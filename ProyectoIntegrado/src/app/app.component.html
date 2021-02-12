@@ -16,16 +16,20 @@
   <div class="collapse navbar-collapse" id="opciones">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item w-about-us">
-        <a class="text-dark font-weight-bolder text-decoration-none size-menu-text" routerLinkActive="active" routerLink="">QUIENES SOMOS</a>
+        <a class="text-dark font-weight-bolder text-decoration-none size-menu-text" routerLinkActive="active"
+          routerLink="">QUIENES SOMOS</a>
       </li>
       <li class="nav-item w-servicies">
-        <a class="text-dark font-weight-bolder text-decoration-none size-menu-text" routerLinkActive="active" routerLink="">SERVICIOS</a>
+        <a class="text-dark font-weight-bolder text-decoration-none size-menu-text" routerLinkActive="active"
+          routerLink="">SERVICIOS</a>
       </li>
       <li class="nav-item w-contact">
-        <a class="text-dark font-weight-bolder text-decoration-none size-menu-text" routerLinkActive="active" routerLink="">CONTACTO</a>
+        <a class="text-dark font-weight-bolder text-decoration-none size-menu-text" routerLinkActive="active"
+          routerLink="">CONTACTO</a>
       </li>
       <li class="nav-item">
-        <a class="text-dark font-weight-bolder text-decoration-none size-menu-text" routerLinkActive="active" routerLink="">PUBLICAR</a>
+        <a class="text-dark font-weight-bolder text-decoration-none size-menu-text" routerLinkActive="active"
+          routerLink="">PUBLICAR</a>
       </li>
     </ul>
   </div>
@@ -48,44 +52,61 @@
 
 <footer class="">
   <div class="container-fluid box-footer">
-    <div class="row">
+    <div class="row justify-content-center">
       <!--Logo-->
-      <div class="col-lg-1 justify-content-center">
+      <div class="col-lg-1">
         <a href="" class="col-3 text-reset text-uppercase d-flex aling-items-center">
           <img class="logo-footer mr-2" src="../assets/img/RowLend.png" alt="Logo"></a>
       </div>
       <!--Menu-->
-      <div class="col-lg-3 justify-content-center">
-        <ul class="col-3 list-unstyled navbar-nav nav-menu">
-          <li class="nav-item font-weight-light text-uppercaser">
-            <a class="text-white text-reset text-decoration-none" routerLinkActive="active" routerLink="">QUIENES
+      <div class="col-lg-4">
+        <ul class="list-unstyled navbar-nav nav-menu m-top-menu-footer">
+          <li class="nav-item font-weight-light text-uppercaser w-about-us-footer">
+            <a class="text-white text-reset text-decoration-none " routerLinkActive="active" routerLink="">QUIENES
               SOMOS</a>
           </li>
-          <li class="nav-item font-weight-light text-uppercase">
+          <li class="nav-item font-weight-light text-uppercase w-servicies-footer">
             <a class="text-white text-reset text-decoration-none" routerLinkActive="active" routerLink="">SERVICIOS</a>
           </li>
-          <li class="nav-item font-weight-light text-uppercase">
+          <li class="nav-item font-weight-light text-uppercase w-contact-footer">
             <a class="text-white text-reset text-decoration-none" routerLinkActive="active" routerLink="">CONTACTO</a>
           </li>
-          <li class="nav-item font-weight-light text-uppercase">
+          <li class="nav-item font-weight-light text-uppercase w-publish-footer">
             <a class="text-white text-reset text-decoration-none" routerLinkActive="active" routerLink="">PUBLICAR</a>
           </li>
         </ul>
       </div>
+      <!-- FAQ'S -->
       <div class="col-lg-2">
-        <ul class="col-3 list-unstyled navbar-nav nav-menu">
+        <ul class="col-3 list-unstyled navbar-nav nav-menu m-top-menu-footer m-left-menu-footer">
           <li class="nav-item font-weight-light text-uppercase">
             <a class="text-white text-reset text-decoration-none" routerLinkActive="active" routerLink="">FAQ'S</a>
           </li>
         </ul>
       </div>
     </div>
-    <div class="row">
+    <div class="row justify-content-center">
       <!--Redes Sociales-->
-      <ul class="col-3 list-unstyled">
-        <li class="font-weight-bold text-uppercase">Resource</li>
-        <li><a href="#" class="text-reset">Link 1</a></li>
-      </ul>
+      <div class="col-lg-4">
+        <a class="text-white text-reset text-decoration-none mr-1" href="" routerLinkActive="active" routerLink=""><i class="fab fa-instagram icon-instagram"></i></a>
+        <a class="text-white text-reset text-decoration-none mr-1" href="" routerLinkActive="active" routerLink=""><i class="fab fa-facebook icon-facebook"></i></a>
+        <a class="text-white text-reset text-decoration-none mr-1" href="" routerLinkActive="active" routerLink=""><i class="fab fa-twitter-square icon-twitter"></i></a>
+        <a class="text-white text-reset text-decoration-none mr-1" href="" routerLinkActive="active" routerLink=""><i class="fab fa-linkedin icon-linkedin"></i></a>
+      </div>
+      <!--Menu-->
+      <div class="col-lg-6 mr-left-policy">
+        <ul class="list-unstyled navbar-nav nav-menu m-top-menu-footer">
+          <li class="nav-item font-weight-light text-uppercase w-about-us-footer">
+            <a class="text-white text-reset text-decoration-none" routerLinkActive="active" routerLink="">Copyright &copy; 2021 RowLend</a>
+          </li>
+          <li class="nav-item font-weight-light text-uppercase w-servicies-footer">
+            <a class="text-white text-reset text-decoration-none" routerLinkActive="active" routerLink="">Politica de privacidad</a>
+          </li>
+          <li class="nav-item font-weight-light text-uppercase w-contact-footer">
+            <a class="text-white text-reset text-decoration-none" routerLinkActive="active" routerLink="">Politica de cookies</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </footer>
