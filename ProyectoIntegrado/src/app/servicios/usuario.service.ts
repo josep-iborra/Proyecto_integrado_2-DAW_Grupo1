@@ -24,7 +24,6 @@ export class UsuarioService {
   httpHeaders = new HttpHeaders().set('Content-Type', 'application/json');
   AddUser(data: User): Observable<any> {
     let API_URL = 'http://localhost:8000/api/addUser';
-    data.nombre = [data.nombre.value];
     return this.httpClient.post(API_URL, data)
       .pipe(
         catchError(this.handleError)
