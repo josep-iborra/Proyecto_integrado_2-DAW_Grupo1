@@ -77,7 +77,7 @@ class MensajesController
                 'id' => $mensaje->getId(),
                 'asunto' => $mensaje->getAsunto(),
                 'mensaje' => $mensaje->getMensaje(),
-                'fecha' => $mensaje->getFecha(),
+                'fecha' => new \Datetime(date("Y/m/d")),
                 'idemisor' => $mensaje->getIdemisor(),
                 'idreceptor' => $mensaje->getIdreceptor()
             ];
