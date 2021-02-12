@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
 import { AddServicioComponent } from './componentes/add-servicio/add-servicio.component';
 import { ContactoComponent } from './componentes/formularios/contacto/contacto.component';
 import { LoginComponent } from './componentes/formularios/login/login.component';
@@ -9,8 +10,10 @@ import { IndexComponent } from './componentes/index/index.component';
 import { PerfilComponent } from './componentes/perfil/perfil.component';
 import { ProductosComponent } from './componentes/productos/productos.component';
 
+
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'index' },
+
   { path: 'index', component: IndexComponent },
   { path: 'perfil', component: PerfilComponent},
   { path: 'productos', component: ProductosComponent},
@@ -20,6 +23,7 @@ const routes: Routes = [
   { path: 'mensajes', component: MensajesComponent},
   { path: 'register', component: RegisterComponent},
   { path: '**', component: IndexComponent}
+
 ];
 
 @NgModule({
