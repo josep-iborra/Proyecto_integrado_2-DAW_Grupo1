@@ -32,13 +32,15 @@ class UsuariosController
         $data = json_decode($request->getContent(), true);
 
         $email = $data['email'];
-        $roles = $data['nombre'];
+        $nombre = $data['nombre'];
+        $apellidos = $data['apellidos'];
+        $telefono = $data['telefono'];
         $password = $data['password'];
 
         if (empty($email) || empty($nombre) || empty($password)) {
             throw new NotFoundHttpException("No están todos los parametros.");
         }
-        $this->userRepository->saveUser($email, $roles, $password);
+        $this->userRepository->saveUser($email, $nombre, $password, $apellidos, $telefono);
 
         return new JsonResponse(['status' => 'Usuario creado con exito'], Response::HTTP_CREATED);
     }
