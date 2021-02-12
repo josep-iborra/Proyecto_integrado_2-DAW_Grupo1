@@ -34,13 +34,13 @@ class MensajesController
         $asunto = $data['asunto'];
         $mensaje = $data['mensaje'];
         $fecha = $data['fecha'];
-        $idemisor = $data['idemisor'];
-        $idreceptor = $data['idreceptor'];
+        $idEmisor = $data['idemisor'];
+        $idReceptor = $data['idreceptor'];
 
-        if (empty($asunto) || empty($mensaje) || empty($fecha) || empty($idemisor) || empty($idreceptor)) {
+        if (empty($asunto) || empty($mensaje) || empty($fecha) || empty($idEmisor) || empty($idReceptor)) {
             throw new NotFoundHttpException("No están todos los parametros.");
         }
-        $this->mensajeRepository->saveMesaje($asunto, $mensaje, $fecha, $idemisor, $idreceptor);
+        $this->mensajeRepository->saveMesaje($asunto, $mensaje, $fecha, $idEmisor, $idReceptor);
 
         return new JsonResponse(['status' => 'Mensaje creado con exito'], Response::HTTP_CREATED);
     }

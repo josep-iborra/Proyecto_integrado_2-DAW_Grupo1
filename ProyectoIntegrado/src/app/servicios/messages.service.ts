@@ -4,26 +4,26 @@ import { Observable, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 
 
-export class User {
-  id!: String;
-  email!: String;
-  nombre!: any;
-  apellidos!: any;
-  telefono!: any;
-  password!: String;
+export class Messages {
+  id!: any;
+  asunto!: any;
+  mensaje!: any;
+  fecha!: any;
+  idEmisor!: any;
+  idReceptor!: any;
 }
 
 @Injectable({
   providedIn: 'root'
 })
-export class UsuarioService {
+export class MessagesService {
 
   constructor(private httpClient: HttpClient) { }
 
-  REST_API_USER: string = 'http://localhost:8000/api/user';
+  REST_API_MESSAGE: string = 'http://localhost:8000/api/mensaje';
   httpHeaders = new HttpHeaders().set('Content-Type', 'application/json');
-  AddUser(data: User): Observable<any> {
-    let API_URL = 'http://localhost:8000/api/addUser';
+  AddUser(data: Messages): Observable<any> {
+    let API_URL = 'http://localhost:8000/api/addMensaje';
     return this.httpClient.post(API_URL, data)
       .pipe(
         catchError(this.handleError)
@@ -31,11 +31,11 @@ export class UsuarioService {
   }
 
   GetUsers() {
-    return this.httpClient.get(this.REST_API_USER);
+    return this.httpClient.get(this.REST_API_MESSAGE);
   }
 
   GetUser(id: any): Observable<any> {
-    let API_URL = '' + this.REST_API_USER + '/' + id;
+    let API_URL = '' + this.REST_API_MESSAGE + '/' + id;
     return this.httpClient.get(API_URL, { headers: this.httpHeaders })
       .pipe(map((res: any) => {
         return res || {}
@@ -45,7 +45,7 @@ export class UsuarioService {
   }
 
   updateUser(id: any, data: any): Observable<any> {
-    let API_URL = '' + this.REST_API_USER + '/' + id;
+    let API_URL = '' + this.REST_API_MESSAGE + '/' + id;
     return this.httpClient.put(API_URL, data, { headers: this.httpHeaders })
       .pipe(
         catchError(this.handleError)
@@ -53,7 +53,7 @@ export class UsuarioService {
   }
 
   deleteUser(id: any): Observable<any> {
-    let API_URL = '' + this.REST_API_USER + '/' + id;
+    let API_URL = '' + this.REST_API_MESSAGE + '/' + id;
     return this.httpClient.delete(API_URL, { headers: this.httpHeaders }).pipe(
       catchError(this.handleError)
     )

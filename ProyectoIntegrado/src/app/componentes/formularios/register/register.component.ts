@@ -1,7 +1,7 @@
 import { Component, OnInit, NgZone } from '@angular/core';
 import { Router } from '@angular/router';
 import { UsuarioService } from './../../../servicios/usuario.service';
-import { FormGroup, FormBuilder } from "@angular/forms";
+import { FormGroup, FormBuilder, ReactiveFormsModule } from "@angular/forms";
 
 @Component({
   selector: 'app-register',
@@ -18,8 +18,10 @@ export class RegisterComponent implements OnInit {
     private ngZone: NgZone
   ) {
     this.userForm = this.formBuilder.group({
-      email: [''],
       nombre: [''],
+      apellidos: [''],
+      telefono: [''],
+      email: [''],
       password: ['']
     })
   }
