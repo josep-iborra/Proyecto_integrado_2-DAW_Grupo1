@@ -11,6 +11,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProductosComponent } from './componentes/productos/productos.component';
 import { RegisterComponent } from './componentes/formularios/register/register.component';
 import { MensajesComponent } from './componentes/formularios/mensajes/mensajes.component';
+import { EditarPerfilComponent } from './formularios/editar-perfil/editar-perfil.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { MensajesComponent } from './componentes/formularios/mensajes/mensajes.c
     ProductosComponent,
     RegisterComponent,
     MensajesComponent,
+    EditarPerfilComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, NgbModule],
   providers: [],
