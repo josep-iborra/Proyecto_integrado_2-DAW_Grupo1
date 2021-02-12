@@ -1,0 +1,14 @@
+/*  Footer */
+.box-footer {
+    background-color: #3e4143;
+}
+
+.logo-footer {
+    width: 5em;
+    height: 5em;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: row;
+}
