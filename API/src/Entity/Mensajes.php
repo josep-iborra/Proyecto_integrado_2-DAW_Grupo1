@@ -2,16 +2,13 @@
 
 namespace App\Entity;
 
-use App\Entity\Usuarios;
-use App\Repository\MensajesRepository;
 use Doctrine\ORM\Mapping as ORM;
-use DateTime;
 
 /**
  * Mensajes
  *
- * @ORM\Table(name="mensajes", indexes={@ORM\Index(name="IDEmisor", columns={"IDEmisor"}), @ORM\Index(name="IDReceptor", columns={"IDReceptor"})})
- * @ORM\Entity(repositoryClass=MensajesRepository::class)
+ * @ORM\Table(name="mensajes")
+ * @ORM\Entity
  */
 class Mensajes
 {
@@ -46,22 +43,16 @@ class Mensajes
     private $fecha;
 
     /**
-     * @var \Usuarios
+     * @var int
      *
-     * @ORM\ManyToOne(targetEntity="Usuarios")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="IDEmisor", referencedColumnName="ID")
-     * })
+     * @ORM\Column(name="IDEmisor", type="integer", nullable=false)
      */
     private $idemisor;
 
     /**
-     * @var \Usuarios
+     * @var int
      *
-     * @ORM\ManyToOne(targetEntity="Usuarios")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="IDReceptor", referencedColumnName="ID")
-     * })
+     * @ORM\Column(name="IDReceptor", type="integer", nullable=false)
      */
     private $idreceptor;
 
@@ -106,27 +97,29 @@ class Mensajes
         return $this;
     }
 
-    public function getIdemisor(): ?Usuarios
+    public function getIdemisor(): ?int
     {
         return $this->idemisor;
     }
 
-    public function setIdemisor(?Usuarios $idemisor): self
+    public function setIdemisor(int $idemisor): self
     {
         $this->idemisor = $idemisor;
 
         return $this;
     }
 
-    public function getIdreceptor(): ?Usuarios
+    public function getIdreceptor(): ?int
     {
         return $this->idreceptor;
     }
 
-    public function setIdreceptor(?Usuarios $idreceptor): self
+    public function setIdreceptor(int $idreceptor): self
     {
         $this->idreceptor = $idreceptor;
 
         return $this;
     }
+
+
 }

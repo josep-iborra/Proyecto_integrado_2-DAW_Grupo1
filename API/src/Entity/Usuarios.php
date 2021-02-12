@@ -2,14 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\UsuariosRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Usuarios
  *
  * @ORM\Table(name="usuarios")
- * @ORM\Entity(repositoryClass=UsuariosRepository::class)
+ * @ORM\Entity
  */
 class Usuarios
 {
@@ -42,6 +41,27 @@ class Usuarios
      * @ORM\Column(name="password", type="string", length=255, nullable=false)
      */
     private $password;
+
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name="apellidos", type="string", length=255, nullable=true)
+     */
+    private $apellidos;
+
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name="telefono", type="string", length=255, nullable=true)
+     */
+    private $telefono;
+
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name="id_empresa", type="string", length=11, nullable=true)
+     */
+    private $idEmpresa;
 
     public function getId(): ?int
     {
@@ -83,4 +103,42 @@ class Usuarios
 
         return $this;
     }
+
+    public function getApellidos(): ?string
+    {
+        return $this->apellidos;
+    }
+
+    public function setApellidos(?string $apellidos): self
+    {
+        $this->apellidos = $apellidos;
+
+        return $this;
+    }
+
+    public function getTelefono(): ?string
+    {
+        return $this->telefono;
+    }
+
+    public function setTelefono(?string $telefono): self
+    {
+        $this->telefono = $telefono;
+
+        return $this;
+    }
+
+    public function getIdEmpresa(): ?string
+    {
+        return $this->idEmpresa;
+    }
+
+    public function setIdEmpresa(?string $idEmpresa): self
+    {
+        $this->idEmpresa = $idEmpresa;
+
+        return $this;
+    }
+
+
 }

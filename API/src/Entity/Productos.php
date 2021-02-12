@@ -2,14 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\ProductosRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Productos
  *
- * @ORM\Table(name="productos", indexes={@ORM\Index(name="Autor_id", columns={"Autor_id"})})
- * @ORM\Entity(repositoryClass=UsuariosRepository::class)
+ * @ORM\Table(name="productos")
+ * @ORM\Entity
  */
 class Productos
 {
@@ -58,14 +57,11 @@ class Productos
     private $categoria;
 
     /**
-     * @var \Usuarios
+     * @var int|null
      *
-     * @ORM\ManyToOne(targetEntity="Usuarios")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="Autor_id", referencedColumnName="ID")
-     * })
+     * @ORM\Column(name="Autor_id", type="integer", nullable=true)
      */
-    private $autor;
+    private $autorId;
 
     public function getId(): ?int
     {
@@ -132,15 +128,17 @@ class Productos
         return $this;
     }
 
-    public function getAutor(): ?Usuarios
+    public function getAutorId(): ?int
     {
-        return $this->autor;
+        return $this->autorId;
     }
 
-    public function setAutor(?Usuarios $autor): self
+    public function setAutorId(?int $autorId): self
     {
-        $this->autor = $autor;
+        $this->autorId = $autorId;
 
         return $this;
     }
+
+
 }
