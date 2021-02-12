@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-02-2021 a las 12:17:53
+-- Tiempo de generación: 12-02-2021 a las 20:12:22
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 7.4.15
 
@@ -28,11 +28,9 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `categorias` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `Nombre` varchar(255) NOT NULL,
-  PRIMARY KEY (ID)
+  `ID` int(11) NOT NULL,
+  `Nombre` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
 
 --
 -- Volcado de datos para la tabla `categorias`
@@ -40,7 +38,20 @@ CREATE TABLE `categorias` (
 
 INSERT INTO `categorias` (`ID`, `Nombre`) VALUES
 (0, 'Agencias'),
-(1, 'Artistas');
+(1, 'Artistas'),
+(2, 'Cantantes'),
+(3, 'Catering'),
+(4, 'Circo'),
+(5, 'Comedia'),
+(6, 'Danza'),
+(7, 'Discomovil'),
+(8, 'Entretenimiento'),
+(10, 'Flamenco'),
+(12, 'Magia'),
+(13, 'Musica clasica'),
+(15, 'Para niños'),
+(16, 'Servicios bodas'),
+(17, 'Teatro');
 
 -- --------------------------------------------------------
 
@@ -49,13 +60,12 @@ INSERT INTO `categorias` (`ID`, `Nombre`) VALUES
 --
 
 CREATE TABLE `empresa` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ID` int(11) NOT NULL,
   `Nombre` varchar(255) NOT NULL,
   `categoria` int(11) NOT NULL,
   `localidad` varchar(255) NOT NULL,
   `codigo_postal` varchar(255) NOT NULL,
-  `descripcion` varchar(255) NOT NULL,
-  PRIMARY KEY (ID)
+  `descripcion` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -65,13 +75,12 @@ CREATE TABLE `empresa` (
 --
 
 CREATE TABLE `mensajes` (
-  `ID` int(100) NOT NULL AUTO_INCREMENT,
+  `ID` int(100) NOT NULL,
   `asunto` varchar(255) NOT NULL,
   `mensaje` varchar(255) NOT NULL,
   `fecha` datetime NOT NULL,
   `IDEmisor` int(100) NOT NULL,
-  `IDReceptor` int(100) NOT NULL,
-  PRIMARY KEY (ID)
+  `IDReceptor` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -81,14 +90,13 @@ CREATE TABLE `mensajes` (
 --
 
 CREATE TABLE `productos` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ID` int(11) NOT NULL,
   `Titulo` varchar(255) NOT NULL,
   `Precio` varchar(255) NOT NULL,
   `Multimedia` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL CHECK (json_valid(`Multimedia`)),
   `Descripcion` varchar(255) DEFAULT NULL,
   `categoria` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL CHECK (json_valid(`categoria`)),
-  `Autor_id` int(11) DEFAULT NULL,
-  PRIMARY KEY (ID)
+  `Autor_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -98,11 +106,77 @@ CREATE TABLE `productos` (
 --
 
 CREATE TABLE `subcategorias` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `Nombre` int(11) NOT NULL,
-  `ID_categoria` int(11) NOT NULL,
-  PRIMARY KEY (ID)
+  `ID` int(11) NOT NULL,
+  `Nombre` varchar(255) NOT NULL,
+  `ID_categoria` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `subcategorias`
+--
+
+INSERT INTO `subcategorias` (`ID`, `Nombre`, `ID_categoria`) VALUES
+(1, 'Organizadores de eventos', 0),
+(2, 'Representantes musicales', 0),
+(3, 'Actores', 1),
+(4, 'Chefs', 1),
+(5, 'Deportistas', 1),
+(6, 'Influencers', 1),
+(7, 'Cantantes de beatbox', 2),
+(8, 'Cantantes de copla', 2),
+(9, 'Cantantes de jazz', 2),
+(10, 'Cantantes de rap', 2),
+(11, 'Cantantes de rock', 2),
+(12, 'Alquiler de carpas', 3),
+(13, 'Cortador de jamon', 3),
+(14, 'Food truck', 3),
+(15, 'Paellas gigantes', 3),
+(16, 'Tartas gigantes', 3),
+(17, 'Payasos', 4),
+(18, 'Mimos', 4),
+(19, 'malabaristas', 4),
+(20, 'Ventrilocuos', 4),
+(21, 'Zancudos', 4),
+(22, 'Comicos', 5),
+(23, 'Grupos de teatro', 5),
+(24, 'Monologistas', 5),
+(25, 'Imitadores', 5),
+(26, 'Bailarinas Danza del vientre', 6),
+(27, 'Bailarines de Tango', 6),
+(28, 'Bailarines de Flamenco', 6),
+(29, 'Compañias de danza', 6),
+(30, 'Danza contemporania', 6),
+(31, 'Disc Jockey', 7),
+(32, 'Disco movil', 7),
+(33, 'Caricaturas', 8),
+(34, 'Castillos hinchables', 8),
+(35, 'Maquina de espuma', 8),
+(36, 'Cine al aire libre', 8),
+(37, 'Baile Flamenco', 10),
+(38, 'Grupos de rumba', 10),
+(39, 'Grupos de flamenco', 10),
+(40, 'Grupos de Sevillanas', 10),
+(41, 'Escapistas', 12),
+(42, 'Hipnotozadores', 12),
+(43, 'Magos', 12),
+(44, 'Mentalista', 12),
+(45, 'Ilusionista', 12),
+(46, 'Clarinetistas', 13),
+(47, 'Flautistas', 13),
+(48, 'Pianistas', 13),
+(49, 'Trompetistas', 13),
+(50, 'Animadores', 15),
+(51, 'Futbolin humano', 15),
+(52, 'Pinta caritas', 15),
+(53, 'Globoflexia', 15),
+(54, 'Barman', 16),
+(55, 'Pirotecnias', 16),
+(56, 'Maestro de ceremonias', 16),
+(57, 'Coches de boda', 16),
+(58, 'Teatro de marionetas', 17),
+(59, 'Sombras chinescas', 17),
+(60, 'Grupos de treato', 17),
+(61, 'Actores de teatro', 17);
 
 -- --------------------------------------------------------
 
@@ -111,14 +185,13 @@ CREATE TABLE `subcategorias` (
 --
 
 CREATE TABLE `usuarios` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ID` int(11) NOT NULL,
   `Nombre` varchar(255) NOT NULL,
   `Email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `apellidos` varchar(255) DEFAULT NULL,
   `telefono` varchar(255) DEFAULT NULL,
-  `id_empresa` varchar(11) DEFAULT NULL,
-  PRIMARY KEY (ID)
+  `id_empresa` varchar(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -129,68 +202,77 @@ CREATE TABLE `usuarios` (
 -- Indices de la tabla `categorias`
 --
 ALTER TABLE `categorias`
-  ADD PRIMARY KEY (`ID`),
-  ADD UNIQUE KEY `Nombre` (`Nombre`);
+  ADD PRIMARY KEY (`ID`);
 
 --
 -- Indices de la tabla `empresa`
 --
 ALTER TABLE `empresa`
-  ADD PRIMARY KEY (`ID`),
-  ADD UNIQUE KEY `Nombre` (`Nombre`);
+  ADD PRIMARY KEY (`ID`);
 
 --
 -- Indices de la tabla `mensajes`
 --
 ALTER TABLE `mensajes`
-  ADD PRIMARY KEY (`ID`),
-  ADD KEY `IDEmisor` (`IDEmisor`),
-  ADD KEY `IDReceptor` (`IDReceptor`);
+  ADD PRIMARY KEY (`ID`);
 
 --
 -- Indices de la tabla `productos`
 --
 ALTER TABLE `productos`
-  ADD PRIMARY KEY (`ID`),
-  ADD KEY `Autor_id` (`Autor_id`);
+  ADD PRIMARY KEY (`ID`);
 
 --
 -- Indices de la tabla `subcategorias`
 --
 ALTER TABLE `subcategorias`
-  ADD PRIMARY KEY (`ID`),
-  ADD UNIQUE KEY `Nombre` (`Nombre`),
-  ADD KEY `ID_categoria` (`ID_categoria`);
+  ADD PRIMARY KEY (`ID`);
 
 --
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`ID`),
-  ADD UNIQUE KEY `id_empresa` (`id_empresa`);
+  ADD PRIMARY KEY (`ID`);
 
 --
--- Restricciones para tablas volcadas
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- Filtros para la tabla `mensajes`
+-- AUTO_INCREMENT de la tabla `categorias`
+--
+ALTER TABLE `categorias`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- AUTO_INCREMENT de la tabla `empresa`
+--
+ALTER TABLE `empresa`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `mensajes`
 --
 ALTER TABLE `mensajes`
-  ADD CONSTRAINT `mensajes_ibfk_1` FOREIGN KEY (`IDEmisor`) REFERENCES `usuarios` (`ID`),
-  ADD CONSTRAINT `mensajes_ibfk_2` FOREIGN KEY (`IDReceptor`) REFERENCES `usuarios` (`ID`);
+  MODIFY `ID` int(100) NOT NULL AUTO_INCREMENT;
 
 --
--- Filtros para la tabla `productos`
+-- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  ADD CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`Autor_id`) REFERENCES `usuarios` (`ID`);
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- Filtros para la tabla `subcategorias`
+-- AUTO_INCREMENT de la tabla `subcategorias`
 --
 ALTER TABLE `subcategorias`
-  ADD CONSTRAINT `subcategorias_ibfk_1` FOREIGN KEY (`ID_categoria`) REFERENCES `categorias` (`ID`);
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+
+--
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
