@@ -8,6 +8,8 @@ export class User {
   id!: String;
   email!: String;
   nombre!: any;
+  apellidos!: any;
+  telefono!: any;
   password!: String;
 }
 
@@ -30,11 +32,11 @@ export class UsuarioService {
   }
 
   GetUsers() {
-    return this.httpClient.get(`${this.REST_API_USER}`);
+    return this.httpClient.get(this.REST_API_USER);
   }
 
   GetUser(id: any): Observable<any> {
-    let API_URL = `${this.REST_API_USER}/${id}`;
+    let API_URL = '' + this.REST_API_USER + '/' + id;
     return this.httpClient.get(API_URL, { headers: this.httpHeaders })
       .pipe(map((res: any) => {
         return res || {}
@@ -44,7 +46,7 @@ export class UsuarioService {
   }
 
   updateUser(id: any, data: any): Observable<any> {
-    let API_URL = `${this.REST_API_USER}/${id}`;
+    let API_URL = '' + this.REST_API_USER + '/' + id;
     return this.httpClient.put(API_URL, data, { headers: this.httpHeaders })
       .pipe(
         catchError(this.handleError)
@@ -52,7 +54,7 @@ export class UsuarioService {
   }
 
   deleteUser(id: any): Observable<any> {
-    let API_URL = `${this.REST_API_USER}/${id}`;
+    let API_URL = '' + this.REST_API_USER + '/' + id;
     return this.httpClient.delete(API_URL, { headers: this.httpHeaders }).pipe(
       catchError(this.handleError)
     )
@@ -61,10 +63,8 @@ export class UsuarioService {
   handleError(error: HttpErrorResponse) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
-      // Handle client error
       errorMessage = error.error.message;
     } else {
-      // Handle server error
       errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
     }
     console.log(errorMessage);
