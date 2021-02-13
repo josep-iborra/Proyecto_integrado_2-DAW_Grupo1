@@ -118,7 +118,7 @@ class MensajesController
         return new JsonResponse(['status' => 'Mensaje eliminado'], Response::HTTP_OK);
     }
 
-        /**
+    /**
      * @Route("mensaje/contactos/{idemisor}/{idreceptor}", name="get_msg_between_contacts", methods={"GET"})
      */
     public function getBySender($idemisor, $idreceptor): JsonResponse

@@ -117,4 +117,16 @@ class ProductosController
 
         return new JsonResponse(['status' => 'Producto eliminado'], Response::HTTP_OK);
     }
+
+    /**
+     * @Route("product/{categoria}", name="get_msg_between_contacts", methods={"GET"})
+     */
+    public function getByCategoria($categoria): JsonResponse
+    {
+        $productos = $this->ProductRepository->getProductosByCategoria($categoria);
+
+        echo json_encode(($productos));
+
+        return new JsonResponse(['status' => 'Contacto filtrado'], Response::HTTP_OK);
+    }
 }

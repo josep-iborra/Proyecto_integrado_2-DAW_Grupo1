@@ -26,7 +26,7 @@ class ProductosRepository extends ServiceEntityRepository
         $this->manager = $manager;
     }
 
-    public function saveProduct($titulo, $precio, $multimedia,$descripcion,$categoria)
+    public function saveProduct($titulo, $precio, $multimedia, $descripcion, $categoria)
     {
         $newProducto = new Productos();
 
@@ -52,6 +52,16 @@ class ProductosRepository extends ServiceEntityRepository
     {
         $this->manager->remove($product);
         $this->manager->flush();
+    }
+
+    public function getProductosByCategoria($categoria)
+    {
+
+        $query = $this->manager->createQuery('SELECT p FROM App\Entity\Products p JOIN App\Entity\Categorias c WHERE p.categoria = :categoria AND c.id = :categoria');
+        $query->setParameter('categoria', $categoria);
+        $albums = $query->getResult(\Doctrine\ORM\Query::HYDRATE_ARRAY);
+        
+        return $albums;
     }
 
     // /**
