@@ -17,6 +17,20 @@ class MensajesRepository extends ServiceEntityRepository
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Mensajes::class);
+
+        
+    }
+    public function getMsgByUser($idemisor, $idreceptor){
+            
+     
+        $query = $this->createQueryBuilder('c')
+            ->where('c.idemisor == :e AND c.idreceptor == :r')
+            ->setParameter('e',$$idemisor)
+            ->setParameter('r',$$idreceptor)
+            ->getQuery();
+
+        $contacto = $query->getResult(\Doctrine\ORM\Query::HYDRATE_ARRAY);
+        return $contacto;
     }
 
     // /**

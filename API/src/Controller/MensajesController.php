@@ -56,7 +56,7 @@ class MensajesController
             'id' => $mensaje->getId(),
             'asunto' => $mensaje->getAsunto(),
             'mensaje' => $mensaje->getMensaje(),
-            'fecha' => $mensaje->getFecha(),
+            'fecha' => new \Datetime(date("Y/m/d")),
             'idemisor' => $mensaje->getIdemisor(),
             'idreceptor' => $mensaje->getIdreceptor()
         ];
@@ -116,5 +116,17 @@ class MensajesController
         $this->mensajeRepository->removeMensaje($mensaje);
 
         return new JsonResponse(['status' => 'Mensaje eliminado'], Response::HTTP_OK);
+    }
+
+        /**
+     * @Route("mensaje/contactos/{idemisor}/{idreceptor}", name="get_msg_between_contacts", methods={"GET"})
+     */
+    public function getBySender($idemisor, $idreceptor): JsonResponse
+    {
+        $msgs = $this->mensajeRepository->getMsgByDate($idemisor, $idreceptor);
+
+        echo json_encode(($msgs));
+
+        return new JsonResponse(['status' => 'Contacto filtrado'], Response::HTTP_OK);
     }
 }
