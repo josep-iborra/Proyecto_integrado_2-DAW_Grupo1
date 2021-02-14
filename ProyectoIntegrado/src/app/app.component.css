@@ -78,11 +78,12 @@
     margin-left: -24em;
 }
 
-.icon-instagram {
-    margin-left: 1.5em;
-}
 
 .icon-instagram, .icon-facebook, .icon-twitter, .icon-linkedin {
     font-size: 19px;
     margin-top: 0.875em;
+
+}
+.icon-linkedin{
+    margin-right: 00.5em;
 }

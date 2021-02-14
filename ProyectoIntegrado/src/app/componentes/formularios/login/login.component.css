@@ -16,9 +16,14 @@ button {
     box-sizing: border-box;
   }
   form {
-    border: 3px solid #14181b;
-    background-color:             #acaba8            ;
+    border: 1px solid #14181b;
+    background-color:#acaba8;
+    padding: 1em;
+    border-radius: 1%;
   }
   .container {
     padding: 16px;
+  }
+  .margin{
+    
   }
