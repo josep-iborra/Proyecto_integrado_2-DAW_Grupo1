@@ -29,6 +29,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit() { }
 
   onSubmit(): any {
+    console.log(this.userForm.value);
     this.usuariosService.AddUser(this.userForm.value)
       .subscribe(() => {
         console.log('Data added successfully!')

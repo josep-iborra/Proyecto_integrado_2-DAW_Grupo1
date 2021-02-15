@@ -1,10 +1,11 @@
 /* Header */
+
 .navegador {
     background-color: #acaba8;
     padding: 0.75em;
 }
 
-.navegador>a{
+.navegador>a {
     text-decoration: none;
     color: black;
 }
@@ -16,14 +17,14 @@
 
 .w-about-us {
     width: 11em;
+}
+
+.w-servicies {
+    width: 7.5em;
     margin-left: 1.5em;
 }
 
-.w-servicies{
-    width: 7.5em;
-}
-
-.w-contact{
+.w-contact {
     width: 8em;
 }
 
@@ -35,7 +36,7 @@
     font-size: 18px;
 }
 
-.btn-user{
+.btn-user {
     background-color: transparent;
     border: 0;
 }
@@ -45,10 +46,17 @@
 }
 
 /*  Footer */
+.espacio{
+    height: 5rem;
+}
 .box-footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
     background-color: #3e4143;
     padding-top: 0.5em;
     padding-bottom: 1.25em;
+   
 }
 
 .logo-footer {
@@ -78,12 +86,11 @@
     margin-left: -24em;
 }
 
-
 .icon-instagram, .icon-facebook, .icon-twitter, .icon-linkedin {
     font-size: 19px;
     margin-top: 0.875em;
-
 }
-.icon-linkedin{
+
+.icon-linkedin {
     margin-right: 00.5em;
 }

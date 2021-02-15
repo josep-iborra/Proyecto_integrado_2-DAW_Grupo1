@@ -4,4 +4,21 @@
 
 return [
     '_preview_error' => [['code', '_format'], ['_controller' => 'error_controller::preview', '_format' => 'html'], ['code' => '\\d+'], [['variable', '.', '[^/]++', '_format', true], ['variable', '/', '\\d+', 'code', true], ['text', '/_error']], [], []],
+    'add_mensaje' => [[], ['_controller' => 'App\\Controller\\MensajesController::add'], [], [['text', '/api/addMensaje']], [], []],
+    'get_one_mensaje' => [['id'], ['_controller' => 'App\\Controller\\MensajesController::get'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/api/mensaje']], [], []],
+    'get_all_mensajes' => [[], ['_controller' => 'App\\Controller\\MensajesController::getAll'], [], [['text', '/api/mensaje']], [], []],
+    'update_mensaje' => [['id'], ['_controller' => 'App\\Controller\\MensajesController::update'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/api/mensaje']], [], []],
+    'delete_mensaje' => [['id'], ['_controller' => 'App\\Controller\\MensajesController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/api/mensaje']], [], []],
+    'add_Product' => [[], ['_controller' => 'App\\Controller\\ProductosController::add'], [], [['text', '/api/addProduct']], [], []],
+    'get_one_product' => [['id'], ['_controller' => 'App\\Controller\\ProductosController::get'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/api/product']], [], []],
+    'get_all_products' => [[], ['_controller' => 'App\\Controller\\ProductosController::getAll'], [], [['text', '/api/product']], [], []],
+    'update_product' => [['id'], ['_controller' => 'App\\Controller\\ProductosController::update'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/api/product']], [], []],
+    'delete_product' => [['id'], ['_controller' => 'App\\Controller\\ProductosController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/api/product']], [], []],
+    'get_msg_between_contacts' => [['categoria'], ['_controller' => 'App\\Controller\\ProductosController::getByCategoria'], [], [['variable', '/', '[^/]++', 'categoria', true], ['text', '/api/product']], [], []],
+    'add_user' => [[], ['_controller' => 'App\\Controller\\UsuariosController::add'], [], [['text', '/api/addUser']], [], []],
+    'get_one_user' => [['id'], ['_controller' => 'App\\Controller\\UsuariosController::get'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/api/user']], [], []],
+    'get_all_users' => [[], ['_controller' => 'App\\Controller\\UsuariosController::getAll'], [], [['text', '/api/user']], [], []],
+    'update_user' => [['id'], ['_controller' => 'App\\Controller\\UsuariosController::update'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/api/user']], [], []],
+    'delete_user' => [['id'], ['_controller' => 'App\\Controller\\UsuariosController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/api/user']], [], []],
+    'login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], []],
 ];

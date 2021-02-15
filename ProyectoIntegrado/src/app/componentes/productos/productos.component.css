@@ -1,0 +1,13 @@
+/* Events */
+.btn-events:hover {
+    text-decoration: none;
+}
+
+.card>img:hover {
+    opacity: 0.5;
+}
+
+.events {
+    border: 0;
+    margin-bottom: 1.75em;
+}
