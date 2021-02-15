@@ -12,12 +12,17 @@ button {
     border: 1px solid #14181b;
     border-radius: 1%;
     margin:1% 0%;
-    width: 70%;
+
     
   }
  form{
      background-color:#acaba8;
  }
- label{
-   margin-right:10px;
+ .form-group{
+    display: flex;
+    align-content: center;
  }
+  .container {
+    padding: 16px;
+  }
+ 
