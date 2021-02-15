@@ -23,7 +23,7 @@ class UsuariosRepository extends ServiceEntityRepository
 
     public function __construct(ManagerRegistry $registry, EntityManagerInterface $manager)
     {
-        parent::__construct($registry, User::class);
+        parent::__construct($registry, Usuarios::class);
         $this->manager = $manager;
     }
 

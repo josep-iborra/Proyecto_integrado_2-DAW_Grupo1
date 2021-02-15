@@ -37,7 +37,7 @@ class UsuariosController
         $telefono = $data['telefono'];
         $password = $data['password'];
 
-        if (empty($email) || empty($nombre) || empty($password)) {
+        if (empty($email) || empty($nombre) || empty($apellidos) || empty($telefono) || empty($password)) {
             throw new NotFoundHttpException("No están todos los parametros.");
         }
         $this->userRepository->saveUser($email, $nombre, $password, $apellidos, $telefono);
