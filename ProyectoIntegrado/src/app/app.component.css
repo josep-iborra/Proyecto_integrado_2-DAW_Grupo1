@@ -46,11 +46,17 @@
 }
 
 /*  Footer */
-
+.espacio{
+    height: 5rem;
+}
 .box-footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
     background-color: #3e4143;
     padding-top: 0.5em;
     padding-bottom: 1.25em;
+   
 }
 
 .logo-footer {
