@@ -9,20 +9,22 @@ import { RegisterComponent } from './componentes/formularios/register/register.c
 import { IndexComponent } from './componentes/index/index.component';
 import { PerfilComponent } from './componentes/perfil/perfil.component';
 import { ProductosComponent } from './componentes/productos/productos.component';
-
+import { VendedorComponent } from './componentes/vendedor/vendedor.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'index' },
   { path: 'index', component: IndexComponent },
   { path: 'perfil', component: PerfilComponent},
   { path: 'productos', component: ProductosComponent},
-  { path: 'crear-servicios', component:AddServicioComponent},
-  { path: 'contacto', component:ContactoComponent},
+  { path: 'crear-servicios', component: AddServicioComponent},
+  { path: 'contacto', component: ContactoComponent},
   { path: 'login', component: LoginComponent},
   { path: 'mensajes', component: MensajesComponent},
   { path: 'register', component: RegisterComponent},
-  {path:'contactanos', component:ContactanosComponent},
+  { path: 'contactanos', component: ContactanosComponent},
+  { path: 'vendedor', component: VendedorComponent},
   { path: '**', component: IndexComponent},
+
   
 
 
