@@ -12,8 +12,8 @@ return [
         '/api/mensaje' => [[['_route' => 'get_all_mensajes', '_controller' => 'App\\Controller\\MensajesController::getAll'], null, ['GET' => 0], null, false, false, null]],
         '/api/addProduct' => [[['_route' => 'add_Product', '_controller' => 'App\\Controller\\ProductosController::add'], null, ['POST' => 0], null, false, false, null]],
         '/api/product' => [[['_route' => 'get_all_products', '_controller' => 'App\\Controller\\ProductosController::getAll'], null, ['GET' => 0], null, false, false, null]],
-        '/api/addUser' => [[['_route' => 'add_user', '_controller' => 'App\\Controller\\UsuariosController::add'], null, ['POST' => 0], null, false, false, null]],
-        '/api/user' => [[['_route' => 'get_all_users', '_controller' => 'App\\Controller\\UsuariosController::getAll'], null, ['GET' => 0], null, false, false, null]],
+        '/api/addUser' => [[['_route' => 'add_user', '_controller' => 'App\\Controller\\UserController::add'], null, ['POST' => 0], null, false, false, null]],
+        '/api/user' => [[['_route' => 'get_all_users', '_controller' => 'App\\Controller\\UserController::getAll'], null, ['GET' => 0], null, false, false, null]],
         '/login' => [[['_route' => 'login', '_controller' => 'App\\Controller\\SecurityController::login'], null, ['POST' => 0], null, false, false, null]],
     ],
     [ // $regexpList
@@ -47,9 +47,9 @@ return [
         ],
         103 => [[['_route' => 'get_msg_between_contacts', '_controller' => 'App\\Controller\\ProductosController::getByCategoria'], ['categoria'], ['GET' => 0], null, false, true, null]],
         128 => [
-            [['_route' => 'get_one_user', '_controller' => 'App\\Controller\\UsuariosController::get'], ['id'], ['GET' => 0], null, false, true, null],
-            [['_route' => 'update_user', '_controller' => 'App\\Controller\\UsuariosController::update'], ['id'], ['PUT' => 0], null, false, true, null],
-            [['_route' => 'delete_user', '_controller' => 'App\\Controller\\UsuariosController::delete'], ['id'], ['DELETE' => 0], null, false, true, null],
+            [['_route' => 'get_one_user', '_controller' => 'App\\Controller\\UserController::get'], ['id'], ['GET' => 0], null, false, true, null],
+            [['_route' => 'update_user', '_controller' => 'App\\Controller\\UserController::update'], ['id'], ['PUT' => 0], null, false, true, null],
+            [['_route' => 'delete_user', '_controller' => 'App\\Controller\\UserController::delete'], ['id'], ['DELETE' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],
