@@ -5,8 +5,8 @@
     <parameter key="kernel.environment">dev</parameter>
     <parameter key="kernel.runtime_environment">%env(default:kernel.environment:APP_RUNTIME_ENV)%</parameter>
     <parameter key="kernel.debug">true</parameter>
-    <parameter key="kernel.build_dir">C:/Users/botolo/Documents/PI_v2/API/var/cache/dev</parameter>
-    <parameter key="kernel.cache_dir">C:/Users/botolo/Documents/PI_v2/API/var/cache/dev</parameter>
+    <parameter key="kernel.build_dir">C:\Users\botolo\Documents\PI_v2\API\var\cache\dev</parameter>
+    <parameter key="kernel.cache_dir">C:\Users\botolo\Documents\PI_v2\API\var\cache\dev</parameter>
     <parameter key="kernel.logs_dir">C:\Users\botolo\Documents\PI_v2\API\var\log</parameter>
     <parameter key="kernel.bundles" type="collection">
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
@@ -79,11 +79,11 @@
       <parameter key="cookie_samesite">lax</parameter>
       <parameter key="gc_probability">1</parameter>
     </parameter>
-    <parameter key="session.save_path">C:/Users/botolo/Documents/PI_v2/API/var/cache/dev/sessions</parameter>
+    <parameter key="session.save_path">C:\Users\botolo\Documents\PI_v2\API\var\cache\dev/sessions</parameter>
     <parameter key="session.metadata.update_threshold">0</parameter>
     <parameter key="data_collector.templates" type="collection"/>
     <parameter key="debug.error_handler.throw_at">-1</parameter>
-    <parameter key="debug.container.dump">C:/Users/botolo/Documents/PI_v2/API/var/cache/dev/App_KernelDevDebugContainer.xml</parameter>
+    <parameter key="debug.container.dump">C:\Users\botolo\Documents\PI_v2\API\var\cache\dev/App_KernelDevDebugContainer.xml</parameter>
     <parameter key="router.request_context.host">localhost</parameter>
     <parameter key="router.request_context.scheme">http</parameter>
     <parameter key="router.request_context.base_url"></parameter>
@@ -155,7 +155,7 @@
     <parameter key="doctrine.orm.second_level_cache.cache_configuration.class">Doctrine\ORM\Cache\CacheConfiguration</parameter>
     <parameter key="doctrine.orm.second_level_cache.regions_configuration.class">Doctrine\ORM\Cache\RegionsConfiguration</parameter>
     <parameter key="doctrine.orm.auto_generate_proxy_classes">true</parameter>
-    <parameter key="doctrine.orm.proxy_dir">C:/Users/botolo/Documents/PI_v2/API/var/cache/dev/doctrine/orm/Proxies</parameter>
+    <parameter key="doctrine.orm.proxy_dir">C:\Users\botolo\Documents\PI_v2\API\var\cache\dev/doctrine/orm/Proxies</parameter>
     <parameter key="doctrine.orm.proxy_namespace">Proxies</parameter>
     <parameter key="doctrine.migrations.preferred_em">null</parameter>
     <parameter key="doctrine.migrations.preferred_connection">null</parameter>
@@ -297,7 +297,7 @@
       </argument>
     </service>
     <service id="http_cache.store" class="Symfony\Component\HttpKernel\HttpCache\Store">
-      <argument>C:/Users/botolo/Documents/PI_v2/API/var/cache/dev/http_cache</argument>
+      <argument>C:\Users\botolo\Documents\PI_v2\API\var\cache\dev/http_cache</argument>
     </service>
     <service id="url_helper" class="Symfony\Component\HttpFoundation\UrlHelper">
       <argument type="service" id="request_stack"/>
@@ -307,7 +307,7 @@
       <tag name="container.no_preload"/>
       <argument type="tagged_iterator" tag="kernel.cache_warmer"/>
       <argument>true</argument>
-      <argument>C:/Users/botolo/Documents/PI_v2/API/var/cache/dev/App_KernelDevDebugContainerDeprecations.log</argument>
+      <argument>C:\Users\botolo\Documents\PI_v2\API\var\cache\dev/App_KernelDevDebugContainerDeprecations.log</argument>
     </service>
     <service id="cache_clearer" class="Symfony\Component\HttpKernel\CacheClearer\ChainCacheClearer" public="true">
       <tag name="container.private" package="symfony/framework-bundle" version="5.2"/>
@@ -652,7 +652,7 @@
       <tag name="kernel.reset" method="reset"/>
       <argument>SruPrVUXKE</argument>
       <argument>0</argument>
-      <argument>C:/Users/botolo/Documents/PI_v2/API/var/cache/dev/pools</argument>
+      <argument>C:\Users\botolo\Documents\PI_v2\API\var\cache\dev/pools</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="logger" on-invalid="ignore"/>
@@ -667,7 +667,7 @@
       <argument>yBqUitInkf</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:/Users/botolo/Documents/PI_v2/API/var/cache/dev/pools</argument>
+      <argument>C:\Users\botolo\Documents\PI_v2\API\var\cache\dev/pools</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -677,7 +677,7 @@
       <argument>0XkKV5a-x+</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:/Users/botolo/Documents/PI_v2/API/var/cache/dev/pools</argument>
+      <argument>C:\Users\botolo\Documents\PI_v2\API\var\cache\dev/pools</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -687,7 +687,7 @@
       <argument>9yQN8BMjk1</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:/Users/botolo/Documents/PI_v2/API/var/cache/dev/pools</argument>
+      <argument>C:\Users\botolo\Documents\PI_v2\API\var\cache\dev/pools</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -697,7 +697,7 @@
       <argument>qNNPDwcvq-</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:/Users/botolo/Documents/PI_v2/API/var/cache/dev/pools</argument>
+      <argument>C:\Users\botolo\Documents\PI_v2\API\var\cache\dev/pools</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -707,7 +707,7 @@
       <argument>Ec66OGEwLL</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:/Users/botolo/Documents/PI_v2/API/var/cache/dev/pools</argument>
+      <argument>C:\Users\botolo\Documents\PI_v2\API\var\cache\dev/pools</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -717,7 +717,7 @@
       <argument></argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:/Users/botolo/Documents/PI_v2/API/var/cache/dev/pools</argument>
+      <argument>C:\Users\botolo\Documents\PI_v2\API\var\cache\dev/pools</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -746,7 +746,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>C:/Users/botolo/Documents/PI_v2/API/var/cache/dev/pools</argument>
+      <argument>C:\Users\botolo\Documents\PI_v2\API\var\cache\dev/pools</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="logger" on-invalid="ignore"/>
@@ -897,14 +897,14 @@
       <deprecated package="symfony/framework-bundle" version="5.1">The "%service_id%" service is deprecated, use "$session-&gt;getAttributeBag()" instead.</deprecated>
     </service>
     <service id="session.storage.mock_file" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorage">
-      <argument>C:/Users/botolo/Documents/PI_v2/API/var/cache/dev/sessions</argument>
+      <argument>C:\Users\botolo\Documents\PI_v2\API\var\cache\dev/sessions</argument>
       <argument>MOCKSESSID</argument>
       <argument type="service" id="session.storage.metadata_bag"/>
     </service>
     <service id="session.handler.native_file" class="Symfony\Component\HttpFoundation\Session\Storage\Handler\StrictSessionHandler">
       <argument type="service">
         <service class="Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeFileSessionHandler">
-          <argument>C:/Users/botolo/Documents/PI_v2/API/var/cache/dev/sessions</argument>
+          <argument>C:\Users\botolo\Documents\PI_v2\API\var\cache\dev/sessions</argument>
         </service>
       </argument>
     </service>
@@ -1303,7 +1303,7 @@
       <argument type="service" id=".service_locator.WOytlHA.router.default"/>
       <argument>kernel::loadRoutes</argument>
       <argument type="collection">
-        <argument key="cache_dir">C:/Users/botolo/Documents/PI_v2/API/var/cache/dev</argument>
+        <argument key="cache_dir">C:\Users\botolo\Documents\PI_v2\API\var\cache\dev</argument>
         <argument key="debug">true</argument>
         <argument key="generator_class">Symfony\Component\Routing\Generator\CompiledUrlGenerator</argument>
         <argument key="generator_dumper_class">Symfony\Component\Routing\Generator\Dumper\CompiledUrlGeneratorDumper</argument>
@@ -1401,14 +1401,14 @@
     <service id="annotations.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\AnnotationsCacheWarmer">
       <tag name="kernel.cache_warmer"/>
       <argument type="service" id="annotations.reader"/>
-      <argument>C:/Users/botolo/Documents/PI_v2/API/var/cache/dev/annotations.php</argument>
+      <argument>C:\Users\botolo\Documents\PI_v2\API\var\cache\dev/annotations.php</argument>
       <argument>#^Symfony\\(?:Component\\HttpKernel\\|Bundle\\FrameworkBundle\\Controller\\(?!.*Controller$))#</argument>
       <argument>true</argument>
     </service>
     <service id="annotations.cache" class="Symfony\Component\Cache\DoctrineProvider">
       <argument type="service">
         <service class="Symfony\Component\Cache\Adapter\PhpArrayAdapter">
-          <argument>C:/Users/botolo/Documents/PI_v2/API/var/cache/dev/annotations.php</argument>
+          <argument>C:\Users\botolo\Documents\PI_v2\API\var\cache\dev/annotations.php</argument>
           <argument type="service" id="cache.annotations"/>
           <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
         </service>
@@ -1773,7 +1773,7 @@
         <argument type="service" id="doctrine.orm.default_metadata_driver"/>
       </call>
       <call method="setProxyDir">
-        <argument>C:/Users/botolo/Documents/PI_v2/API/var/cache/dev/doctrine/orm/Proxies</argument>
+        <argument>C:\Users\botolo\Documents\PI_v2\API\var\cache\dev/doctrine/orm/Proxies</argument>
       </call>
       <call method="setProxyNamespace">
         <argument>Proxies</argument>
@@ -2275,7 +2275,7 @@
       <argument>V9VPPtqL5k</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:/Users/botolo/Documents/PI_v2/API/var/cache/dev/pools</argument>
+      <argument>C:\Users\botolo\Documents\PI_v2\API\var\cache\dev/pools</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>

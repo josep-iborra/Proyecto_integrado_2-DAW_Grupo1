@@ -232,14 +232,3 @@ $classes[] = 'Symfony\Component\HttpKernel\EventListener\StreamedResponseListene
 $classes[] = 'Symfony\Component\HttpKernel\EventListener\ValidateRequestListener';
 
 Preloader::preload($classes);
-
-$classes = [];
-$classes[] = 'Symfony\\Component\\Routing\\Generator\\CompiledUrlGenerator';
-$classes[] = 'Symfony\\Bundle\\FrameworkBundle\\Routing\\RedirectableCompiledUrlMatcher';
-$classes[] = 'Symfony\\Component\\Routing\\Annotation\\Route';
-$classes[] = 'Doctrine\\ORM\\Mapping\\Table';
-$classes[] = 'Doctrine\\ORM\\Mapping\\Entity';
-$classes[] = 'Doctrine\\ORM\\Mapping\\Column';
-$classes[] = 'Doctrine\\ORM\\Mapping\\Id';
-$classes[] = 'Doctrine\\ORM\\Mapping\\GeneratedValue';
-Preloader::preload($classes);
