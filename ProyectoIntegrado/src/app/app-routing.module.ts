@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
 import { AddServicioComponent } from './componentes/add-servicio/add-servicio.component';
+import { ContactanosComponent } from './componentes/formularios/contactanos/contactanos.component';
 import { ContactoComponent } from './componentes/formularios/contacto/contacto.component';
 import { LoginComponent } from './componentes/formularios/login/login.component';
 import { MensajesComponent } from './componentes/formularios/mensajes/mensajes.component';
@@ -13,7 +13,6 @@ import { ProductosComponent } from './componentes/productos/productos.component'
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'index' },
-
   { path: 'index', component: IndexComponent },
   { path: 'perfil', component: PerfilComponent},
   { path: 'productos', component: ProductosComponent},
@@ -22,7 +21,10 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'mensajes', component: MensajesComponent},
   { path: 'register', component: RegisterComponent},
-  { path: '**', component: IndexComponent}
+  {path:'contactanos', component:ContactanosComponent},
+  { path: '**', component: IndexComponent},
+  
+
 
 ];
 
