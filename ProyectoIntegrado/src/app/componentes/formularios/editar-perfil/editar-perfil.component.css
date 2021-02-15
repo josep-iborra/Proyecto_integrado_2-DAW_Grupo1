@@ -1,0 +1,19 @@
+button {
+    background-color: #264470              ;
+    color:white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+  form {
+    border: 1px solid #14181b;
+    background-color:#acaba8;
+    padding: 1em;
+    border-radius: 1%;
+  }
+  .container {
+    padding: 16px;
+  }
+ 
