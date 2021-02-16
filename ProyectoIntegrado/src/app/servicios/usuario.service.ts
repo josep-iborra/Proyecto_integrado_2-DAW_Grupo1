@@ -59,6 +59,14 @@ export class UsuarioService {
     )
   }
 
+  login(data: any) {
+    let API_URL = 'http://localhost:8000/login';
+    return this.httpClient.post(API_URL, data, { headers: this.httpHeaders })
+      .pipe(
+        catchError(this.handleError)
+      )
+  }
+
   handleError(error: HttpErrorResponse) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {

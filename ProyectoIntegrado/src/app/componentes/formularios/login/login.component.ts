@@ -27,12 +27,18 @@ export class LoginComponent implements OnInit {
 
   onSubmit(): any {
     console.log(this.userForm.value);
-    this.usuariosService.AddUser(this.userForm.value)
+    const aux = {
+      "username":this.userForm.value.email,
+      "password":this.userForm.value.password
+    }
+    this.usuariosService.login(aux)
       .subscribe(() => {
-        console.log('Data added successfully!')
+        console.log('Login successfull!')
         this.ngZone.run(() => this.router.navigateByUrl('/index'))
       }, (err) => {
         console.log(err);
       });
   }
+
+
 }

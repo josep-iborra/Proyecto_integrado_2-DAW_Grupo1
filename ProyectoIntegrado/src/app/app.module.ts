@@ -16,6 +16,7 @@ import { EditarPerfilComponent } from './componentes/formularios/editar-perfil/e
 import { AboutComponent } from './componentes/about/about.component';
 import { ContactanosComponent } from './componentes/formularios/contactanos/contactanos.component';
 import { VendedorComponent } from './componentes/vendedor/vendedor.component';
+import { LoginComponent } from './componentes/formularios/login/login.component';
 
 @NgModule({
   declarations: [
@@ -30,8 +31,16 @@ import { VendedorComponent } from './componentes/vendedor/vendedor.component';
     AboutComponent,
     ContactanosComponent,
     VendedorComponent,
+    LoginComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule, ReactiveFormsModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NgbModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
