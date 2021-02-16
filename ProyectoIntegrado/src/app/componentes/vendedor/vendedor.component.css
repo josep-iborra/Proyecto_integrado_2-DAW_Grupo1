@@ -1,0 +1,32 @@
+.data-profile {
+    margin-left: 0em;
+}
+
+.data-service {
+    display: flex;
+    flex-direction: row;
+    border-radius: 1.25em;
+}
+
+.contact-service {
+    border-radius: 1.25em;
+}
+
+.seller-name {
+    font-size: 1.5em;
+}
+
+.icon-phone {
+    width: 1.359em;
+    height: 1.375em;
+}
+
+.number-phone {
+    margin-top: 0.25em;
+}
+
+.espacio{
+    height: 8rem;
+}
+
+
