@@ -13,9 +13,6 @@ export class LoginComponent implements OnInit {
 
   constructor(
     public formBuilder: FormBuilder,
-    private router: Router,
-    private usuariosService: UsuarioService,
-    private ngZone: NgZone
   ) {
     this.userForm = this.formBuilder.group({
       email: [''],
@@ -27,12 +24,7 @@ export class LoginComponent implements OnInit {
 
   onSubmit(): any {
     console.log(this.userForm.value);
-    this.usuariosService.AddUser(this.userForm.value)
-      .subscribe(() => {
-        console.log('Data added successfully!')
-        this.ngZone.run(() => this.router.navigateByUrl('/index'))
-      }, (err) => {
-        console.log(err);
-      });
   }
+
+
 }
