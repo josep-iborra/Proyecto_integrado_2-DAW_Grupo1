@@ -13,6 +13,9 @@ export class LoginComponent implements OnInit {
 
   constructor(
     public formBuilder: FormBuilder,
+    private router: Router,
+    private usuariosService: UsuarioService,
+    private ngZone: NgZone
   ) {
     this.userForm = this.formBuilder.group({
       email: [''],
@@ -24,6 +27,17 @@ export class LoginComponent implements OnInit {
 
   onSubmit(): any {
     console.log(this.userForm.value);
+    const aux = {
+      "username":this.userForm.value.email,
+      "password":this.userForm.value.password
+    }
+    this.usuariosService.login(aux)
+      .subscribe(() => {
+        console.log('Login successfull!')
+        this.ngZone.run(() => this.router.navigateByUrl('/index'))
+      }, (err) => {
+        console.log(err);
+      });
   }
 
 
