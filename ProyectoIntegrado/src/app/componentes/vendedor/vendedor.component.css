@@ -5,10 +5,15 @@
 .data-service {
     display: flex;
     flex-direction: row;
+    height: 275px;
     border-radius: 1.25em;
 }
 
 .contact-service {
+    height: 670px;
+}
+
+.contact-service, .box-slider-vendor, .box-reviews {
     border-radius: 1.25em;
 }
 
@@ -21,12 +26,45 @@
     height: 1.375em;
 }
 
-.number-phone {
+.icon-mail {
+    width: 1.328em;
+    height: 1.375em;
+}
+
+.icon-location {
+    width: 1.328em;
+    height: 1.375em;
+    margin-left: 0.5em;
+    margin-right: 1.5em;
+}
+
+.number-phone, .email-address {
     margin-top: 0.25em;
 }
 
-.espacio{
-    height: 8rem;
+.location-cities, .date-hour {
+    line-height: 0.5;
 }
 
+.send-message {
+    margin-left: 0.5em;
+    padding-bottom: 0.15em;
+}
 
+.info-contact {
+    margin-left: -2.75em;
+}
+
+.box-slider-vendor {
+    margin-top: -24.5em;
+    height: 375px;
+}
+
+.photo-profile-user {
+    width: 2.5em;
+    height: 2.5em;
+}
+
+.espacio {
+    height: 12rem;
+}
