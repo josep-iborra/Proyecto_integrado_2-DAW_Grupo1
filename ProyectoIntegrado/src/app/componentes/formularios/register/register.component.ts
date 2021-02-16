@@ -33,7 +33,7 @@ export class RegisterComponent implements OnInit {
     this.usuariosService.AddUser(this.userForm.value)
       .subscribe(() => {
         console.log('Data added successfully!')
-        this.ngZone.run(() => this.router.navigateByUrl('/user-list'))
+        this.ngZone.run(() => this.router.navigateByUrl('/index'))
       }, (err) => {
         console.log(err);
       });
