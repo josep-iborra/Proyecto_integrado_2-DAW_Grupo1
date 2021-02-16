@@ -33,10 +33,9 @@ class UserRepository extends ServiceEntityRepository
 
         $newUser->setEmail($email);
         $newUser->setNombre($nombre);
-        $newUser->setPassword($password);
+        $newUser->setPassword(password_hash($password, PASSWORD_BCRYPT));
         $newUser->setApellidos($apellidos);
         $newUser->setTelefono($telefono);
-
         $this->manager->persist($newUser);
         $this->manager->flush();
     }
