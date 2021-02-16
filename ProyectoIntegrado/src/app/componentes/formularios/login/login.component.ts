@@ -2,6 +2,7 @@ import { Component, OnInit, NgZone } from '@angular/core';
 import { Router } from '@angular/router';
 import { UsuarioService } from './../../../servicios/usuario.service';
 import { FormGroup, FormBuilder, ReactiveFormsModule } from "@angular/forms";
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -33,8 +34,8 @@ export class LoginComponent implements OnInit {
     }
     this.usuariosService.login(aux)
       .subscribe(() => {
-        console.log('Login successfull!')
-        this.ngZone.run(() => this.router.navigateByUrl('/index'))
+        console.log('Login successfull!');
+        this.ngZone.run(() => this.router.navigateByUrl('index'))
       }, (err) => {
         console.log(err);
       });
