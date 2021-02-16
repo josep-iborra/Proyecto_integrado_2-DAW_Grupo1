@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { catchError, map } from 'rxjs/operators';
-import { Observable, throwError } from 'rxjs';
+import { Observable, throwError, BehaviorSubject } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 
 
@@ -18,6 +18,8 @@ export class User {
 })
 export class UsuarioService {
 
+  private userSubject!: BehaviorSubject<User>;
+  public user!: Observable<User>;
   constructor(private httpClient: HttpClient) { }
 
   REST_API_USER: string = 'http://localhost:8000/api/user';
