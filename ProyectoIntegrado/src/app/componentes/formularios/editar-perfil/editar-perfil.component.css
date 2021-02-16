@@ -16,4 +16,9 @@ button {
   .container {
     padding: 16px;
   }
- 
+  .espacio{
+    height: 4rem;
+}
+#edit{
+  align-content: center;
+}
