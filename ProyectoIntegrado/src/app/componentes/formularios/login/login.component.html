@@ -1,5 +1,6 @@
 <div class="container my-auto">
-    <div class="signup-form-container  ">
+
+    <div class="signin-form-container  ">
         <form role="form" id="login-form" autocomplete="off" class="login-form1 aling-item-center">
             <div class="form-body">
                 <div class="row justify-content-center mt-5">
@@ -7,32 +8,36 @@
                         <form id="login-form" [formGroup]="userForm" (ngSubmit)="onSubmit()">
                             <div class="form-header">
                                 <h3 class="form-title"><i class="fa fa-user"></i> Sign In</h3>
-                                <div class="form-group">
-                                    <div class="input-group">
-                                        <div class="input-group-addon"><span
-                                                class="glyphicon glyphicon-envelope"></span></div>
-                                        <label>Email:</label>
-                                        <input class="form-control" type="text" formControlName="email" placeholder=""
-                                            required>
+                                <div class="pull-right">
+                                    <h3 class="form-title"><span class="glyphicon glyphicon-pencil"></span>
+                                    </h3>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
                                     </div>
-                                    <span class="help-block" id="error"></span>
+                                    <label>Email:</label>
+                                    <input class="form-control" type="text" formControlName="email" placeholder=""
+                                        required>
                                 </div>
-
-                                <div class="form-group">
-                                    <div class="input-group">
-                                        <div class="input-group-addon"><span class="glyphicon glyphicon-lock"></span>
-                                        </div>
-                                        <label>Password:</label>
-                                        <input class="form-control" type="text" formControlName="password"
-                                            placeholder="" required>
+                                <span class="help-block" id="error"></span>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-addon"><span class="glyphicon glyphicon-lock"></span>
                                     </div>
-                                    <span class="help-block" id="error"></span>
+                                    <label>Password:</label>
+                                    <input class="form-control" type="text" formControlName="password" placeholder=""
+                                        required>
                                 </div>
-                                <div class="form-footer text-center">
-                                    <button type="submit" class="btn btn-info">
-                                        <span class="glyphicon glyphicon-log-in"></span> Login
-                                    </button>
-                                </div>
+                                <span class="help-block" id="error"></span>
+                            </div>
+                            <div class="form-footer text-center">
+                                <button type="submit" class="btn btn-info">
+                                    <span class="glyphicon glyphicon-log-in"></span> Login
+                                </button>
+                            </div>
                         </form>
                     </div>
                 </div>
