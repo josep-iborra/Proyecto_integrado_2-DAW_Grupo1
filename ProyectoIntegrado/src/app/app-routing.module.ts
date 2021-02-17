@@ -4,7 +4,6 @@ import { AddServicioComponent } from './componentes/add-servicio/add-servicio.co
 import { ContactanosComponent } from './componentes/formularios/contactanos/contactanos.component';
 import { ContactoComponent } from './componentes/formularios/contacto/contacto.component';
 import { EditarPerfilComponent } from './componentes/formularios/editar-perfil/editar-perfil.component';
-import { EnvioMensajeComponent } from './componentes/formularios/envio-mensaje/envio-mensaje.component';
 import { LoginComponent } from './componentes/formularios/login/login.component';
 import { MensajesComponent } from './componentes/formularios/mensajes/mensajes.component';
 import { RegisterComponent } from './componentes/formularios/register/register.component';
@@ -26,7 +25,6 @@ const routes: Routes = [
   { path: 'contactanos', component: ContactanosComponent},
   { path: 'vendedor', component: VendedorComponent},
   {path:'editarPerfil', component: EditarPerfilComponent},
-  {path:'envioMensaje', component: EnvioMensajeComponent},
   { path: '**', component: IndexComponent},
 
   
