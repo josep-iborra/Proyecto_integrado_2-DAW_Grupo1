@@ -42,6 +42,9 @@ export class EditarPerfilComponent implements OnInit {
     console.log(this.updateForm.value);
     this.usuarioService.updateUser(this.user.id, this.updateForm.value)
       .subscribe(() => {
+        this.user = this.usuarioService.userValue;
+        console.log(this.user);
+        console.log(this.usuarioService.userValue);
         console.log('Data updated successfully!')
       }, (err) => {
         console.log(err);

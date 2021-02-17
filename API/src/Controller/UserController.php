@@ -92,7 +92,9 @@ class UserController
 
         empty($data['email']) ? true : $user->setEmail($data['email']);
         empty($data['nombre']) ? true : $user->setNombre($data['nombre']);
-        empty($data['password']) ? true : $user->setPassword($data['password']);
+        empty($data['password']) ? true : $user->setPassword(password_hash($data['password'],PASSWORD_BCRYPT));
+        empty($data['apellidos']) ? true : $user->setApellidos($data['apellidos']);
+        empty($data['telefono']) ? true : $user->setTelefono($data['telefono']);
 
         $updateUser = $this->userRepository->updateUser($user);
 
