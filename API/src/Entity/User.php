@@ -28,6 +28,11 @@ class User implements UserInterface
      */
     private $roles = [];
 
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name="nombre", type="string", length=255, nullable=true)
+     */
     private $nombre;
 
     /**
@@ -173,7 +178,6 @@ class User implements UserInterface
     public function getPassword(): ?string
     {
         return $this->password;
-
     }
 
     /**

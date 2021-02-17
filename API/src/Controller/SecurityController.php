@@ -23,7 +23,8 @@ class SecurityController extends AbstractController
             'nombre' => $user->getNombre(),
             'apellidos' => $user->getApellidos(),
             'telefono' => $user->getTelefono(),
-            'idEmpresa' => $user->getIdEmpresa()
+            'idEmpresa' => $user->getIdEmpresa(),
+            'id'=>$user->getId(),
         ]);
     }
 }
