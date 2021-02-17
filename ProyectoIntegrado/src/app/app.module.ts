@@ -17,6 +17,7 @@ import { AboutComponent } from './componentes/about/about.component';
 import { ContactanosComponent } from './componentes/formularios/contactanos/contactanos.component';
 import { VendedorComponent } from './componentes/vendedor/vendedor.component';
 import { LoginComponent } from './componentes/formularios/login/login.component';
+import { EnvioMensajeComponent } from './componentes/formularios/envio-mensaje/envio-mensaje.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { LoginComponent } from './componentes/formularios/login/login.component'
     AboutComponent,
     ContactanosComponent,
     VendedorComponent,
-    LoginComponent
+    LoginComponent,
+    EnvioMensajeComponent
   ],
   imports: [
     BrowserModule,

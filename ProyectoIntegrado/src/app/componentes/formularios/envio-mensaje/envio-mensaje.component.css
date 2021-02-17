@@ -1,0 +1,64 @@
+button {
+    background-color: #264470              ;
+    color:white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+  .envio {
+    padding-bottom: 130px;
+  }
+  .envio .info h4 {
+    padding: 0 0 0 60px;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #050d18;
+  }
+  
+  .envio .info p {
+    padding: 0 0 10px 60px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #173b6c;
+  }
+  .envio  input {
+    height: 44px;
+  }
+  
+  .envio textarea {
+    padding: 10px 15px;
+  }
+  .envio .form-auth input, .envio .form-auth textarea {
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 14px;
+  }
+  .envio  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .envio  label {
+    padding-bottom: 8px;
+  }
+  .envio .form-auth {
+    width: 100%;
+    padding: 30px;
+    background: #fff;
+    box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+  }
+  .envio .form-auth .form-group {
+    padding-bottom: 8px;
+  }
+  .envio .form-auth .form-group {
+    margin-bottom: 15px;
+  }
+  .envio .form-auth label {
+    padding-bottom: 8px;
+  }
+  section{
+      display: flex;
+      justify-content: center;
+  }

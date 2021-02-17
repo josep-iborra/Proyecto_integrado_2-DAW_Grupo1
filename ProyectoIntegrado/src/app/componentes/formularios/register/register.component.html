@@ -7,7 +7,7 @@
                               <form id="register-form" [formGroup]="userForm" (ngSubmit)="onSubmit()">
                                    <div class="form-header">
                                         <h3 class="form-title"><i class="fa fa-user"></i> Sign Up</h3>
-                                        <div class="pull-right">
+                                        <div >
                                              <h3 class="form-title"><span class="glyphicon glyphicon-pencil"></span>
                                              </h3>
                                         </div>
@@ -18,9 +18,7 @@
 
                                    <div class="form-group">
                                         <div class="input-group">
-                                             <div class="input-group-addon"><span
-                                                       class="glyphicon glyphicon-user"></span>
-                                             </div>
+                                    
                                              <label>Nombre:</label>
                                              <input class="form-control" type="text" formControlName="nombre"
                                                   placeholder="" required>
@@ -30,9 +28,8 @@
 
                                    <div class="form-group">
                                         <div class="input-group">
-                                             <div class="input-group-addon"><span
-                                                       class="glyphicon glyphicon-user"></span>
-                                             </div>
+                                             
+                                            
                                              <label>Apellidos:</label>
                                              <input class="form-control" type="text" formControlName="apellidos"
                                                   placeholder="" required>
@@ -42,9 +39,7 @@
 
                                    <div class="form-group">
                                         <div class="input-group">
-                                             <div class="input-group-addon"><span
-                                                       class="glyphicon glyphicon-user"></span>
-                                             </div>
+
                                              <label>Teléfono:</label>
                                              <input class="form-control" type="text" formControlName="telefono"
                                                   placeholder="" required>
@@ -54,8 +49,7 @@
 
                                    <div class="form-group">
                                         <div class="input-group">
-                                             <div class="input-group-addon"><span
-                                                       class="glyphicon glyphicon-envelope"></span></div>
+                                             
                                              <label>Email:</label>
                                              <input class="form-control" type="text" formControlName="email"
                                                   placeholder="" required>
@@ -65,9 +59,7 @@
 
                                    <div class="form-group">
                                         <div class="input-group">
-                                             <div class="input-group-addon"><span
-                                                       class="glyphicon glyphicon-lock"></span>
-                                             </div>
+                                             
                                              <label>Password:</label>
                                              <input class="form-control" type="text" formControlName="password"
                                                   placeholder="" required>
@@ -76,7 +68,7 @@
                                    </div>
                                    <div class="form-footer text-center">
                                         <button type="submit" class="btn btn-info">
-                                             <span class="glyphicon glyphicon-log-in"></span> Registrarse
+                                              Registrarse
                                         </button>
                                    </div>
                               </form>
