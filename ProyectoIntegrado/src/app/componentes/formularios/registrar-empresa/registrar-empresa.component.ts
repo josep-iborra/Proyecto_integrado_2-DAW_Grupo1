@@ -21,16 +21,26 @@ export class RegistrarEmpresaComponent implements OnInit {
     private empresaService: EmpresaService,
     private ngZone: NgZone,
     private usuarioService: UsuarioService
-    
+
   ) {
     this.user = this.usuarioService.userValue;
+    const aux = new User();
+    aux.apellidos = this.user.apellidos;
+    aux.email = this.user.email;
+    aux.id = this.user.id;
+    aux.nombre = this.user.nombre;
+    aux.password = this.user.password;
+    aux.roles = this.user.roles;
+    aux.telefono = this.user.telefono;
+    console.log("------------------------");
+    console.log(this.user);
     this.empForm = this.formBuilder.group({
       nombre: [''],
       categoria: [''],
       localidad: [''],
       codigoPostal: [''],
       descripcion: [''],
-      idUsuario:[this.user.id]
+      idUsuario: [this.user.id]
     });
   }
 

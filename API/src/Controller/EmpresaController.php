@@ -37,8 +37,9 @@ class EmpresaController
         $codigoPostal = $data['codigoPostal'];
         $descripcion = $data['descripcion'];
         $idUsuario = $data['idUsuario'];
-
-        if (empty($categoria) || empty($nombre) || empty($localidad) || empty($codigoPostal) || empty($descripcion) || empty($idUsuario)) {
+        
+        var_dump($data);
+        if (empty($categoria) || empty($nombre) || empty($localidad) || empty($codigoPostal) || empty($descripcion)) {
             throw new NotFoundHttpException("No están todos los parametros.");
         }
         $this->empresaRepository->saveEmpresa($nombre, $categoria, $localidad, $codigoPostal, $descripcion, $idUsuario);

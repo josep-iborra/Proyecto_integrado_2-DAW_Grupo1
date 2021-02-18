@@ -60,10 +60,7 @@ class Empresa
     /**
      * @var int
      *
-     * @ORM\ManyToOne(targetEntity="User")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_usuario", referencedColumnName="id")
-     * })
+     * @ORM\Column(name="id_usuario", type="integer", length=11, nullable=true)
      */
     private $idUsuario;
 

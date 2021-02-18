@@ -12,6 +12,7 @@ export class User {
   apellidos!: any;
   telefono!: any;
   password!: String;
+  roles!:any;
 }
 
 @Injectable({
@@ -86,7 +87,7 @@ export class UsuarioService {
 
   logout() {
     localStorage.removeItem('user');
-    this.router.navigate(['/account/login']);
+    this.router.navigate(['/login']);
   }
 
   handleError(error: HttpErrorResponse) {

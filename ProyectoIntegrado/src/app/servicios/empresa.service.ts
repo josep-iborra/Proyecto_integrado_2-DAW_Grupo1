@@ -4,6 +4,8 @@ import { Observable, throwError, BehaviorSubject } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { EditarEmpresaComponent } from '../componentes/formularios/editar-empresa/editar-empresa.component';
+import { User } from 'src/app/servicios/usuario.service';
+import { UsuarioService } from 'src/app/servicios/usuario.service';
 
 export class Empresa {
   id!: String;
@@ -20,8 +22,10 @@ export class Empresa {
 })
 export class EmpresaService {
 
-  constructor(private httpClient: HttpClient, private router: Router) {
+  user: User;
 
+  constructor(private httpClient: HttpClient, private router: Router, private usuarioService: UsuarioService) {
+    this.user = this.usuarioService.userValue;
   }
 
 
