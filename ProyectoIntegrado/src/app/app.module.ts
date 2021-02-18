@@ -18,6 +18,7 @@ import { ContactanosComponent } from './componentes/formularios/contactanos/cont
 import { VendedorComponent } from './componentes/vendedor/vendedor.component';
 import { LoginComponent } from './componentes/formularios/login/login.component';
 import { EnvioMensajeComponent } from './componentes/formularios/envio-mensaje/envio-mensaje.component';
+import { ReviewsComponent } from './componentes/reviews/reviews.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { EnvioMensajeComponent } from './componentes/formularios/envio-mensaje/e
     ContactanosComponent,
     VendedorComponent,
     LoginComponent,
-    EnvioMensajeComponent
+    EnvioMensajeComponent,
+    ReviewsComponent
   ],
   imports: [
     BrowserModule,
