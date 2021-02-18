@@ -1,3 +1,7 @@
+<ng-template #content let-modal>
+    <app-envio-mensaje></app-envio-mensaje>
+</ng-template>
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 col-xs-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 bg-dark box-profile-user">
@@ -12,7 +16,8 @@
                             alt="Icono buscar correo">
                     </div>
                     <div class="col-12 col-xs-12 col-sm-6 col-md-4 col-lg-6 col-xl-6 p-3 mt-3 ml-3">
-                        <button class="bg-white border-0 p-2 rounded-lg btn-new-message" type="button">Mensaje nuevo</button>
+                        <button class="bg-white border-0 p-2 rounded-lg btn-new-message" type="button"
+                            (click)="open(content)">Mensaje nuevo</button>
                     </div>
                 </div>
             </div>
@@ -171,4 +176,3 @@
     </div>
 
 </div>
-
