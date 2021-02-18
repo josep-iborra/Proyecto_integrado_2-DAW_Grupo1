@@ -27,6 +27,10 @@
         <a class="text-dark font-weight-bolder text-decoration-none size-menu-text" routerLinkActive="active"
           routerLink="">PUBLICAR</a>
       </li>
+      <li class="nav-item" *ngIf="!checkLogin()">
+        <a class="text-dark font-weight-bolder text-decoration-none size-menu-text" routerLinkActive="active"
+          routerLink="/mensajes">Mensajes</a>
+      </li>
     </ul>
   </div>
   <div class="input-group search" style="align-items: center;">

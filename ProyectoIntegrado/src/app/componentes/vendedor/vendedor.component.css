@@ -31,9 +31,20 @@
     height: 1.375em;
 }
 
+.box-icon-location {
+    margin-top: -0.15em;
+}
+
 .icon-location {
-    width: 1.328em;
-    height: 1.375em;
+    width: 1.473em;
+    height: 1.758em;
+    margin-left: 0.5em;
+    margin-right: 1.5em;
+}
+
+.icon-horary {
+    width: 1.473em;
+    height: 1.547em; 
     margin-left: 0.5em;
     margin-right: 1.5em;
 }
