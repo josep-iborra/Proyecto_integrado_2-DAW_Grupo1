@@ -1,5 +1,12 @@
 <ng-template #content let-modal>
-    <app-envio-mensaje></app-envio-mensaje>
+    <div class="modal-title ">
+        <button class="close mt-2 mr-2" aria-label="close" type="button" (click)="modal.dismiss()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <app-envio-mensaje class="new-message"></app-envio-mensaje>
+    </div>
 </ng-template>
 
 <div class="container-fluid">
