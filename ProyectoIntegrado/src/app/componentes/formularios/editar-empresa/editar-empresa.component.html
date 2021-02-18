@@ -1,0 +1,35 @@
+<main role="main" class="container my-auto">
+    <div class="row">
+        <div id="edit" class="col-lg-6 offset-lg-3 col-md-6 offset-md-3
+            col-12 col-sm-12">
+            <form id="data" [formGroup]="updateForm" (ngSubmit)="onUpdate()">
+                <h4>Datos Empresariales</h4>
+                <div class="form-group">
+                    <label for="categoria">Categoría</label>
+                    <input id="categoria" name="categoria" class="form-control" type="text" formControlName="categoria"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="localidad">Localidad</label>
+                    <input id="localidad" name="localidad" class="form-control" type="text" formControlName="localidad"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="codigo_postal">Código Postal</label>
+                    <input id="codigo_postal" name="codigo_postal" class="form-control" type="text"
+                        formControlName="codigo_postal" required>
+                </div>
+                <div class="form-group">
+                    <label for="descripcion">Descripción</label>
+                    <input id="descripcion" name="descripcion" class="form-control" type="text"
+                        formControlName="descripcion" required>
+                </div>
+
+                <input id="idUsuario" name="idUsuario" class="form-control" type="hidden" formControlName="idUsuario"
+                    required>
+
+                <button>Guardar</button>
+            </form>
+        </div>
+    </div>
+</main>

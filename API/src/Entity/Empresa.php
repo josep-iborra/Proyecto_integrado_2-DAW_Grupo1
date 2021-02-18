@@ -3,11 +3,12 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use App\Entity\User;
 
 /**
  * Empresa
  *
- * @ORM\Table(name="empresa")
+ * @ORM\Table(name="empresa", indexes={@ORM\Index(name="id_usuario", columns={"id_usuario"})})
  * @ORM\Entity
  */
 class Empresa
@@ -55,6 +56,16 @@ class Empresa
      * @ORM\Column(name="descripcion", type="string", length=255, nullable=false)
      */
     private $descripcion;
+
+    /**
+     * @var int
+     *
+     * @ORM\ManyToOne(targetEntity="User")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_usuario", referencedColumnName="id")
+     * })
+     */
+    private $idUsuario;
 
     public function getId(): ?int
     {
@@ -117,6 +128,18 @@ class Empresa
     public function setDescripcion(string $descripcion): self
     {
         $this->descripcion = $descripcion;
+
+        return $this;
+    }
+
+    public function getIdUsuario(): ?int
+    {
+        return $this->idUsuario;
+    }
+
+    public function setIdUsuario(?int $idUsuario): self
+    {
+        $this->idUsuario = $idUsuario;
 
         return $this;
     }
