@@ -22,9 +22,9 @@ class Subcategorias
     private $id;
 
     /**
-     * @var int
+     * @var string
      *
-     * @ORM\Column(name="Nombre", type="integer", nullable=false)
+     * @ORM\Column(name="Nombre", type="string", length=255, nullable=false)
      */
     private $nombre;
 
@@ -40,12 +40,12 @@ class Subcategorias
         return $this->id;
     }
 
-    public function getNombre(): ?int
+    public function getNombre(): ?string
     {
         return $this->nombre;
     }
 
-    public function setNombre(int $nombre): self
+    public function setNombre(string $nombre): self
     {
         $this->nombre = $nombre;
 

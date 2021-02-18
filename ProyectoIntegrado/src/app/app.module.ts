@@ -19,6 +19,8 @@ import { VendedorComponent } from './componentes/vendedor/vendedor.component';
 import { LoginComponent } from './componentes/formularios/login/login.component';
 import { EnvioMensajeComponent } from './componentes/formularios/envio-mensaje/envio-mensaje.component';
 import { ReviewsComponent } from './componentes/reviews/reviews.component';
+import { EditarEmpresaComponent } from './componentes/formularios/editar-empresa/editar-empresa.component';
+import { RegistrarEmpresaComponent } from './componentes/formularios/registrar-empresa/registrar-empresa.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { ReviewsComponent } from './componentes/reviews/reviews.component';
     VendedorComponent,
     LoginComponent,
     EnvioMensajeComponent,
-    ReviewsComponent
+    ReviewsComponent,
+    EditarEmpresaComponent,
+    RegistrarEmpresaComponent
   ],
   imports: [
     BrowserModule,

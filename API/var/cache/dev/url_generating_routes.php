@@ -4,6 +4,11 @@
 
 return [
     '_preview_error' => [['code', '_format'], ['_controller' => 'error_controller::preview', '_format' => 'html'], ['code' => '\\d+'], [['variable', '.', '[^/]++', '_format', true], ['variable', '/', '\\d+', 'code', true], ['text', '/_error']], [], []],
+    'add_empresa' => [[], ['_controller' => 'App\\Controller\\EmpresaController::add'], [], [['text', '/api/addEmpresa']], [], []],
+    'get_one_empresa' => [['id'], ['_controller' => 'App\\Controller\\EmpresaController::get'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/api/empresa']], [], []],
+    'get_all_empresas' => [[], ['_controller' => 'App\\Controller\\EmpresaController::getAll'], [], [['text', '/api/empresas']], [], []],
+    'update_empresa' => [['id'], ['_controller' => 'App\\Controller\\EmpresaController::update'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/api/empresa']], [], []],
+    'delete_empresa' => [['id'], ['_controller' => 'App\\Controller\\EmpresaController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/api/empresa']], [], []],
     'add_mensaje' => [[], ['_controller' => 'App\\Controller\\MensajesController::add'], [], [['text', '/api/addMensaje']], [], []],
     'get_one_mensaje' => [['id'], ['_controller' => 'App\\Controller\\MensajesController::get'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/api/mensaje']], [], []],
     'get_all_mensajes' => [[], ['_controller' => 'App\\Controller\\MensajesController::getAll'], [], [['text', '/api/mensaje']], [], []],

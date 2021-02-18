@@ -13,25 +13,29 @@ import { IndexComponent } from './componentes/index/index.component';
 import { PerfilComponent } from './componentes/perfil/perfil.component';
 import { ProductosComponent } from './componentes/productos/productos.component';
 import { VendedorComponent } from './componentes/vendedor/vendedor.component';
+import { EditarEmpresaComponent } from './componentes/formularios/editar-empresa/editar-empresa.component';
+import { RegistrarEmpresaComponent } from './componentes/formularios/registrar-empresa/registrar-empresa.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'index' },
   { path: 'index', component: IndexComponent },
-  { path: 'perfil', component: PerfilComponent},
-  { path: 'productos', component: ProductosComponent},
-  { path: 'crear-servicios', component: AddServicioComponent},
-  { path: 'contacto', component: ContactoComponent},
-  { path: 'login', component: LoginComponent},
-  { path: 'mensajes', component: MensajesComponent},
-  { path: 'register', component: RegisterComponent},
-  { path: 'contactanos', component: ContactanosComponent},
-  { path: 'vendedor', component: VendedorComponent},
-  { path: 'editarPerfil', component: EditarPerfilComponent},
-  { path: 'mensaje-nuevo', component: EnvioMensajeComponent},
-  { path: 'about', component: AboutComponent},
-  { path: '**', component: IndexComponent},
+  { path: 'perfil', component: PerfilComponent },
+  { path: 'productos', component: ProductosComponent },
+  { path: 'crear-servicios', component: AddServicioComponent },
+  { path: 'contacto', component: ContactoComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'mensajes', component: MensajesComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'registrarEmpresa', component: RegistrarEmpresaComponent },
+  { path: 'contactanos', component: ContactanosComponent },
+  { path: 'vendedor', component: VendedorComponent },
+  { path: 'editarPerfil', component: EditarPerfilComponent },
+  { path: 'editarEmpresa', component: EditarEmpresaComponent },
+  { path: 'mensaje-nuevo', component: EnvioMensajeComponent },
+  { path: 'about', component: AboutComponent },
+  { path: '**', component: IndexComponent },
 
-  
+
 
 
 ];

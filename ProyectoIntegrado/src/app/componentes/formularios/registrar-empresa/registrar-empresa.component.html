@@ -1,0 +1,58 @@
+<div class="container my-auto">
+    <div class="signup-form-container  ">
+        <form role="form" id="register-form" autocomplete="off" class="register-form1 aling-item-center">
+            <div class="form-body">
+                <div class="row justify-content-center mt-5">
+                    <div class="col-md-5">
+                        <form id="register-form" [formGroup]="empForm" (ngSubmit)="onSubmit()">
+                            <div class="form-header">
+                                <h3 class="form-title"><i class="fa fa-user"></i> Datos de Empresa </h3>
+                            </div>
+                            <div class="form-group">
+                                <label for="nombre">Nombre</label>
+                                <input id="nombre" name="nombre" class="form-control" type="text"
+                                    formControlName="nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="categoria">Categoría</label>
+                                <input id="categoria" name="categoria" class="form-control" type="text"
+                                    formControlName="categoria" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="localidad">Localidad</label>
+                                <input id="localidad" name="localidad" class="form-control" type="text"
+                                    formControlName="localidad" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="codigoPostal">Código Postal</label>
+                                <input id="codigoPostal" name="codigoPostal" class="form-control" type="text"
+                                    formControlName="codigoPostal" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="descripcion">Descripción</label>
+                                <input id="descripcion" name="descripcion" class="form-control" type="text"
+                                    formControlName="descripcion" required>
+                            </div>
+
+                            <input id="idUsuario" name="idUsuario" class="form-control" type="hidden"
+                                formControlName="idUsuario" required>
+                            <div class="form-footer text-center">
+                                <button type="submit" class="btn btn-info">
+                                    Registrar Empresa
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+        </form>
+
+    </div>
+
+</div>
+
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/jquery-1.11.2.min.js"></script>
+<script src="assets/jquery.validate.min.js"></script>
