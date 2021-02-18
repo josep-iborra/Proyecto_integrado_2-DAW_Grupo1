@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-02-2021 a las 12:04:40
+-- Tiempo de generación: 18-02-2021 a las 09:16:35
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 7.4.15
 
@@ -71,7 +71,9 @@ CREATE TABLE `doctrine_migration_versions` (
 
 INSERT INTO `doctrine_migration_versions` (`version`, `executed_at`, `execution_time`) VALUES
 ('DoctrineMigrations\\Version20210216074257', '2021-02-16 09:06:16', 520),
-('DoctrineMigrations\\Version20210216080723', '2021-02-16 09:07:30', 1407);
+('DoctrineMigrations\\Version20210216080723', '2021-02-16 09:07:30', 1407),
+('DoctrineMigrations\\Version20210217073953', '2021-02-17 08:59:33', 225),
+('DoctrineMigrations\\Version20210217075242', '2021-02-17 08:53:20', 1651);
 
 -- --------------------------------------------------------
 
@@ -85,7 +87,8 @@ CREATE TABLE `empresa` (
   `categoria` int(11) NOT NULL,
   `localidad` varchar(255) NOT NULL,
   `codigo_postal` varchar(255) NOT NULL,
-  `descripcion` varchar(255) NOT NULL
+  `descripcion` varchar(255) NOT NULL,
+  `id_usuario` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -122,12 +125,25 @@ CREATE TABLE `productos` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `reseña`
+--
+
+CREATE TABLE `reseña` (
+  `ID` int(11) NOT NULL,
+  `mensaje` varchar(255) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `id_vendedor` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `subcategorias`
 --
 
 CREATE TABLE `subcategorias` (
   `ID` int(11) NOT NULL,
-  `Nombre` varchar(255) NOT NULL,
+  `Nombre` int(11) NOT NULL,
   `ID_categoria` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -136,59 +152,59 @@ CREATE TABLE `subcategorias` (
 --
 
 INSERT INTO `subcategorias` (`ID`, `Nombre`, `ID_categoria`) VALUES
-(1, 'organizacion_de_eventos', 0),
-(2, 'representantes_musicales', 0),
-(3, 'Actores', 1),
-(4, 'Chefs', 1),
-(7, 'Cantantes_de_beatbox', 2),
-(8, 'cantantes_de_copla', 2),
-(9, 'cantantes_de_jazz', 2),
-(10, 'cantantes_de_rap', 2),
-(11, 'cantantes_de_rock', 2),
-(12, 'alquiler_de_carpas', 3),
-(13, 'cortador_de_jamon', 3),
-(14, 'food_truck', 3),
-(15, 'paellas_gigantes', 3),
-(16, 'tartas_gigantes', 3),
-(17, 'payasos', 4),
-(18, 'mimos', 4),
-(19, 'malabaristas', 4),
-(20, 'ventrilocuos', 4),
-(22, 'comicos', 5),
-(23, 'grupo_de_teatro', 5),
-(24, 'monologistas', 5),
-(25, 'imitadores', 5),
-(26, 'bailarinas_de_la_danza_del_vientre', 6),
-(27, 'bailarines_de_tango', 6),
-(29, 'compania_de_danza', 6),
-(30, 'danza_contemporania', 6),
-(31, 'disc_jockey', 7),
-(32, 'disco_movil', 7),
-(34, 'castillos_hinchables', 8),
-(35, 'maquina_de_espuma', 8),
-(36, 'cine_al_aire_libre', 8),
-(37, 'grupos_de_rumba', 10),
-(38, 'grupos_de_flamenco', 10),
-(39, 'grupos_de_sevillanas', 10),
-(41, 'hipnotizadores', 12),
-(42, 'magos', 12),
-(43, 'mentalistas', 12),
-(44, 'ilusionistas', 12),
-(45, 'escapistas', 12),
-(46, 'clarinetistas', 13),
-(47, 'flautistas', 13),
-(48, 'pianistas', 13),
-(49, 'trompetistas', 13),
-(50, 'animadores', 15),
-(51, 'futbolin_humano', 15),
-(52, 'pinta_caritas', 15),
-(53, 'globoflexia', 15),
-(54, 'barman', 16),
-(55, 'pirotecnia', 16),
-(56, 'maestro_de_ceremonias', 16),
-(57, 'coches_de_boda', 16),
-(59, 'sombras_chinescas', 17),
-(62, 'teatro_de_marionetas', 17);
+(1, 0, 0),
+(2, 0, 0),
+(3, 0, 1),
+(4, 0, 1),
+(7, 0, 2),
+(8, 0, 2),
+(9, 0, 2),
+(10, 0, 2),
+(11, 0, 2),
+(12, 0, 3),
+(13, 0, 3),
+(14, 0, 3),
+(15, 0, 3),
+(16, 0, 3),
+(17, 0, 4),
+(18, 0, 4),
+(19, 0, 4),
+(20, 0, 4),
+(22, 0, 5),
+(23, 0, 5),
+(24, 0, 5),
+(25, 0, 5),
+(26, 0, 6),
+(27, 0, 6),
+(29, 0, 6),
+(30, 0, 6),
+(31, 0, 7),
+(32, 0, 7),
+(34, 0, 8),
+(35, 0, 8),
+(36, 0, 8),
+(37, 0, 10),
+(38, 0, 10),
+(39, 0, 10),
+(41, 0, 12),
+(42, 0, 12),
+(43, 0, 12),
+(44, 0, 12),
+(45, 0, 12),
+(46, 0, 13),
+(47, 0, 13),
+(48, 0, 13),
+(49, 0, 13),
+(50, 0, 15),
+(51, 0, 15),
+(52, 0, 15),
+(53, 0, 15),
+(54, 0, 16),
+(55, 0, 16),
+(56, 0, 16),
+(57, 0, 16),
+(59, 0, 17),
+(62, 0, 17);
 
 -- --------------------------------------------------------
 
@@ -204,31 +220,16 @@ CREATE TABLE `user` (
   `apellidos` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `telefono` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `id_empresa` varchar(11) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `api_token` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `api_token` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `nombre` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- --------------------------------------------------------
-
 --
--- Estructura de tabla para la tabla `usuarios`
+-- Volcado de datos para la tabla `user`
 --
 
-CREATE TABLE `usuarios` (
-  `ID` int(11) NOT NULL,
-  `Nombre` varchar(255) NOT NULL,
-  `Email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `apellidos` varchar(255) DEFAULT NULL,
-  `telefono` varchar(255) DEFAULT NULL,
-  `id_empresa` varchar(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `usuarios`
---
-
-INSERT INTO `usuarios` (`ID`, `Nombre`, `Email`, `password`, `apellidos`, `telefono`, `id_empresa`) VALUES
-(1, 'pepo', 'Pepo@gmail.com', '1234', 'pacp', '565432145', NULL);
+INSERT INTO `user` (`id`, `email`, `roles`, `password`, `apellidos`, `telefono`, `id_empresa`, `api_token`, `nombre`) VALUES
+(1, 'peop@gmail.com', '[]', '$2y$10$0loUoyCLNuWJguxmzrjLROr0w5NRp8HUAwLw/rpZ0rKfEbDyISLwO', 'poep', '6546546545', NULL, NULL, 'peop');
 
 --
 -- Índices para tablas volcadas
@@ -250,7 +251,8 @@ ALTER TABLE `doctrine_migration_versions`
 -- Indices de la tabla `empresa`
 --
 ALTER TABLE `empresa`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `id_usuario` (`id_usuario`);
 
 --
 -- Indices de la tabla `mensajes`
@@ -265,6 +267,14 @@ ALTER TABLE `productos`
   ADD PRIMARY KEY (`ID`);
 
 --
+-- Indices de la tabla `reseña`
+--
+ALTER TABLE `reseña`
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `id_usuario` (`id_usuario`),
+  ADD KEY `id_vendedor` (`id_vendedor`);
+
+--
 -- Indices de la tabla `subcategorias`
 --
 ALTER TABLE `subcategorias`
@@ -276,12 +286,6 @@ ALTER TABLE `subcategorias`
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `UNIQ_8D93D649E7927C74` (`email`);
-
---
--- Indices de la tabla `usuarios`
---
-ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`ID`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -321,13 +325,24 @@ ALTER TABLE `subcategorias`
 -- AUTO_INCREMENT de la tabla `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT de la tabla `usuarios`
+-- Restricciones para tablas volcadas
 --
-ALTER TABLE `usuarios`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- Filtros para la tabla `empresa`
+--
+ALTER TABLE `empresa`
+  ADD CONSTRAINT `empresa_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `user` (`id`);
+
+--
+-- Filtros para la tabla `reseña`
+--
+ALTER TABLE `reseña`
+  ADD CONSTRAINT `reseña_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `user` (`id`),
+  ADD CONSTRAINT `reseña_ibfk_2` FOREIGN KEY (`id_vendedor`) REFERENCES `empresa` (`ID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
