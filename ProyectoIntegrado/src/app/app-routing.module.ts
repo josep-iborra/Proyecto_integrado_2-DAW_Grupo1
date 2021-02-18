@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AboutComponent } from './componentes/about/about.component';
 import { AddServicioComponent } from './componentes/add-servicio/add-servicio.component';
 import { ContactanosComponent } from './componentes/formularios/contactanos/contactanos.component';
 import { ContactoComponent } from './componentes/formularios/contacto/contacto.component';
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: 'vendedor', component: VendedorComponent},
   { path: 'editarPerfil', component: EditarPerfilComponent},
   { path: 'mensaje-nuevo', component: EnvioMensajeComponent},
+  { path: 'about', component: AboutComponent},
   { path: '**', component: IndexComponent},
 
   
