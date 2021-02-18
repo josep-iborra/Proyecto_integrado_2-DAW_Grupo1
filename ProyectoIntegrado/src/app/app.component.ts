@@ -26,4 +26,10 @@ export class AppComponent {
       return false;
     }
   }
+
+  navbarOpen = false;
+
+  toggleNavbar() {
+    this.navbarOpen = !this.navbarOpen;
+  }
 }
