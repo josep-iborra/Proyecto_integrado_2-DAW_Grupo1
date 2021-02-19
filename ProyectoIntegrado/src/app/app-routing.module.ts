@@ -15,6 +15,8 @@ import { ProductosComponent } from './componentes/productos/productos.component'
 import { VendedorComponent } from './componentes/vendedor/vendedor.component';
 import { EditarEmpresaComponent } from './componentes/formularios/editar-empresa/editar-empresa.component';
 import { RegistrarEmpresaComponent } from './componentes/formularios/registrar-empresa/registrar-empresa.component';
+import { CategoriasComponent } from './componentes/categorias/categorias.component';
+import { SubcategoriasComponent } from './componentes/subcategorias/subcategorias.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'index' },
@@ -33,6 +35,8 @@ const routes: Routes = [
   { path: 'editarEmpresa', component: EditarEmpresaComponent },
   { path: 'mensaje-nuevo', component: EnvioMensajeComponent },
   { path: 'about', component: AboutComponent },
+  { path: 'categorias', component: CategoriasComponent},
+  { path: 'subcategorias', component: SubcategoriasComponent},
   { path: '**', component: IndexComponent },
 
 

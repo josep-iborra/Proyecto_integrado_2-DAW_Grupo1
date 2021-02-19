@@ -98,3 +98,12 @@
 .navbar{
     margin-bottom: 1rem;
 } */
+
+footer{
+    background-color: grey;
+}
+
+
+.dropdown-toggle::after {
+    display:none;
+}

@@ -1,0 +1,14 @@
+/* Feature Event Category */
+
+.btn-events:hover {
+    text-decoration: none;
+}
+
+.card>img:hover {
+    opacity: 0.5;
+}
+
+.events-categories {
+    border: 0;
+    margin-bottom: 1.75em;
+}

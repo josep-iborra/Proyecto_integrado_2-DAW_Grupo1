@@ -125,10 +125,10 @@ CREATE TABLE `productos` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `reseña`
+-- Estructura de tabla para la tabla `resena`
 --
 
-CREATE TABLE `reseña` (
+CREATE TABLE `resena` (
   `ID` int(11) NOT NULL,
   `mensaje` varchar(255) NOT NULL,
   `id_usuario` int(11) NOT NULL,
@@ -152,59 +152,59 @@ CREATE TABLE `subcategorias` (
 --
 
 INSERT INTO `subcategorias` (`ID`, `Nombre`, `ID_categoria`) VALUES
-(1, '0', 0),
-(2, '0', 0),
-(3, '0', 1),
-(4, '0', 1),
-(7, '0', 2),
-(8, '0', 2),
-(9, '0', 2),
-(10, '0', 2),
-(11, '0', 2),
-(12, '0', 3),
-(13, '0', 3),
-(14, '0', 3),
-(15, '0', 3),
-(16, '0', 3),
-(17, '0', 4),
-(18, '0', 4),
-(19, '0', 4),
-(20, '0', 4),
-(22, '0', 5),
-(23, '0', 5),
-(24, '0', 5),
-(25, '0', 5),
-(26, '0', 6),
-(27, '0', 6),
-(29, '0', 6),
-(30, '0', 6),
-(31, '0', 7),
-(32, '0', 7),
-(34, '0', 8),
-(35, '0', 8),
-(36, '0', 8),
-(37, '0', 10),
-(38, '0', 10),
-(39, '0', 10),
-(41, '0', 12),
-(42, '0', 12),
-(43, '0', 12),
-(44, '0', 12),
-(45, '0', 12),
-(46, '0', 13),
-(47, '0', 13),
-(48, '0', 13),
-(49, '0', 13),
-(50, '0', 15),
-(51, '0', 15),
-(52, '0', 15),
-(53, '0', 15),
-(54, '0', 16),
-(55, '0', 16),
-(56, '0', 16),
-(57, '0', 16),
-(59, '0', 17),
-(62, '0', 17);
+(1, 'organizadorDeEventos', 0),
+(2, 'representatesMusicales', 0),
+(3, 'actores', 1),
+(4, 'chefs', 1),
+(7, 'cantantesDeBeatbox', 2),
+(8, 'cantantesDeCopla', 2),
+(9, 'cantantesDeJazz', 2),
+(10, 'cantantesDeRap', 2),
+(11, 'cantantesDeRock', 2),
+(12, 'alquilerDeCarpas', 3),
+(13, 'cortadorDeJamon', 3),
+(14, 'foodTruck', 3),
+(15, 'paellasGigantes', 3),
+(16, 'tartasGigantes', 3),
+(17, 'payasos', 4),
+(18, 'mismos', 4),
+(19, 'malabaristas', 4),
+(20, 'ventrilocuos', 4),
+(22, 'comicos', 5),
+(23, 'grupoDeTeatro', 5),
+(24, 'monologistas', 5),
+(25, 'imitadores', 5),
+(26, 'bailarinasDanzaDelVientre', 6),
+(27, 'bailarinesDeTango', 6),
+(29, 'compañiasDeDanza', 6),
+(30, 'danzaContemporania', 6),
+(31, 'discJockey', 7),
+(32, 'discoMovil', 7),
+(34, 'castillosHinchables', 8),
+(35, 'maquinaDeEspuma', 8),
+(36, 'cineAlAireLibre', 8),
+(37, 'gruposDeRumba', 10),
+(38, 'gruposDeFlamenco', 10),
+(39, 'gruposDeSevillanas', 10),
+(41, 'escapistas', 12),
+(42, 'hipnotizadores', 12),
+(43, 'magos', 12),
+(44, 'mentalistas', 12),
+(45, 'ilusionistas', 12),
+(46, 'clarinetistas', 13),
+(47, 'flautistas', 13),
+(48, 'pianistas', 13),
+(49, 'trompetistas', 13),
+(50, 'animadores', 15),
+(51, 'futbolinHumano', 15),
+(52, 'pintaCaritas', 15),
+(53, 'globoFlexia', 15),
+(54, 'barman', 16),
+(55, 'pirotecnia', 16),
+(56, 'maestroDeCeremonias', 16),
+(57, 'cochesDeBoda', 16),
+(59, 'teatroDeMarionetas', 17),
+(62, 'sombrasChinescas', 17);
 
 -- --------------------------------------------------------
 
@@ -267,9 +267,9 @@ ALTER TABLE `productos`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indices de la tabla `reseña`
+-- Indices de la tabla `resena`
 --
-ALTER TABLE `reseña`
+ALTER TABLE `resena`
   ADD PRIMARY KEY (`ID`),
   ADD KEY `id_usuario` (`id_usuario`),
   ADD KEY `id_vendedor` (`id_vendedor`);
@@ -338,11 +338,11 @@ ALTER TABLE `empresa`
   ADD CONSTRAINT `empresa_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `user` (`id`);
 
 --
--- Filtros para la tabla `reseña`
+-- Filtros para la tabla `resena`
 --
-ALTER TABLE `reseña`
-  ADD CONSTRAINT `reseña_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `user` (`id`),
-  ADD CONSTRAINT `reseña_ibfk_2` FOREIGN KEY (`id_vendedor`) REFERENCES `empresa` (`ID`);
+ALTER TABLE `resena`
+  ADD CONSTRAINT `resena_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `user` (`id`),
+  ADD CONSTRAINT `resena_ibfk_2` FOREIGN KEY (`id_vendedor`) REFERENCES `empresa` (`ID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

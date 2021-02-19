@@ -1,30 +1,17 @@
-/* Feature Event Category */
-.btn-events:hover {
-    text-decoration: none;
-}
-
-.card>img:hover {
-    opacity: 0.5;
-}
-
-.events-categories {
-    border: 0;
-    margin-bottom: 1.75em;
-}
- .img1 {
+.img1 {
     height: 400px;
     width: 750px;
     margin-left: auto;
     margin-right: auto;
     display: block;
-    
-  }
-  .carrousel{
-    background-color:grey;
+}
+
+.carrousel {
+    background-color: grey;
     height: 400px;
     width: 750px;
-  }
-  .carr{
-      margin-left: 10.5rem;
+}
 
-  }
+.carr {
+    margin-left: 10.5rem;
+}
