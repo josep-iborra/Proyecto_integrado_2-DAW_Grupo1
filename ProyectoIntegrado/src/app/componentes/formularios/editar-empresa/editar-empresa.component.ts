@@ -3,7 +3,6 @@ import { EmpresaService, Empresa } from 'src/app/servicios/empresa.service'
 import { UsuarioService } from 'src/app/servicios/usuario.service'
 import { FormGroup, FormBuilder } from "@angular/forms";
 import { JsonPipe } from '@angular/common';
-import { AnyTxtRecord } from 'dns';
 
 @Component({
   selector: 'app-editar-empresa',
@@ -25,7 +24,7 @@ export class EditarEmpresaComponent implements OnInit {
   ) {
 
     this.user = this.usuarioService.userValue;
-    this.empresaService.GetEmpresas().subscribe(res =>{ console.log('::'); console.log(res); this.pingo = res;});
+    this.empresaService.GetCategorias().subscribe(res =>{ console.log('::'); console.log(res); this.pingo = res;});
 
     this.empresaService.GetEmpresaByUserId(this.user.id).subscribe(res => {
       this.eId = res['id'];

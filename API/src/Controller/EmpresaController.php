@@ -116,7 +116,7 @@ class EmpresaController
     {
         $empresa = $this->empresaRepository->findOneBy(['id' => $id]);
 
-        $this->empresaRepository->removeUser($empresa);
+        $this->empresaRepository->removeEmpresa($empresa);
 
         return new JsonResponse(['status' => 'Empresa eliminada'], Response::HTTP_OK);
     }

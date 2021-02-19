@@ -14,6 +14,7 @@ export class RegistrarEmpresaComponent implements OnInit {
 
   empForm: FormGroup;
   user: User;
+  pingo: any;
 
   constructor(
     public formBuilder: FormBuilder,
@@ -24,14 +25,8 @@ export class RegistrarEmpresaComponent implements OnInit {
 
   ) {
     this.user = this.usuarioService.userValue;
-    const aux = new User();
-    aux.apellidos = this.user.apellidos;
-    aux.email = this.user.email;
-    aux.id = this.user.id;
-    aux.nombre = this.user.nombre;
-    aux.password = this.user.password;
-    aux.roles = this.user.roles;
-    aux.telefono = this.user.telefono;
+    this.empresaService.GetCategorias().subscribe(res => { console.log('::'); console.log(res); this.pingo = res; });
+
     console.log("------------------------");
     console.log(this.user);
     this.empForm = this.formBuilder.group({

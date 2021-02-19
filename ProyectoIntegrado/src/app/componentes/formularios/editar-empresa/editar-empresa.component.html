@@ -7,8 +7,8 @@
                 <div class="form-group">
                     <label for="categoria">Categorías</label>
                     <select id="categoria" name="categoria" class="form-control" type="text" formControlName="categoria"
-                        required >
-                        <option value="" *ngFor="let item of pingo">{{item.categoria}}</option>
+                        required>
+                        <option value={{item.id}} *ngFor="let item of pingo">{{item.nombre}}</option>
                     </select>
                 </div>
                 <div class="form-group">
