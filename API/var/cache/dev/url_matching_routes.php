@@ -22,41 +22,45 @@ return [
         0 => '{^(?'
                 .'|/_error/(\\d+)(?:\\.([^/]++))?(*:35)'
                 .'|/api/(?'
-                    .'|empresa/([^/]++)(?'
-                        .'|(*:69)'
+                    .'|empresa(?'
+                        .'|/([^/]++)(?'
+                            .'|(*:72)'
+                        .')'
+                        .'|User/([^/]++)(*:93)'
                     .')'
                     .'|mensaje/([^/]++)(?'
-                        .'|(*:96)'
+                        .'|(*:120)'
                     .')'
                     .'|product/([^/]++)(?'
-                        .'|(*:123)'
-                        .'|(*:131)'
+                        .'|(*:148)'
+                        .'|(*:156)'
                     .')'
                     .'|user/([^/]++)(?'
-                        .'|(*:156)'
+                        .'|(*:181)'
                     .')'
                 .')'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
         35 => [[['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null]],
-        69 => [
+        72 => [
             [['_route' => 'get_one_empresa', '_controller' => 'App\\Controller\\EmpresaController::get'], ['id'], ['GET' => 0], null, false, true, null],
             [['_route' => 'update_empresa', '_controller' => 'App\\Controller\\EmpresaController::update'], ['id'], ['PUT' => 0], null, false, true, null],
             [['_route' => 'delete_empresa', '_controller' => 'App\\Controller\\EmpresaController::delete'], ['id'], ['DELETE' => 0], null, false, true, null],
         ],
-        96 => [
+        93 => [[['_route' => 'get_one_empresa_by_userId', '_controller' => 'App\\Controller\\EmpresaController::getByUID'], ['id'], ['GET' => 0], null, false, true, null]],
+        120 => [
             [['_route' => 'get_one_mensaje', '_controller' => 'App\\Controller\\MensajesController::get'], ['id'], ['GET' => 0], null, false, true, null],
             [['_route' => 'update_mensaje', '_controller' => 'App\\Controller\\MensajesController::update'], ['id'], ['PUT' => 0], null, false, true, null],
             [['_route' => 'delete_mensaje', '_controller' => 'App\\Controller\\MensajesController::delete'], ['id'], ['DELETE' => 0], null, false, true, null],
         ],
-        123 => [
+        148 => [
             [['_route' => 'get_one_product', '_controller' => 'App\\Controller\\ProductosController::get'], ['id'], ['GET' => 0], null, false, true, null],
             [['_route' => 'update_product', '_controller' => 'App\\Controller\\ProductosController::update'], ['id'], ['PUT' => 0], null, false, true, null],
             [['_route' => 'delete_product', '_controller' => 'App\\Controller\\ProductosController::delete'], ['id'], ['DELETE' => 0], null, false, true, null],
         ],
-        131 => [[['_route' => 'get_msg_between_contacts', '_controller' => 'App\\Controller\\ProductosController::getByCategoria'], ['categoria'], ['GET' => 0], null, false, true, null]],
-        156 => [
+        156 => [[['_route' => 'get_msg_between_contacts', '_controller' => 'App\\Controller\\ProductosController::getByCategoria'], ['categoria'], ['GET' => 0], null, false, true, null]],
+        181 => [
             [['_route' => 'get_one_user', '_controller' => 'App\\Controller\\UserController::get'], ['id'], ['GET' => 0], null, false, true, null],
             [['_route' => 'update_user', '_controller' => 'App\\Controller\\UserController::update'], ['id'], ['PUT' => 0], null, false, true, null],
             [['_route' => 'delete_user', '_controller' => 'App\\Controller\\UserController::delete'], ['id'], ['DELETE' => 0], null, false, true, null],

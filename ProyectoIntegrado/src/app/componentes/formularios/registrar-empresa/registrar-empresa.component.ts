@@ -51,9 +51,7 @@ export class RegistrarEmpresaComponent implements OnInit {
     this.empresaService.AddEmpresa(this.empForm.value)
       .subscribe(() => {
         console.log('Data added successfully!')
-        this.ngZone.run(() => this.router.navigateByUrl('/index'))
-      }, (err) => {
-        console.log(err);
+        this.ngZone.run(() => this.router.navigateByUrl('/perfil'))
       });
   }
 

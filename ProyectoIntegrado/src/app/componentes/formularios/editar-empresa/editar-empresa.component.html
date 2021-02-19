@@ -5,7 +5,14 @@
             <form id="data" [formGroup]="updateForm" (ngSubmit)="onUpdate()">
                 <h4>Datos Empresariales</h4>
                 <div class="form-group">
-                    <label for="categoria">Categoría</label>
+                    <label for="categoria">Categorías</label>
+                    <select id="categoria" name="categoria" class="form-control" type="text" formControlName="categoria"
+                        required >
+                        <option value="" *ngFor="let item of pingo">{{item.categoria}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="categoria">Subcategorías</label>
                     <input id="categoria" name="categoria" class="form-control" type="text" formControlName="categoria"
                         required>
                 </div>
@@ -27,6 +34,7 @@
 
                 <input id="idUsuario" name="idUsuario" class="form-control" type="hidden" formControlName="idUsuario"
                     required>
+                <input id="id" name="id" class="form-control" type="hidden" formControlName="id" required>
 
                 <button>Guardar</button>
             </form>

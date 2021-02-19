@@ -21,13 +21,11 @@ export class Empresa {
   providedIn: 'root'
 })
 export class EmpresaService {
-
   user: User;
 
   constructor(private httpClient: HttpClient, private router: Router, private usuarioService: UsuarioService) {
     this.user = this.usuarioService.userValue;
   }
-
 
   REST_API: string = 'http://localhost:8000/api/empresa';
   httpHeaders = new HttpHeaders().set('Content-Type', 'application/json');
@@ -41,7 +39,7 @@ export class EmpresaService {
   }
 
   GetEmpresas() {
-    return this.httpClient.get(this.REST_API);
+    return this.httpClient.get(this.REST_API + 's');
   }
 
   GetEmpresa(id: any): Observable<any> {
@@ -69,6 +67,16 @@ export class EmpresaService {
     )
   }
 
+  GetEmpresaByUserId(id: any): Observable<any> {
+    let API_URL = "http://localhost:8000/api/empresaUser" + '/' + id;
+    return this.httpClient.get(API_URL, { headers: this.httpHeaders })
+      .pipe(map((res: any) => {
+        return res || {}
+      }),
+        catchError(this.handleError)
+      )
+  }
+
   handleError(error: HttpErrorResponse) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
@@ -76,7 +84,6 @@ export class EmpresaService {
     } else {
       errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
     }
-    console.log(errorMessage);
     return throwError(errorMessage);
   }
 }

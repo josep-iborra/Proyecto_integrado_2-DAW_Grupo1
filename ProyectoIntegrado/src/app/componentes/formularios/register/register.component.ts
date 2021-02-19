@@ -32,8 +32,8 @@ export class RegisterComponent implements OnInit {
     console.log(this.userForm.value);
     this.usuariosService.AddUser(this.userForm.value)
       .subscribe(() => {
-        console.log('Data added successfully!')
-        this.ngZone.run(() => this.router.navigateByUrl('/index'))
+        console.log('Data added successfully!');
+        this.ngZone.run(() => this.router.navigateByUrl('/index'));
       }, (err) => {
         console.log(err);
       });

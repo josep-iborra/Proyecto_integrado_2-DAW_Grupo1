@@ -37,14 +37,14 @@ class EmpresaController
         $codigoPostal = $data['codigoPostal'];
         $descripcion = $data['descripcion'];
         $idUsuario = $data['idUsuario'];
-        
+
         var_dump($data);
         if (empty($categoria) || empty($nombre) || empty($localidad) || empty($codigoPostal) || empty($descripcion)) {
             throw new NotFoundHttpException("No están todos los parametros.");
         }
         $this->empresaRepository->saveEmpresa($nombre, $categoria, $localidad, $codigoPostal, $descripcion, $idUsuario);
 
-        return new JsonResponse(['status' => 'Empresa creada con éxito'], Response::HTTP_CREATED);
+        return new JsonResponse(['status' => 'Empresa creada con exito'], Response::HTTP_CREATED);
     }
 
     /**
@@ -99,7 +99,7 @@ class EmpresaController
 
         empty($data['categoria']) ? true : $empresa->setCategoria($data['categoria']);
         empty($data['nombre']) ? true : $empresa->setNombre($data['nombre']);
-        empty($data['localidad']) ? true : $empresa->setLocalidad($data['localdad']);
+        empty($data['localidad']) ? true : $empresa->setLocalidad($data['localidad']);
         empty($data['codigoPostal']) ? true : $empresa->setCodigoPostal($data['codigoPostal']);
         empty($data['descripcion']) ? true : $empresa->setDescripcion($data['descripcion']);
         empty($data['idUsuario']) ? true : $empresa->setIdUsuario($data['idUsuario']);
@@ -119,5 +119,24 @@ class EmpresaController
         $this->empresaRepository->removeUser($empresa);
 
         return new JsonResponse(['status' => 'Empresa eliminada'], Response::HTTP_OK);
+    }
+
+    /**
+     * @Route("empresaUser/{id}", name="get_one_empresa_by_userId", methods={"GET"})
+     */
+    public function getByUID($id): JsonResponse
+    {
+        $empresa = $this->empresaRepository->findOneBy(['idUsuario' => $id]);
+
+        $data = [
+            'id' => $empresa->getId(),
+            'categoria' => $empresa->getCategoria(),
+            'nombre' => $empresa->getNombre(),
+            'localidad' => $empresa->getLocalidad(),
+            'codigoPostal' => $empresa->getCodigoPostal(),
+            'descripcion' => $empresa->getDescripcion(),
+            'idUsuario' => $empresa->getIdUsuario()
+        ];
+        return new JsonResponse($data, Response::HTTP_OK);
     }
 }
