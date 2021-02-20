@@ -15,7 +15,12 @@ export class CategoriasService {
 
   constructor(private httpClient: HttpClient, private router: Router) { }
 
+  httpHeaders = new HttpHeaders().set('Content-Type', 'application/json');
   GetCategorias() {
-    return this.httpClient.get('http://localhost:8000/api/categorias');
+    return this.httpClient.get('http://localhost:8000/api/categorias', { headers: this.httpHeaders });
+  }
+
+  GetSubCategorias(id:any) {
+    return this.httpClient.get('http://localhost:8000/api/subcategorias/' + id);
   }
 }

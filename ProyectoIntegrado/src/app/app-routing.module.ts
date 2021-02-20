@@ -36,7 +36,7 @@ const routes: Routes = [
   { path: 'mensaje-nuevo', component: EnvioMensajeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'categorias', component: CategoriasComponent},
-  { path: 'subcategorias', component: SubcategoriasComponent},
+  { path: 'subcategorias/:id', component: SubcategoriasComponent},
   { path: '**', component: IndexComponent },
 
 

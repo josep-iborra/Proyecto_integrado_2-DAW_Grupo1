@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AnyTxtRecord } from 'dns';
-import { from } from 'rxjs';
 import { User } from 'src/app/servicios/usuario.service';
 import { UsuarioService } from 'src/app/servicios/usuario.service';
 
