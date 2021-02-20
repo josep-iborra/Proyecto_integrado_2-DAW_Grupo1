@@ -25,7 +25,7 @@ class CategoriasController
     }
 
     /**
-     * @Route("addCategoria", name="add_ecategoria", methods={"POST"})
+     * @Route("addCategoria", name="add_categoria", methods={"POST"})
      */
     public function add(Request $request): JsonResponse
     {

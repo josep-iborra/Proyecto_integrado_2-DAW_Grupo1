@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CategoriasService } from 'src/app/servicios/categorias.service'
 
 @Component({
   selector: 'app-categorias',
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoriasComponent implements OnInit {
 
-  constructor() { }
+  categorias!: any;
+
+  constructor(private categoriaService: CategoriasService) { 
+    this.categoriaService.GetCategorias().subscribe(res =>{ console.log('::'); console.log(res); this.categorias = res;});
+    console.log(this.categorias);
+  }
 
   ngOnInit(): void {
   }

@@ -8,7 +8,7 @@
 return [
     false, // $matchHost
     [ // $staticRoutes
-        '/api/addCategoria' => [[['_route' => 'add_ecategoria', '_controller' => 'App\\Controller\\CategoriasController::add'], null, ['POST' => 0], null, false, false, null]],
+        '/api/addCategoria' => [[['_route' => 'add_categoria', '_controller' => 'App\\Controller\\CategoriasController::add'], null, ['POST' => 0], null, false, false, null]],
         '/api/categorias' => [[['_route' => 'get_all_categorias', '_controller' => 'App\\Controller\\CategoriasController::getAll'], null, ['GET' => 0], null, false, false, null]],
         '/api/addEmpresa' => [[['_route' => 'add_empresa', '_controller' => 'App\\Controller\\EmpresaController::add'], null, ['POST' => 0], null, false, false, null]],
         '/api/empresas' => [[['_route' => 'get_all_empresas', '_controller' => 'App\\Controller\\EmpresaController::getAll'], null, ['GET' => 0], null, false, false, null]],

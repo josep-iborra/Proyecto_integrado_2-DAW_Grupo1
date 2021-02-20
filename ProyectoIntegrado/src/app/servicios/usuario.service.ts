@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 
 
 export class User {
-  id!: String;
+  id!: any;
   email!: String;
   nombre!: any;
   apellidos!: any;
@@ -78,6 +78,8 @@ export class UsuarioService {
     return this.httpClient.post(API_URL, data, { headers: this.httpHeaders })
       .pipe(map((user: any) => {
         localStorage.setItem('user', JSON.stringify(user));
+        const fecha = new Date();
+        localStorage.setItem('date', fecha.getTime());
         this.userSubject.next(user);
         return user;
       }),
