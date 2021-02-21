@@ -19,7 +19,8 @@ export class EditarEmpresaComponent implements OnInit {
   eId: any;
   categorias: any;
   subcategorias: any;
-
+  tienes: any;
+  vacio: any;
   constructor(
     public formBuilder: FormBuilder,
     private empresaService: EmpresaService,
@@ -34,9 +35,11 @@ export class EditarEmpresaComponent implements OnInit {
     this.categoriasService.GetSubCategorias(this.eId).subscribe(res => { console.log('::'); console.log(res); this.subcategorias = res; });
 
     this.empresaService.GetEmpresaByUserId(this.user.id).subscribe(res => {
-      console.log('.....................................');
-      console.log(res);
+      
       this.eId = res['id'];
+      this.tienes = res;
+      this.vacio = [];
+     console.log(this.tienes.id);
       this.updateForm.setValue({
         id: res['id'],
         subcategoria: res['subcategoria'],

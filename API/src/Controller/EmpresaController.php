@@ -53,18 +53,22 @@ class EmpresaController
      */
     public function get($id): JsonResponse
     {
+        $vacio = $this->empresaRepository->findOneBy(['idUsuario' => 8.5]);
         $empresa = $this->empresaRepository->findOneBy(['id' => $id]);
-
-        $data = [
-            'id' => $empresa->getId(),
-            'categoria' => $empresa->getCategoria(),
-            'subcategoria' => $empresa->getSubcategoria(),
-            'nombre' => $empresa->getNombre(),
-            'localidad' => $empresa->getLocalidad(),
-            'codigoPostal' => $empresa->getCodigoPostal(),
-            'descripcion' => $empresa->getDescripcion(),
-            'idUsuario' => $empresa->getIdUsuario()
-        ];
+        if ($empresa != $vacio) {
+            $data = [
+                'id' => $empresa->getId(),
+                'categoria' => $empresa->getCategoria(),
+                'subcategoria' => $empresa->getSubcategoria(),
+                'nombre' => $empresa->getNombre(),
+                'localidad' => $empresa->getLocalidad(),
+                'codigoPostal' => $empresa->getCodigoPostal(),
+                'descripcion' => $empresa->getDescripcion(),
+                'idUsuario' => $empresa->getIdUsuario()
+            ];
+        } else {
+            $data = [];
+        }
         return new JsonResponse($data, Response::HTTP_OK);
     }
 
@@ -130,18 +134,46 @@ class EmpresaController
      */
     public function getByUID($id): JsonResponse
     {
+        $vacio = $this->empresaRepository->findOneBy(['idUsuario' => 8.5]);
         $empresa = $this->empresaRepository->findOneBy(['idUsuario' => $id]);
+        if ($empresa != $vacio) {
+            $data = [
+                'id' => $empresa->getId(),
+                'categoria' => $empresa->getCategoria(),
+                'subcategoria' => $empresa->getSubcategoria(),
+                'nombre' => $empresa->getNombre(),
+                'localidad' => $empresa->getLocalidad(),
+                'codigoPostal' => $empresa->getCodigoPostal(),
+                'descripcion' => $empresa->getDescripcion(),
+                'idUsuario' => $empresa->getIdUsuario()
+            ];
+        } else {
+            $data = [];
+        }
+        return new JsonResponse($data, Response::HTTP_OK);
+    }
 
-        $data = [
-            'id' => $empresa->getId(),
-            'categoria' => $empresa->getCategoria(),
-            'subcategoria' => $empresa->getSubcategoria(),
-            'nombre' => $empresa->getNombre(),
-            'localidad' => $empresa->getLocalidad(),
-            'codigoPostal' => $empresa->getCodigoPostal(),
-            'descripcion' => $empresa->getDescripcion(),
-            'idUsuario' => $empresa->getIdUsuario()
-        ];
+    /**
+     * @Route("empresaCat/{id}", name="get_empresa_by_categoria", methods={"GET"})
+     */
+    public function getByCat($id): JsonResponse
+    {
+        $vacio = $this->empresaRepository->findOneBy(['subcategoria' => 8.5]);
+        $empresa = $this->empresaRepository->findOneBy(['subcategoria' => $id]);
+        if ($empresa != $vacio) {
+            $data = [
+                'id' => $empresa->getId(),
+                'categoria' => $empresa->getCategoria(),
+                'subcategoria' => $empresa->getSubcategoria(),
+                'nombre' => $empresa->getNombre(),
+                'localidad' => $empresa->getLocalidad(),
+                'codigoPostal' => $empresa->getCodigoPostal(),
+                'descripcion' => $empresa->getDescripcion(),
+                'idUsuario' => $empresa->getIdUsuario()
+            ];
+        } else {
+            $data = [];
+        }
         return new JsonResponse($data, Response::HTTP_OK);
     }
 }

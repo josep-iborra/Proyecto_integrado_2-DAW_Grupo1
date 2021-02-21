@@ -12,9 +12,15 @@ export class ProductosComponent implements OnInit {
   getId: any;
   productos!: any;
 
-  constructor(private empresaService: EmpresaService, private activatedRoute: ActivatedRoute) { 
+  constructor(private empresaService: EmpresaService, private activatedRoute: ActivatedRoute) {
     this.getId = this.activatedRoute.snapshot.paramMap.get('id');
-    this.empresaService.GetEmpresas().subscribe(res =>{ console.log('::'); console.log(res); this.productos = res;});
+    this.empresaService.GetEmpresaBySubCategoria(this.getId).subscribe(res => {
+      console.log('::');
+      console.log(res);
+      this.productos = []; this.productos.push(res);
+
+    });
+    console.log(this.productos);
   }
 
   ngOnInit(): void {

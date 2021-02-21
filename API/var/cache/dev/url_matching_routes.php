@@ -33,20 +33,21 @@ return [
                             .'|(*:101)'
                         .')'
                         .'|User/([^/]++)(*:123)'
+                        .'|Cat/([^/]++)(*:143)'
                     .')'
                     .'|mensaje/([^/]++)(?'
-                        .'|(*:151)'
+                        .'|(*:171)'
                     .')'
                     .'|product/([^/]++)(?'
-                        .'|(*:179)'
-                        .'|(*:187)'
+                        .'|(*:199)'
+                        .'|(*:207)'
                     .')'
                     .'|subcategoria(?'
-                        .'|/([^/]++)(*:220)'
-                        .'|s/([^/]++)(*:238)'
+                        .'|/([^/]++)(*:240)'
+                        .'|s/([^/]++)(*:258)'
                     .')'
                     .'|user/([^/]++)(?'
-                        .'|(*:263)'
+                        .'|(*:283)'
                     .')'
                 .')'
             .')/?$}sDu',
@@ -64,20 +65,21 @@ return [
             [['_route' => 'delete_empresa', '_controller' => 'App\\Controller\\EmpresaController::delete'], ['id'], ['DELETE' => 0], null, false, true, null],
         ],
         123 => [[['_route' => 'get_one_empresa_by_userId', '_controller' => 'App\\Controller\\EmpresaController::getByUID'], ['id'], ['GET' => 0], null, false, true, null]],
-        151 => [
+        143 => [[['_route' => 'get_empresa_by_categoria', '_controller' => 'App\\Controller\\EmpresaController::getByCat'], ['id'], ['GET' => 0], null, false, true, null]],
+        171 => [
             [['_route' => 'get_one_mensaje', '_controller' => 'App\\Controller\\MensajesController::get'], ['id'], ['GET' => 0], null, false, true, null],
             [['_route' => 'update_mensaje', '_controller' => 'App\\Controller\\MensajesController::update'], ['id'], ['PUT' => 0], null, false, true, null],
             [['_route' => 'delete_mensaje', '_controller' => 'App\\Controller\\MensajesController::delete'], ['id'], ['DELETE' => 0], null, false, true, null],
         ],
-        179 => [
+        199 => [
             [['_route' => 'get_one_product', '_controller' => 'App\\Controller\\ProductosController::get'], ['id'], ['GET' => 0], null, false, true, null],
             [['_route' => 'update_product', '_controller' => 'App\\Controller\\ProductosController::update'], ['id'], ['PUT' => 0], null, false, true, null],
             [['_route' => 'delete_product', '_controller' => 'App\\Controller\\ProductosController::delete'], ['id'], ['DELETE' => 0], null, false, true, null],
         ],
-        187 => [[['_route' => 'get_msg_between_contacts', '_controller' => 'App\\Controller\\ProductosController::getByCategoria'], ['categoria'], ['GET' => 0], null, false, true, null]],
-        220 => [[['_route' => 'get_one_subcategoria', '_controller' => 'App\\Controller\\SubcategoriasController::get'], ['id'], ['GET' => 0], null, false, true, null]],
-        238 => [[['_route' => 'get_one_subcategoria_by_idCategoria', '_controller' => 'App\\Controller\\SubcategoriasController::getByCat'], ['id'], ['GET' => 0], null, false, true, null]],
-        263 => [
+        207 => [[['_route' => 'get_msg_between_contacts', '_controller' => 'App\\Controller\\ProductosController::getByCategoria'], ['categoria'], ['GET' => 0], null, false, true, null]],
+        240 => [[['_route' => 'get_one_subcategoria', '_controller' => 'App\\Controller\\SubcategoriasController::get'], ['id'], ['GET' => 0], null, false, true, null]],
+        258 => [[['_route' => 'get_one_subcategoria_by_idCategoria', '_controller' => 'App\\Controller\\SubcategoriasController::getByCat'], ['id'], ['GET' => 0], null, false, true, null]],
+        283 => [
             [['_route' => 'get_one_user', '_controller' => 'App\\Controller\\UserController::get'], ['id'], ['GET' => 0], null, false, true, null],
             [['_route' => 'update_user', '_controller' => 'App\\Controller\\UserController::update'], ['id'], ['PUT' => 0], null, false, true, null],
             [['_route' => 'delete_user', '_controller' => 'App\\Controller\\UserController::delete'], ['id'], ['DELETE' => 0], null, false, true, null],

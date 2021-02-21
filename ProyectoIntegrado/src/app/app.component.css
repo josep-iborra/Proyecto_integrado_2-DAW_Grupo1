@@ -47,7 +47,7 @@
 
 /*  Footer */
 .espacio{
-    height: 5rem;
+    height: 2rem;
 }
 .box-footer {
     position: relative;
@@ -106,4 +106,8 @@ footer{
 
 .dropdown-toggle::after {
     display:none;
+}
+
+li{
+    list-style:none;
 }
