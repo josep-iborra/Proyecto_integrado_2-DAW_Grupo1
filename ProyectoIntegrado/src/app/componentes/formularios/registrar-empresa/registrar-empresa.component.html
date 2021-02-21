@@ -1,54 +1,113 @@
 <div class="container my-auto">
-    <div class="signup-form-container  ">
+    <div class="signup-form-container">
         <form role="form" id="register-form" autocomplete="off" class="register-form1 aling-item-center">
             <div class="form-body">
                 <div class="row justify-content-center mt-5">
                     <div class="col-md-5">
                         <form id="register-form" [formGroup]="empForm" (ngSubmit)="onSubmit()">
-                            <div class="form-header">
+                            <div class="form-header text-center mb-3">
                                 <h3 class="form-title"><i class="fa fa-user"></i> Datos de Empresa </h3>
                             </div>
                             <div class="form-group">
-                                <label for="nombre">Nombre</label>
-                                <input id="nombre" name="nombre" class="form-control" type="text"
-                                    formControlName="nombre" required>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-5 col-xl-4">
+                                            <label for="nombre">Nombre</label>
+                                        </div>
+                                        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-7 col-xl-8">
+                                            <input id="nombre" name="nombre" class="form-control" type="text"
+                                                formControlName="nombre" required>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="form-group">
-                                <label for="categoria">Categorías</label>
-                                <select id="categoria" name="categoria" class="form-control" type="text"
-                                    formControlName="categoria" (change)='onSelected()' required>
-                                    <option value={{item.id}} *ngFor="let item of categorias">{{item.nombre}}</option>
-                                </select>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-5 col-xl-4">
+                                            <label for="categoria">Categorías</label>
+                                        </div>
+                                        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-7 col-xl-8">
+                                            <select id="categoria" name="categoria" class="form-control" type="text"
+                                                formControlName="categoria" required (change)="onSelected()">
+                                                <option value={{item.id}} *ngFor="let item of categorias">
+                                                    {{item.nombre}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div id="subC" class="form-group">
-                                <label for="subcategoria">Subcategorías</label>
-                                <select id="subcategoria" name="subcategoria" class="form-control" type="text" formControlName="subcategoria"
-                                    required>
-                                    <option value={{item.id}} *ngFor="let item of subcategorias">{{item.nombre}}</option>
-                                </select>
+                            <div class="form-group" id="subC">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-5 col-xl-4">
+                                            <label for="subcategoria">Subcategorías</label>
+                                        </div>
+                                        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-7 col-xl-8">
+                                            <select id="subcategoria" name="subcategoria" class="form-control"
+                                                type="text" formControlName="subcategoria" required>
+                                                <option value={{item.id}} *ngFor="let item of subcategorias">
+                                                    {{item.nombre}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-5 col-xl-4">
+                                            <label for="localidad">Localidad</label>
+                                        </div>
+                                        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-7 col-xl-8">
+                                            <input id="localidad" name="localidad" class="form-control" type="text"
+                                                formControlName="localidad" required>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="form-group">
-                                <label for="localidad">Localidad</label>
-                                <input id="localidad" name="localidad" class="form-control" type="text"
-                                    formControlName="localidad" required>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-5 col-xl-4">
+                                            <label for="codigoPostal">Código Postal</label>
+                                        </div>
+                                        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-7 col-xl-8">
+                                            <input id="codigoPostal" name="codigoPostal" class="form-control"
+                                                type="text" formControlName="codigoPostal" required>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="form-group">
-                                <label for="codigoPostal">Código Postal</label>
-                                <input id="codigoPostal" name="codigoPostal" class="form-control" type="text"
-                                    formControlName="codigoPostal" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="descripcion">Descripción</label>
-                                <input id="descripcion" name="descripcion" class="form-control" type="text"
-                                    formControlName="descripcion" required>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-5 col-xl-4">
+                                            <label for="descripcion">Descripción</label>
+                                        </div>
+                                        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-7 col-xl-8">
+                                            <input id="descripcion" name="descripcion" class="form-control" type="text"
+                                                formControlName="descripcion" required>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
                             <input id="idUsuario" name="idUsuario" class="form-control" type="hidden"
                                 formControlName="idUsuario" required>
                             <div class="form-footer text-center">
-                                <button type="submit" class="btn btn-info">
-                                    Registrar Empresa
-                                </button>
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-8 col-xl-6">
+                                            <button type="submit" class="btn btn-info">
+                                                Registrar Empresa
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </form>
                     </div>
