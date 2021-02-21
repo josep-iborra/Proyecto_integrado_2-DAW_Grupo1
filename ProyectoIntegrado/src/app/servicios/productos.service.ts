@@ -3,27 +3,27 @@ import { catchError, map } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 
-
-export class Messages {
+export class Productos {
   id!: any;
-  asunto!: any;
-  mensaje!: any;
-  fecha!: any;
-  idEmisor!: any;
-  idReceptor!: any;
+  titulo!: any;
+  precio!: any;
+  multimedia!: any;
+  descripcion!: any;
+  categoria!: any;
+  autor_id!: any;
 }
 
 @Injectable({
   providedIn: 'root'
 })
-export class MessagesService {
+export class ProductosService {
 
   constructor(private httpClient: HttpClient) { }
 
-  REST_API_MESSAGE: string = 'http://localhost:8000/api/mensaje';
+  REST_API_MESSAGE: string = 'http://localhost:8000/api/productos';
   httpHeaders = new HttpHeaders().set('Content-Type', 'application/json');
-  AddMsg(data: Messages): Observable<any> {
-    let API_URL = 'http://localhost:8000/api/addMensaje';
+  AddMsg(data: Productos): Observable<any> {
+    let API_URL = 'http://localhost:8000/api/addProductos';
     return this.httpClient.post(API_URL, data)
       .pipe(
         catchError(this.handleError)

@@ -29,14 +29,33 @@
                                         </div>
                                         <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-7 col-xl-8">
                                             <select id="categoria" name="categoria" class="form-control" type="text"
-                                                formControlName="categoria" required>
-                                                <option value={{item.id}} *ngFor="let item of pingo">{{item.nombre}}
+                                                formControlName="categoria" required (change)="onSelected()">
+                                                <option value={{item.id}} *ngFor="let item of categorias">
+                                                    {{item.nombre}}
                                                 </option>
                                             </select>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <div class="form-group" id="subC">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-5 col-xl-4">
+                                            <label for="subcategoria">Subcategorías</label>
+                                        </div>
+                                        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-7 col-xl-8">
+                                            <select id="subcategoria" name="subcategoria" class="form-control"
+                                                type="text" formControlName="subcategoria" required>
+                                                <option value={{item.id}} *ngFor="let item of subcategorias">
+                                                    {{item.nombre}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="form-group">
                                 <div class="container">
                                     <div class="row">

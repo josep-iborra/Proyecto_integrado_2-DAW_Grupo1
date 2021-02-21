@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit, NgZone } from '@angular/core'
 import { UsuarioService } from 'src/app/servicios/usuario.service'
 import { FormGroup, FormBuilder } from "@angular/forms";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-editar-perfil',
@@ -15,6 +16,8 @@ export class EditarPerfilComponent implements OnInit {
   constructor(
     public formBuilder: FormBuilder,
     private usuarioService: UsuarioService,
+    private router: Router,
+    private ngZone: NgZone
   ) {
     this.user = this.usuarioService.userValue;
     this.usuarioService.GetUser(this.user.id).subscribe(res => {
@@ -49,6 +52,7 @@ export class EditarPerfilComponent implements OnInit {
       }, (err) => {
         console.log(err);
       });
+      this.ngZone.run(() => this.router.navigateByUrl('/perfil'));
   }
 
 }

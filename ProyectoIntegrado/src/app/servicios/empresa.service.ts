@@ -23,14 +23,14 @@ export class Empresa {
 export class EmpresaService {
   user: User;
   pingo: any;
-  
+
   constructor(private httpClient: HttpClient, private router: Router, private usuarioService: UsuarioService) {
     this.user = this.usuarioService.userValue;
   }
 
   REST_API: string = 'http://localhost:8000/api/empresa';
   httpHeaders = new HttpHeaders().set('Content-Type', 'application/json');
-  
+
 
   AddEmpresa(data: Empresa): Observable<any> {
     let API_URL = 'http://localhost:8000/api/addEmpresa';
@@ -75,6 +75,16 @@ export class EmpresaService {
 
   GetEmpresaByUserId(id: any): Observable<any> {
     let API_URL = "http://localhost:8000/api/empresaUser" + '/' + id;
+    return this.httpClient.get(API_URL, { headers: this.httpHeaders })
+      .pipe(map((res: any) => {
+        return res || {}
+      }),
+        catchError(this.handleError)
+      )
+  }
+
+  GetEmpresaBySubCategoria(id: any): Observable<any> {
+    let API_URL = "http://localhost:8000/api/empresaCat" + '/' + id;
     return this.httpClient.get(API_URL, { headers: this.httpHeaders })
       .pipe(map((res: any) => {
         return res || {}

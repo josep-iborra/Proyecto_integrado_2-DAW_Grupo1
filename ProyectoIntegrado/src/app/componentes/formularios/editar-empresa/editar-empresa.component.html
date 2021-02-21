@@ -1,4 +1,4 @@
-<main role="main" class="container my-auto">
+<main role="main" class="container my-auto" *ngIf="tienes.id != undefined">
     <div class="row">
         <div id="edit" class="col-lg-6 offset-lg-3 col-md-6 offset-md-3
             col-12 col-sm-12">
@@ -7,14 +7,16 @@
                 <div class="form-group">
                     <label for="categoria">Categorías</label>
                     <select id="categoria" name="categoria" class="form-control" type="text" formControlName="categoria"
-                        required>
-                        <option value={{item.id}} *ngFor="let item of pingo">{{item.nombre}}</option>
+                        required (change)='onSelected()'>
+                        <option value={{item.id}} *ngFor="let item of categorias">{{item.nombre}}</option>
                     </select>
                 </div>
-                <div class="form-group">
-                    <label for="categoria">Subcategorías</label>
-                    <input id="categoria" name="categoria" class="form-control" type="text" formControlName="categoria"
+                <div id="subC" class="form-group">
+                    <label for="subcategoria">Subcategorías</label>
+                    <select id="subcategoria" name="subcategoria" class="form-control" type="text" formControlName="subcategoria"
                         required>
+                        <option value={{item.id}} *ngFor="let item of subcategorias">{{item.nombre}}</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="localidad">Localidad</label>
@@ -41,3 +43,8 @@
         </div>
     </div>
 </main>
+
+<div *ngIf="tienes.id == undefined">
+    <p>Todavía no tienes una empresa a tu nombre. Entra en el siguiente enlace para crear una:</p>
+    <a routerLink="/registrarEmpresa">Registrar Empresa</a>
+</div>
