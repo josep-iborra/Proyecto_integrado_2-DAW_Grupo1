@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-02-2021 a las 09:43:23
+-- Tiempo de generación: 21-02-2021 a las 19:08:33
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 7.4.15
 
@@ -29,29 +29,30 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `categorias` (
   `ID` int(11) NOT NULL,
-  `Nombre` varchar(255) NOT NULL
+  `Nombre` varchar(255) NOT NULL,
+  `nombre_visible` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `categorias`
 --
 
-INSERT INTO `categorias` (`ID`, `Nombre`) VALUES
-(0, 'Agencias'),
-(1, 'Artistas'),
-(2, 'Cantantes'),
-(3, 'Catering'),
-(4, 'Circo'),
-(5, 'Comedia'),
-(6, 'Danza'),
-(7, 'Discomovil'),
-(8, 'Entretenimiento'),
-(10, 'Flamenco'),
-(12, 'Magia'),
-(13, 'Musica clasica'),
-(15, 'Para niños'),
-(16, 'Servicios bodas'),
-(17, 'Teatro');
+INSERT INTO `categorias` (`ID`, `Nombre`, `nombre_visible`) VALUES
+(0, 'Agencias', 'Agencias'),
+(1, 'Artistas', 'Artistas'),
+(2, 'Cantantes', 'Cantantes'),
+(3, 'Catering', 'Catering'),
+(4, 'Circo', 'Circo'),
+(5, 'Comedia', 'Comedia'),
+(6, 'Danza', 'Danza'),
+(7, 'Discomovil', 'Discomóvil'),
+(8, 'Entretenimiento', 'Entretenimiento'),
+(10, 'Flamenco', 'Flamenco'),
+(12, 'Magia', 'Magia'),
+(13, 'Musica clasica', 'Música clásica'),
+(15, 'Para niños', 'Para niños'),
+(16, 'Servicios bodas', 'Servicios para bodas'),
+(17, 'Teatro', 'Teatro');
 
 -- --------------------------------------------------------
 
@@ -144,67 +145,66 @@ CREATE TABLE `resena` (
 CREATE TABLE `subcategorias` (
   `ID` int(11) NOT NULL,
   `Nombre` varchar(255) NOT NULL,
-  `ID_categoria` int(11) NOT NULL
+  `ID_categoria` int(11) NOT NULL,
+  `nombre_visible` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `subcategorias`
 --
 
-INSERT INTO `subcategorias` (`ID`, `Nombre`, `ID_categoria`) VALUES
-(1, 'organizadorDeEventos', 0),
-(2, 'representatesMusicales', 0),
-(3, 'actores', 1),
-(4, 'chefs', 1),
-(7, 'cantantesDeBeatbox', 2),
-(8, 'cantantesDeCopla', 2),
-(9, 'cantantesDeJazz', 2),
-(10, 'cantantesDeRap', 2),
-(11, 'cantantesDeRock', 2),
-(12, 'alquilerDeCarpas', 3),
-(13, 'cortadorDeJamon', 3),
-(14, 'foodTruck', 3),
-(15, 'paellasGigantes', 3),
-(16, 'tartasGigantes', 3),
-(17, 'payasos', 4),
-(18, 'mismos', 4),
-(19, 'malabaristas', 4),
-(20, 'ventrilocuos', 4),
-(22, 'comicos', 5),
-(23, 'grupoDeTeatro', 5),
-(24, 'monologistas', 5),
-(25, 'imitadores', 5),
-(26, 'bailarinasDanzaDelVientre', 6),
-(27, 'bailarinesDeTango', 6),
-(29, 'compañiasDeDanza', 6),
-(30, 'danzaContemporania', 6),
-(31, 'discJockey', 7),
-(32, 'discoMovil', 7),
-(34, 'castillosHinchables', 8),
-(35, 'maquinaDeEspuma', 8),
-(36, 'cineAlAireLibre', 8),
-(37, 'gruposDeRumba', 10),
-(38, 'gruposDeFlamenco', 10),
-(39, 'gruposDeSevillanas', 10),
-(41, 'escapistas', 12),
-(42, 'hipnotizadores', 12),
-(43, 'magos', 12),
-(44, 'mentalistas', 12),
-(45, 'ilusionistas', 12),
-(46, 'clarinetistas', 13),
-(47, 'flautistas', 13),
-(48, 'pianistas', 13),
-(49, 'trompetistas', 13),
-(50, 'animadores', 15),
-(51, 'futbolinHumano', 15),
-(52, 'pintaCaritas', 15),
-(53, 'globoFlexia', 15),
-(54, 'barman', 16),
-(55, 'pirotecnia', 16),
-(56, 'maestroDeCeremonias', 16),
-(57, 'cochesDeBoda', 16),
-(59, 'teatroDeMarionetas', 17),
-(62, 'sombrasChinescas', 17);
+INSERT INTO `subcategorias` (`ID`, `Nombre`, `ID_categoria`, `nombre_visible`) VALUES
+(1, 'organizadorDeEventos', 0, 'Organizador de eventos'),
+(2, 'representantesMusicales', 0, 'Representantes musicales'),
+(3, 'actores', 1, 'Actores'),
+(4, 'chefs', 1, 'Chefs'),
+(7, 'cantantesDeBeatbox', 2, 'Cantantes de beatbox'),
+(8, 'cantantesDeCopla', 2, 'Cantantes de copla'),
+(9, 'cantantesDeJazz', 2, 'Cantantes de jazz'),
+(10, 'cantantesDeRap', 2, 'Cantantes de rap'),
+(11, 'cantantesDeRock', 2, 'Cantantes de rock'),
+(12, 'alquilerDeCarpas', 3, 'Alquiler de carpas'),
+(13, 'cortadorDeJamon', 3, 'Cortador de jamón'),
+(14, 'foodTruck', 3, 'Food truck'),
+(15, 'paellasGigantes', 3, 'Paellas gigantes'),
+(16, 'tartasGigantes', 3, 'Tartas gigantes'),
+(17, 'payasos', 4, 'Payasos'),
+(18, 'mimos', 4, 'Mimos'),
+(19, 'malabaristas', 4, 'Malabaristas'),
+(20, 'ventrilocuos', 4, 'Ventrílocuos'),
+(22, 'comicos', 5, 'Comicos'),
+(23, 'grupoDeTeatro', 5, 'Grupos de teatro'),
+(24, 'monologuistas', 5, 'Monologuistas'),
+(25, 'imitadores', 5, 'Imitadores'),
+(26, 'bailarinasDanzaDelVientre', 6, 'Bailarinas de danza del vientre'),
+(27, 'bailarinesDeTango', 6, 'Bailarinas de tango'),
+(29, 'compañiasDeDanza', 6, 'Compañías de danza'),
+(30, 'danzaContemporanea', 6, 'Danza contemporánea'),
+(31, 'discJockey', 7, 'Disc Jockeys'),
+(32, 'discoMovil', 7, 'Disco Móvil'),
+(34, 'castillosHinchables', 8, 'Castillos hinchables'),
+(36, 'cineAlAireLibre', 8, 'Cine al aire libre'),
+(37, 'gruposDeRumba', 10, 'Grupos de rumba'),
+(38, 'gruposDeFlamenco', 10, 'Grupos de flamenco'),
+(39, 'gruposDeSevillanas', 10, 'Grupos de sevillanas'),
+(41, 'escapistas', 12, 'Escapistas'),
+(42, 'hipnotizadores', 12, 'Hipnotizadores'),
+(43, 'magos', 12, 'Magos'),
+(44, 'mentalistas', 12, 'Mentalistas'),
+(45, 'ilusionistas', 12, 'Ilusionistas'),
+(46, 'clarinetistas', 13, 'Clarinetistas'),
+(47, 'flautistas', 13, 'Flautistas'),
+(48, 'pianistas', 13, 'Pianistas'),
+(49, 'trompetistas', 13, 'Trompetistas'),
+(50, 'animadores', 15, 'Animadores'),
+(51, 'futbolinHumano', 15, 'Futbolín humano'),
+(53, 'globoFlexia', 15, 'Globoflexia'),
+(54, 'barman', 16, 'Barman'),
+(55, 'pirotecnia', 16, 'Pirotecnia'),
+(56, 'maestroDeCeremonias', 16, 'Maestro de ceremonias'),
+(57, 'cochesDeBoda', 16, 'Coches de boda'),
+(59, 'teatroDeMarionetas', 17, 'Teatro de marionetas'),
+(62, 'sombrasChinescas', 17, 'Sombras chinescas');
 
 -- --------------------------------------------------------
 
