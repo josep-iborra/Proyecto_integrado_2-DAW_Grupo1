@@ -16,6 +16,7 @@ return [
         '/api/mensaje' => [[['_route' => 'get_all_mensajes', '_controller' => 'App\\Controller\\MensajesController::getAll'], null, ['GET' => 0], null, false, false, null]],
         '/api/addProduct' => [[['_route' => 'add_Product', '_controller' => 'App\\Controller\\ProductosController::add'], null, ['POST' => 0], null, false, false, null]],
         '/api/product' => [[['_route' => 'get_all_products', '_controller' => 'App\\Controller\\ProductosController::getAll'], null, ['GET' => 0], null, false, false, null]],
+        '/api/subcategorias' => [[['_route' => 'get_all_subcategorias', '_controller' => 'App\\Controller\\SubcategoriasController::getAll'], null, ['GET' => 0], null, false, false, null]],
         '/api/addUser' => [[['_route' => 'add_user', '_controller' => 'App\\Controller\\UserController::add'], null, ['POST' => 0], null, false, false, null]],
         '/api/user' => [[['_route' => 'get_all_users', '_controller' => 'App\\Controller\\UserController::getAll'], null, ['GET' => 0], null, false, false, null]],
         '/login' => [[['_route' => 'login', '_controller' => 'App\\Controller\\SecurityController::login'], null, ['POST' => 0], null, false, false, null]],
@@ -40,8 +41,12 @@ return [
                         .'|(*:179)'
                         .'|(*:187)'
                     .')'
+                    .'|subcategoria(?'
+                        .'|/([^/]++)(*:220)'
+                        .'|s/([^/]++)(*:238)'
+                    .')'
                     .'|user/([^/]++)(?'
-                        .'|(*:212)'
+                        .'|(*:263)'
                     .')'
                 .')'
             .')/?$}sDu',
@@ -70,7 +75,9 @@ return [
             [['_route' => 'delete_product', '_controller' => 'App\\Controller\\ProductosController::delete'], ['id'], ['DELETE' => 0], null, false, true, null],
         ],
         187 => [[['_route' => 'get_msg_between_contacts', '_controller' => 'App\\Controller\\ProductosController::getByCategoria'], ['categoria'], ['GET' => 0], null, false, true, null]],
-        212 => [
+        220 => [[['_route' => 'get_one_subcategoria', '_controller' => 'App\\Controller\\SubcategoriasController::get'], ['id'], ['GET' => 0], null, false, true, null]],
+        238 => [[['_route' => 'get_one_subcategoria_by_idCategoria', '_controller' => 'App\\Controller\\SubcategoriasController::getByCat'], ['id'], ['GET' => 0], null, false, true, null]],
+        263 => [
             [['_route' => 'get_one_user', '_controller' => 'App\\Controller\\UserController::get'], ['id'], ['GET' => 0], null, false, true, null],
             [['_route' => 'update_user', '_controller' => 'App\\Controller\\UserController::update'], ['id'], ['PUT' => 0], null, false, true, null],
             [['_route' => 'delete_user', '_controller' => 'App\\Controller\\UserController::delete'], ['id'], ['DELETE' => 0], null, false, true, null],
