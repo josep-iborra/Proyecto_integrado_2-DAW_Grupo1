@@ -23,6 +23,7 @@ import { EditarEmpresaComponent } from './componentes/formularios/editar-empresa
 import { RegistrarEmpresaComponent } from './componentes/formularios/registrar-empresa/registrar-empresa.component';
 import { CategoriasComponent } from './componentes/categorias/categorias.component';
 import { SubcategoriasComponent } from './componentes/subcategorias/subcategorias.component';
+import { FaqsComponent } from './componentes/faqs/faqs.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { SubcategoriasComponent } from './componentes/subcategorias/subcategoria
     EditarEmpresaComponent,
     RegistrarEmpresaComponent,
     CategoriasComponent,
-    SubcategoriasComponent
+    SubcategoriasComponent,
+    FaqsComponent
   ],
   imports: [
     BrowserModule,
