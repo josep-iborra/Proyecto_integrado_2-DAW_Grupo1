@@ -14,7 +14,7 @@ export class AppComponent {
   login_date:any;
   constructor(private usuarioService: UsuarioService) {
     
-    this.login_date = localStorage.getItem('date');
+    this.login_date = Number(localStorage.getItem('date'));
     this.date = new Date().getTime();
     if(this.date - this.login_date >= 3600000){
       localStorage.removeItem('user');

@@ -79,7 +79,7 @@ export class UsuarioService {
       .pipe(map((user: any) => {
         localStorage.setItem('user', JSON.stringify(user));
         const fecha = new Date();
-        localStorage.setItem('date', fecha.getTime());
+        localStorage.setItem('date', ''+fecha.getTime());
         this.userSubject.next(user);
         return user;
       }),
