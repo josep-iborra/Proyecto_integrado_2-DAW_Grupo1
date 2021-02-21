@@ -37,6 +37,13 @@ class Empresa
     private $categoria;
 
     /**
+     * @var int
+     *
+     * @ORM\Column(name="subcategoria", type="integer", nullable=false)
+     */
+    private $subcategoria;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="localidad", type="string", length=255, nullable=false)
@@ -89,6 +96,18 @@ class Empresa
     public function setCategoria(int $categoria): self
     {
         $this->categoria = $categoria;
+
+        return $this;
+    }
+
+    public function getSubcategoria(): ?int
+    {
+        return $this->subcategoria;
+    }
+
+    public function setSubcategoria(int $subcategoria): self
+    {
+        $this->subcategoria = $subcategoria;
 
         return $this;
     }

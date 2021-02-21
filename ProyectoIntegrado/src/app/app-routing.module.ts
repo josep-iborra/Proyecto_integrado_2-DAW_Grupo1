@@ -22,7 +22,7 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'index' },
   { path: 'index', component: IndexComponent },
   { path: 'perfil', component: PerfilComponent },
-  { path: 'productos', component: ProductosComponent },
+  { path: 'productos/:id', component: ProductosComponent },
   { path: 'crear-servicios', component: AddServicioComponent },
   { path: 'contacto', component: ContactoComponent },
   { path: 'login', component: LoginComponent },

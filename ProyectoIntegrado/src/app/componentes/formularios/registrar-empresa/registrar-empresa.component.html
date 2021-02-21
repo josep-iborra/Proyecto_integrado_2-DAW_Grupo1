@@ -16,8 +16,15 @@
                             <div class="form-group">
                                 <label for="categoria">Categorías</label>
                                 <select id="categoria" name="categoria" class="form-control" type="text"
-                                    formControlName="categoria" required>
-                                    <option value={{item.id}} *ngFor="let item of pingo">{{item.nombre}}</option>
+                                    formControlName="categoria" (change)='onSelected()' required>
+                                    <option value={{item.id}} *ngFor="let item of categorias">{{item.nombre}}</option>
+                                </select>
+                            </div>
+                            <div id="subC" class="form-group">
+                                <label for="subcategoria">Subcategorías</label>
+                                <select id="subcategoria" name="subcategoria" class="form-control" type="text" formControlName="subcategoria"
+                                    required>
+                                    <option value={{item.id}} *ngFor="let item of subcategorias">{{item.nombre}}</option>
                                 </select>
                             </div>
                             <div class="form-group">

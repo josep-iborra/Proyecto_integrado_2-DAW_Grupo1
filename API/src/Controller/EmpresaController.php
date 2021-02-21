@@ -36,13 +36,14 @@ class EmpresaController
         $localidad = $data['localidad'];
         $codigoPostal = $data['codigoPostal'];
         $descripcion = $data['descripcion'];
+        $subcategoria = $data['subcategoria'];
         $idUsuario = $data['idUsuario'];
 
         var_dump($data);
-        if (empty($categoria) || empty($nombre) || empty($localidad) || empty($codigoPostal) || empty($descripcion)) {
+        if (empty($categoria) || empty($nombre) || empty($localidad) || empty($codigoPostal) || empty($descripcion || empty($subcategoria))) {
             throw new NotFoundHttpException("No están todos los parametros.");
         }
-        $this->empresaRepository->saveEmpresa($nombre, $categoria, $localidad, $codigoPostal, $descripcion, $idUsuario);
+        $this->empresaRepository->saveEmpresa($nombre, $categoria, $localidad, $codigoPostal, $descripcion, $idUsuario, $subcategoria,);
 
         return new JsonResponse(['status' => 'Empresa creada con exito'], Response::HTTP_CREATED);
     }
@@ -57,6 +58,7 @@ class EmpresaController
         $data = [
             'id' => $empresa->getId(),
             'categoria' => $empresa->getCategoria(),
+            'subcategoria' => $empresa->getSubcategoria(),
             'nombre' => $empresa->getNombre(),
             'localidad' => $empresa->getLocalidad(),
             'codigoPostal' => $empresa->getCodigoPostal(),
@@ -78,6 +80,7 @@ class EmpresaController
             $data[] = [
                 'id' => $empresa->getId(),
                 'categoria' => $empresa->getCategoria(),
+                'subcategoria' => $empresa->getSubcategoria(),
                 'nombre' => $empresa->getNombre(),
                 'localidad' => $empresa->getLocalidad(),
                 'codigoPostal' => $empresa->getCodigoPostal(),
@@ -98,6 +101,7 @@ class EmpresaController
         $data = json_decode($request->getContent(), true);
 
         empty($data['categoria']) ? true : $empresa->setCategoria($data['categoria']);
+        empty($data['subcategoria']) ? true : $empresa->setSubcategoria($data['subcategoria']);
         empty($data['nombre']) ? true : $empresa->setNombre($data['nombre']);
         empty($data['localidad']) ? true : $empresa->setLocalidad($data['localidad']);
         empty($data['codigoPostal']) ? true : $empresa->setCodigoPostal($data['codigoPostal']);
@@ -131,6 +135,7 @@ class EmpresaController
         $data = [
             'id' => $empresa->getId(),
             'categoria' => $empresa->getCategoria(),
+            'subcategoria' => $empresa->getSubcategoria(),
             'nombre' => $empresa->getNombre(),
             'localidad' => $empresa->getLocalidad(),
             'codigoPostal' => $empresa->getCodigoPostal(),
