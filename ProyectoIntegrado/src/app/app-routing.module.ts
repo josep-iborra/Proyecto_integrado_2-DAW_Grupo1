@@ -18,6 +18,7 @@ import { CategoriasComponent } from './componentes/categorias/categorias.compone
 import { SubcategoriasComponent } from './componentes/subcategorias/subcategorias.component';
 import { FaqsComponent } from './componentes/faqs/faqs.component';
 import { PoliticaComponent } from './componentes/politica/politica.component';
+import { CookiesComponent } from './componentes/cookies/cookies.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'index' },
@@ -39,6 +40,7 @@ const routes: Routes = [
   { path: 'subcategorias/:id', component: SubcategoriasComponent},
   { path: 'faqs', component: FaqsComponent},
   { path: 'politica', component: PoliticaComponent},
+  { path: 'cookies', component: CookiesComponent},
   { path: '**', component: IndexComponent },
 
 
