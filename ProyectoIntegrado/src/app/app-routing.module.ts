@@ -17,6 +17,7 @@ import { RegistrarEmpresaComponent } from './componentes/formularios/registrar-e
 import { CategoriasComponent } from './componentes/categorias/categorias.component';
 import { SubcategoriasComponent } from './componentes/subcategorias/subcategorias.component';
 import { FaqsComponent } from './componentes/faqs/faqs.component';
+import { PoliticaComponent } from './componentes/politica/politica.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'index' },
@@ -37,6 +38,7 @@ const routes: Routes = [
   { path: 'categorias', component: CategoriasComponent},
   { path: 'subcategorias/:id', component: SubcategoriasComponent},
   { path: 'faqs', component: FaqsComponent},
+  { path: 'politica', component: PoliticaComponent},
   { path: '**', component: IndexComponent },
 
 
