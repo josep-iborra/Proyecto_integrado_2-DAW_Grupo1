@@ -31,8 +31,6 @@ export class RegistrarEmpresaComponent implements OnInit {
     this.user = this.usuarioService.userValue;
     this.empresaService.GetCategorias().subscribe(res => { console.log('::'); console.log(res); this.categorias = res; });
 
-
-    console.log("------------------------");
     console.log(this.user);
     this.empForm = this.formBuilder.group({
       nombre: [''],
@@ -51,6 +49,7 @@ export class RegistrarEmpresaComponent implements OnInit {
   }
 
   onSubmit(): any {
+    console.log('........................');
     console.log(this.empForm.value);
     this.empresaService.AddEmpresa(this.empForm.value)
       .subscribe(() => {

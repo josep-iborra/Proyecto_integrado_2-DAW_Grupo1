@@ -29,6 +29,13 @@ class Subcategorias
     private $nombre;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="nombre_visible", type="string", length=255, nullable=false)
+     */
+    private $nombre_visible;
+
+    /**
      * @var int
      *
      * @ORM\Column(name="ID_categoria", type="integer", nullable=false)
@@ -52,6 +59,18 @@ class Subcategorias
         return $this;
     }
 
+    public function getNombreVisible(): ?string
+    {
+        return $this->nombre_visible;
+    }
+
+    public function setNombreVisible(string $nombre_visible): self
+    {
+        $this->nombre_visible = $nombre_visible;
+
+        return $this;
+    }
+
     public function getIdCategoria(): ?int
     {
         return $this->idCategoria;
@@ -63,6 +82,4 @@ class Subcategorias
 
         return $this;
     }
-
-
 }
