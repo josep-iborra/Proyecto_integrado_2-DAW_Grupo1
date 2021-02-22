@@ -33,7 +33,7 @@ const routes: Routes = [
   { path: 'mensajes', component: MensajesComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'registrarEmpresa', component: RegistrarEmpresaComponent },
-  { path: 'vendedor', component: VendedorComponent },
+  { path: 'vendedor/:id', component: VendedorComponent },
   { path: 'editarPerfil', component: EditarPerfilComponent },
   { path: 'editarEmpresa', component: EditarEmpresaComponent },
   { path: 'mensaje-nuevo', component: EnvioMensajeComponent },

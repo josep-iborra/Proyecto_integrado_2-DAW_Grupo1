@@ -1,11 +1,14 @@
 <!-- Events categories -->
 <div class="container mt-5">
     <div class="row">
-        <div  class="col-12 col-xs-12 col-md-6 col-md-6 col-lg-3 col-xl-3" *ngFor="let categoria of categorias">
-            
+        <div class="col-12 col-xs-12 col-md-6 col-md-6 col-lg-3 col-xl-3" *ngFor="let categoria of categorias">
             <a class="btn-events" routerLink="/subcategorias/{{categoria.id}}">
                 <div class="card border-light bg-secondary text-white events-categories mt-2 mr-2">
-                    <img class="card-img-top" src="https://rowlend.s3.eu-west-3.amazonaws.com/{{categoria.nombre}}.jpg" alt="{{categoria.nombre}}">
+                    <div class="altura_minima">
+                        <img class="card-img-top"
+                            src="https://rowlend.s3.eu-west-3.amazonaws.com/{{categoria.nombre}}.jpg"
+                            alt="{{categoria.nombre}}">
+                    </div>
                     <div class="card-body">
                         <h5 class="card-title">{{categoria.nombreVisible}}</h5>
                     </div>

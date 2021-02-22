@@ -11,6 +11,7 @@ export class ReviewsComponent implements OnInit {
 
   reviews!: any;
   getId: any;
+  usuario!:any;
 
   constructor(private categoriaService: ResenasService, private activatedRoute: ActivatedRoute) {
     this.getId = this.activatedRoute.snapshot.paramMap.get('id');
