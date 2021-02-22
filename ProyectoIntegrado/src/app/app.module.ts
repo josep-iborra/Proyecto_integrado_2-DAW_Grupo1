@@ -25,6 +25,7 @@ import { SubcategoriasComponent } from './componentes/subcategorias/subcategoria
 import { FaqsComponent } from './componentes/faqs/faqs.component';
 import { PoliticaComponent } from './componentes/politica/politica.component';
 import { CookiesComponent } from './componentes/cookies/cookies.component';
+import { LogoutComponent } from './componentes/logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { CookiesComponent } from './componentes/cookies/cookies.component';
     SubcategoriasComponent,
     FaqsComponent,
     PoliticaComponent,
-    CookiesComponent
+    CookiesComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

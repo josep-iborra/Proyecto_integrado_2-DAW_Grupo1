@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, NgZone } from '@angular/core';
 import { catchError, map } from 'rxjs/operators';
 import { Observable, throwError, BehaviorSubject } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
@@ -12,7 +12,7 @@ export class User {
   apellidos!: any;
   telefono!: any;
   password!: String;
-  roles!:any;
+  roles!: any;
 }
 
 @Injectable({
@@ -23,7 +23,11 @@ export class UsuarioService {
   private userSubject!: BehaviorSubject<User>;
   public user!: Observable<User>;
 
-  constructor(private httpClient: HttpClient, private router: Router) {
+  constructor(
+    private httpClient: HttpClient,
+    private router: Router,
+    private ngZone: NgZone
+  ) {
     const aux = localStorage.getItem('user');
     this.userSubject = new BehaviorSubject<User>(JSON.parse(aux || '{}'));
     this.user = this.userSubject.asObservable();
@@ -79,7 +83,7 @@ export class UsuarioService {
       .pipe(map((user: any) => {
         localStorage.setItem('user', JSON.stringify(user));
         const fecha = new Date();
-        localStorage.setItem('date', ''+fecha.getTime());
+        localStorage.setItem('date', '' + fecha.getTime());
         this.userSubject.next(user);
         return user;
       }),
@@ -89,7 +93,7 @@ export class UsuarioService {
 
   logout() {
     localStorage.removeItem('user');
-    this.router.navigate(['/login']);
+
   }
 
   handleError(error: HttpErrorResponse) {

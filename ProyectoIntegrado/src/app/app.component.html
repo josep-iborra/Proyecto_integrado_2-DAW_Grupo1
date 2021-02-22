@@ -23,15 +23,19 @@
       </li>
     </ul>
 
-      <div ngbDropdown class="d-inline-block float-right" placement="bottom-right" display="dynamic">
-        <button type="button" class="btn-user" ngbDropdownToggle>
-          <i class="fas fa-user-circle icon-user"></i>
-        </button>
-        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-          <button routerLink="/login" ngbDropdownItem>Iniciar sesión</button>
-          <button routerLink="/register" ngbDropdownItem>Registrarse</button>
-        </div>
+    <div ngbDropdown class="d-inline-block float-right" placement="bottom-right" display="dynamic">
+      <button type="button" class="btn-user" ngbDropdownToggle>
+        <i class="fas fa-user-circle icon-user"></i>
+      </button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1" *ngIf="checkLogin()">
+        <button routerLink="/login" ngbDropdownItem>Iniciar sesión</button>
+        <button routerLink="/register" ngbDropdownItem>Registrarse</button>
       </div>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1" *ngIf="!checkLogin()">
+        <button routerLink="/editarPerfil" ngbDropdownItem>Editar Perfil</button>
+        <button routerLink="/logout" ngbDropdownItem>Logout</button>
+      </div>
+    </div>
   </div>
 </nav>
 
@@ -43,7 +47,7 @@
 
 <footer class="page-footer font-small cyan darken-3">
 
-  
+
   <div class="container">
     <div class="espacio">
 
@@ -61,22 +65,22 @@
           <li class="nav-item font-weight-light text-uppercase w-publish-footer">
             <a class="text-white text-reset text-decoration-none" routerLink="registrarEmpresa">PUBLICAR</a>
           </li>
-          
+
         </div>
       </div>
 
 
-     
+
       <div class="col-md-4">
         <div class="mb-5 flex-center">
           <a class="fb-ic" href="https://es-es.facebook.com/">
-            <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x" > </i>
+            <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
           </a>
           <a class="tw-ic" href="https://twitter.com/home?lang=es">
-            <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x" > </i>
+            <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
           </a>
           <a class="li-ic" href="https://es.linkedin.com/">
-            <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x" > </i>
+            <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
           </a>
 
           <a class="ins-ic">
@@ -98,12 +102,12 @@
           </li>
         </div>
       </div>
-      
 
-    
+
+
 
     </div>
- 
+
 
   </div>
 

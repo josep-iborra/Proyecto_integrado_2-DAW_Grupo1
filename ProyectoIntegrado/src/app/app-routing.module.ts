@@ -19,6 +19,7 @@ import { SubcategoriasComponent } from './componentes/subcategorias/subcategoria
 import { FaqsComponent } from './componentes/faqs/faqs.component';
 import { PoliticaComponent } from './componentes/politica/politica.component';
 import { CookiesComponent } from './componentes/cookies/cookies.component';
+import { LogoutComponent } from './componentes/logout/logout.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'index' },
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'crear-servicios', component: AddServicioComponent },
   { path: 'contacto', component: ContactoComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'logout', component: LogoutComponent },
   { path: 'mensajes', component: MensajesComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'registrarEmpresa', component: RegistrarEmpresaComponent },
@@ -36,11 +38,11 @@ const routes: Routes = [
   { path: 'editarEmpresa', component: EditarEmpresaComponent },
   { path: 'mensaje-nuevo', component: EnvioMensajeComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'categorias', component: CategoriasComponent},
-  { path: 'subcategorias/:id', component: SubcategoriasComponent},
-  { path: 'faqs', component: FaqsComponent},
-  { path: 'politica', component: PoliticaComponent},
-  { path: 'cookies', component: CookiesComponent},
+  { path: 'categorias', component: CategoriasComponent },
+  { path: 'subcategorias/:id', component: SubcategoriasComponent },
+  { path: 'faqs', component: FaqsComponent },
+  { path: 'politica', component: PoliticaComponent },
+  { path: 'cookies', component: CookiesComponent },
   { path: '**', component: IndexComponent },
 
 
