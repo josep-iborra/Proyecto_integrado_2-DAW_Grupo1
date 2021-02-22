@@ -22,7 +22,7 @@ export class MessagesService {
 
   REST_API_MESSAGE: string = 'http://localhost:8000/api/mensaje';
   httpHeaders = new HttpHeaders().set('Content-Type', 'application/json');
-  AddUser(data: Messages): Observable<any> {
+  AddMsg(data: Messages): Observable<any> {
     let API_URL = 'http://localhost:8000/api/addMensaje';
     return this.httpClient.post(API_URL, data)
       .pipe(
@@ -30,11 +30,11 @@ export class MessagesService {
       )
   }
 
-  GetUsers() {
+  GetMsgs() {
     return this.httpClient.get(this.REST_API_MESSAGE);
   }
 
-  GetUser(id: any): Observable<any> {
+  GetMsg(id: any): Observable<any> {
     let API_URL = '' + this.REST_API_MESSAGE + '/' + id;
     return this.httpClient.get(API_URL, { headers: this.httpHeaders })
       .pipe(map((res: any) => {
@@ -44,7 +44,7 @@ export class MessagesService {
       )
   }
 
-  updateUser(id: any, data: any): Observable<any> {
+  updateMsg(id: any, data: any): Observable<any> {
     let API_URL = '' + this.REST_API_MESSAGE + '/' + id;
     return this.httpClient.put(API_URL, data, { headers: this.httpHeaders })
       .pipe(
@@ -52,7 +52,7 @@ export class MessagesService {
       )
   }
 
-  deleteUser(id: any): Observable<any> {
+  deleteMsg(id: any): Observable<any> {
     let API_URL = '' + this.REST_API_MESSAGE + '/' + id;
     return this.httpClient.delete(API_URL, { headers: this.httpHeaders }).pipe(
       catchError(this.handleError)

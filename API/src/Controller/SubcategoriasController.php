@@ -35,7 +35,8 @@ class SubcategoriasController
         $data = [
             'id' => $subcategoria->getId(),
             'nombre' => $subcategoria->getNombre(),
-            'idCategoria' => $subcategoria->getIdCategoria()
+            'idCategoria' => $subcategoria->getIdCategoria(),
+            'nombreVisible'=> $subcategoria->getNombreVisible()
         ];
         return new JsonResponse($data, Response::HTTP_OK);
     }
@@ -52,7 +53,8 @@ class SubcategoriasController
             $data[] = [
                 'id' => $subcategoria->getId(),
                 'nombre' => $subcategoria->getNombre(),
-                'idCategoria' => $subcategoria->getIdCategoria()
+                'idCategoria' => $subcategoria->getIdCategoria(),
+                'nombreVisible' => $subcategoria->getNombreVisible()
             ];
         }
 
@@ -70,7 +72,8 @@ class SubcategoriasController
             $data[] = [
                 'id' => $subcategoria->getId(),
                 'nombre' => $subcategoria->getNombre(),
-                'idCategoria' => $subcategoria->getIdCategoria()
+                'idCategoria' => $subcategoria->getIdCategoria(),
+                'nombreVisible' => $subcategoria->getNombreVisible()
             ];
         }
         return new JsonResponse($data, Response::HTTP_OK);

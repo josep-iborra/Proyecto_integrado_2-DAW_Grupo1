@@ -26,7 +26,7 @@ class EmpresaRepository extends ServiceEntityRepository
         $this->manager = $manager;
     }
 
-    public function saveEmpresa($nombre, $categoria, $localidad, $codigoPostal, $descripcion, $idUsuario)
+    public function saveEmpresa($nombre, $categoria, $localidad, $codigoPostal, $descripcion, $idUsuario, $subcategoria)
     {
         $newEmpresa = new Empresa();
 
@@ -36,6 +36,7 @@ class EmpresaRepository extends ServiceEntityRepository
         $newEmpresa->setCodigoPostal($codigoPostal);
         $newEmpresa->setDescripcion($descripcion);
         $newEmpresa->setIdUsuario($idUsuario);
+        $newEmpresa->setSubcategoria($subcategoria);
 
         $this->manager->persist($newEmpresa);
         $this->manager->flush();

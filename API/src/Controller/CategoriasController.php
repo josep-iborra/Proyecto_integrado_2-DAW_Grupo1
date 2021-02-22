@@ -50,7 +50,8 @@ class CategoriasController
 
         $data = [
             'id' => $categoria->getId(),
-            'nombre' => $categoria->getNombre()
+            'nombre' => $categoria->getNombre(),
+            'nombreVisible' => $categoria->getNombreVisible()
         ];
         return new JsonResponse($data, Response::HTTP_OK);
     }
@@ -66,7 +67,8 @@ class CategoriasController
         foreach ($categorias as $categoria) {
             $data[] = [
                 'id' => $categoria->getId(),
-                'nombre' => $categoria->getNombre()
+                'nombre' => $categoria->getNombre(),
+                'nombreVisible' => $categoria->getNombreVisible()
             ];
         }
 

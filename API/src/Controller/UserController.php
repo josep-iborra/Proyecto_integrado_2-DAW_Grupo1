@@ -57,6 +57,7 @@ class UserController
             'email' => $user->getEmail(),
             'nombre' => $user->getNombre(),
             'password' => $user->getPassword(),
+            'telefono' => $user->getTelefono(),
         ];
 
         return new JsonResponse($data, Response::HTTP_OK);
