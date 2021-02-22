@@ -158,19 +158,21 @@ class EmpresaController
      */
     public function getByCat($id): JsonResponse
     {
-        $vacio = $this->empresaRepository->findOneBy(['subcategoria' => 9999]);
-        $empresa = $this->empresaRepository->findOneBy(['subcategoria' => $id]);
-        if ($empresa != $vacio) {
-            $data = [
-                'id' => $empresa->getId(),
-                'categoria' => $empresa->getCategoria(),
-                'subcategoria' => $empresa->getSubcategoria(),
-                'nombre' => $empresa->getNombre(),
-                'localidad' => $empresa->getLocalidad(),
-                'codigoPostal' => $empresa->getCodigoPostal(),
-                'descripcion' => $empresa->getDescripcion(),
-                'idUsuario' => $empresa->getIdUsuario()
-            ];
+        $vacio = $this->empresaRepository->findBy(['subcategoria' => 9999]);
+        $empresas = $this->empresaRepository->findBy(['subcategoria' => $id]);
+        if ($empresas != $vacio) {
+            foreach ($empresas as $empresa) {
+                $data = [
+                    'id' => $empresa->getId(),
+                    'categoria' => $empresa->getCategoria(),
+                    'subcategoria' => $empresa->getSubcategoria(),
+                    'nombre' => $empresa->getNombre(),
+                    'localidad' => $empresa->getLocalidad(),
+                    'codigoPostal' => $empresa->getCodigoPostal(),
+                    'descripcion' => $empresa->getDescripcion(),
+                    'idUsuario' => $empresa->getIdUsuario()
+                ];
+            }
         } else {
             $data = [];
         }

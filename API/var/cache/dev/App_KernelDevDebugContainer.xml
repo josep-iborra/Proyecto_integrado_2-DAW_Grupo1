@@ -225,6 +225,10 @@
       <tag name="controller.service_arguments"/>
       <argument type="service" id="App\Repository\ProductosRepository"/>
     </service>
+    <service id="App\Controller\ResenaController" class="App\Controller\ResenaController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <argument type="service" id="App\Repository\ResenaRepository"/>
+    </service>
     <service id="App\Controller\SecurityController" class="App\Controller\SecurityController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -255,6 +259,11 @@
       <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\ProductosRepository" class="App\Repository\ProductosRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+      <argument type="service" id="doctrine.orm.default_entity_manager"/>
+    </service>
+    <service id="App\Repository\ResenaRepository" class="App\Repository\ResenaRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
       <argument type="service" id="doctrine.orm.default_entity_manager"/>
@@ -1642,7 +1651,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.jjEYdxJ"/>
+      <argument type="service" id=".service_locator.Vo9cL8j"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -2828,6 +2837,8 @@
     <service id=".abstract.instanceof.App\Repository\MensajesRepository" class="App\Repository\MensajesRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ProductosRepository" class="App\Repository\ProductosRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ProductosRepository" class="App\Repository\ProductosRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ResenaRepository" class="App\Repository\ResenaRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\ResenaRepository" class="App\Repository\ResenaRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\SubcategoriasRepository" class="App\Repository\SubcategoriasRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\SubcategoriasRepository" class="App\Repository\SubcategoriasRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" abstract="true"/>
@@ -3213,13 +3224,14 @@
         <argument key="doctrine.orm.listeners.pdo_cache_adapter_doctrine_schema_subscriber" type="service" id="doctrine.orm.listeners.pdo_cache_adapter_doctrine_schema_subscriber"/>
       </argument>
     </service>
-    <service id=".service_locator.jjEYdxJ" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.Vo9cL8j" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\CategoriasRepository" type="service" id="App\Repository\CategoriasRepository"/>
         <argument key="App\Repository\EmpresaRepository" type="service" id="App\Repository\EmpresaRepository"/>
         <argument key="App\Repository\MensajesRepository" type="service" id="App\Repository\MensajesRepository"/>
         <argument key="App\Repository\ProductosRepository" type="service" id="App\Repository\ProductosRepository"/>
+        <argument key="App\Repository\ResenaRepository" type="service" id="App\Repository\ResenaRepository"/>
         <argument key="App\Repository\SubcategoriasRepository" type="service" id="App\Repository\SubcategoriasRepository"/>
         <argument key="App\Repository\UserRepository" type="service" id="App\Repository\UserRepository"/>
       </argument>
