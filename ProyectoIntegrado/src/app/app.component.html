@@ -16,10 +16,7 @@
   <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item ">
-        <a class="nav-link " routerLink="">SERVICIOS</a>
-      </li>
-      <li class="nav-item ">
-        <a class="nav-link " routerLink="Contactanos">CONTACTO</a>
+        <a class="nav-link " routerLink="contacto">CONTACTO</a>
       </li>
       <li class="nav-item" *ngIf="!checkLogin()">
         <a class="nav-link " routerLink="registrarEmpresa">PUBLICAR</a>
@@ -58,18 +55,13 @@
             <a class="text-white text-reset text-decoration-none " routerLink="about">QUIENES
               SOMOS</a>
           </li>
-          <li class="nav-item font-weight-light text-uppercase w-servicies-footer">
-            <a class="text-white text-reset text-decoration-none" routerLink="">SERVICIOS</a>
-          </li>
           <li class="nav-item font-weight-light text-uppercase w-contact-footer">
-            <a class="text-white text-reset text-decoration-none" routerLink="Contactanos">CONTACTO</a>
+            <a class="text-white text-reset text-decoration-none" routerLink="contacto">CONTACTO</a>
           </li>
           <li class="nav-item font-weight-light text-uppercase w-publish-footer">
             <a class="text-white text-reset text-decoration-none" routerLink="registrarEmpresa">PUBLICAR</a>
           </li>
-          <li class="nav-item font-weight-light text-uppercase">
-            <a class="text-white text-reset text-decoration-none" routerLink="faqs">FAQ'S</a>
-          </li>
+          
         </div>
       </div>
 
@@ -77,32 +69,32 @@
      
       <div class="col-md-4">
         <div class="mb-5 flex-center">
-          <a class="fb-ic">
-            <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x" routerLink="https://es-es.facebook.com/"> </i>
+          <a class="fb-ic" href="https://es-es.facebook.com/">
+            <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x" > </i>
           </a>
-          <a class="tw-ic">
-            <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x" routerLink="https://twitter.com/home?lang=es"> </i>
+          <a class="tw-ic" href="https://twitter.com/home?lang=es">
+            <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x" > </i>
           </a>
-          <a class="li-ic">
-            <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x" routerLink="https://es.linkedin.com/"> </i>
+          <a class="li-ic" href="https://es.linkedin.com/">
+            <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x" > </i>
           </a>
 
           <a class="ins-ic">
-            <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x" routerLink=""> </i>
+            <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x" href=""> </i>
           </a>
         </div>
       </div>
 
       <div class="col-md-4">
         <div class="mb-5 flex-center">
-          <li class="nav-item font-weight-light text-uppercase w-about-us-footer">
-            <a class="text-white text-reset text-decoration-none" routerLink="">Copyright &copy; 2021 RowLend</a>
-          </li>
           <li class="nav-item font-weight-light text-uppercase w-servicies-footer">
             <a class="text-white text-reset text-decoration-none" routerLink="">Politica de privacidad</a>
           </li>
           <li class="nav-item font-weight-light text-uppercase w-contact-footer">
             <a class="text-white text-reset text-decoration-none" routerLink="">Politica de cookies</a>
+          </li>
+          <li class="nav-item font-weight-light text-uppercase">
+            <a class="text-white text-reset text-decoration-none" routerLink="faqs">FAQ'S</a>
           </li>
         </div>
       </div>

@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent } from './componentes/about/about.component';
 import { AddServicioComponent } from './componentes/add-servicio/add-servicio.component';
-import { ContactanosComponent } from './componentes/formularios/contactanos/contactanos.component';
 import { ContactoComponent } from './componentes/formularios/contacto/contacto.component';
 import { EditarPerfilComponent } from './componentes/formularios/editar-perfil/editar-perfil.component';
 import { EnvioMensajeComponent } from './componentes/formularios/envio-mensaje/envio-mensaje.component';
@@ -30,7 +29,6 @@ const routes: Routes = [
   { path: 'mensajes', component: MensajesComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'registrarEmpresa', component: RegistrarEmpresaComponent },
-  { path: 'contactanos', component: ContactanosComponent },
   { path: 'vendedor', component: VendedorComponent },
   { path: 'editarPerfil', component: EditarPerfilComponent },
   { path: 'editarEmpresa', component: EditarEmpresaComponent },

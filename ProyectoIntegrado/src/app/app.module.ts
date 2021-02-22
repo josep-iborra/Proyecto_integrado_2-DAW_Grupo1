@@ -14,7 +14,6 @@ import { RegisterComponent } from './componentes/formularios/register/register.c
 import { MensajesComponent } from './componentes/formularios/mensajes/mensajes.component';
 import { EditarPerfilComponent } from './componentes/formularios/editar-perfil/editar-perfil.component';
 import { AboutComponent } from './componentes/about/about.component';
-import { ContactanosComponent } from './componentes/formularios/contactanos/contactanos.component';
 import { VendedorComponent } from './componentes/vendedor/vendedor.component';
 import { LoginComponent } from './componentes/formularios/login/login.component';
 import { EnvioMensajeComponent } from './componentes/formularios/envio-mensaje/envio-mensaje.component';
@@ -36,7 +35,6 @@ import { FaqsComponent } from './componentes/faqs/faqs.component';
     MensajesComponent,
     EditarPerfilComponent,
     AboutComponent,
-    ContactanosComponent,
     VendedorComponent,
     LoginComponent,
     EnvioMensajeComponent,
