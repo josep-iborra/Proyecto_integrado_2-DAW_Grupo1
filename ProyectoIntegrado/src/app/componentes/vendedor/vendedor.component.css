@@ -1,24 +1,8 @@
-.data-profile {
-    margin-left: 0em;
-}
-
-.data-service {
-    display: flex;
-    flex-direction: row;
-    height: 275px;
-    border-radius: 1.25em;
-}
-
-.contact-service {
-    height: 670px;
-}
-
-.contact-service, .box-slider-vendor, .box-reviews {
-    border-radius: 1.25em;
-}
-
-.seller-name {
-    font-size: 1.5em;
+.profile-photo-seller {
+    width: 12.5em;
+    height: 12.5em;
+    margin-top: 0.5em;
+    margin-left: 0.5em;
 }
 
 .icon-phone {
@@ -31,44 +15,13 @@
     height: 1.375em;
 }
 
-.box-icon-location {
-    margin-top: -0.15em;
-}
-
 .icon-location {
     width: 1.473em;
     height: 1.758em;
-    margin-left: 0.5em;
-    margin-right: 1.5em;
 }
 
-.icon-horary {
-    width: 1.473em;
-    height: 1.547em; 
-    margin-left: 0.5em;
-    margin-right: 1.5em;
-}
-
-.number-phone, .email-address {
-    margin-top: 0.25em;
-}
-
-.location-cities, .date-hour {
+.location-cities {
     line-height: 0.5;
-}
-
-.send-message {
-    margin-left: 0.5em;
-    padding-bottom: 0.15em;
-}
-
-.info-contact {
-    margin-left: -2.75em;
-}
-
-.box-slider-vendor {
-    margin-top: -24.5em;
-    height: 375px;
 }
 
 .photo-profile-user {
@@ -76,6 +29,7 @@
     height: 2.5em;
 }
 
-.espacio {
-    height: 12rem;
+.carousel img {
+    width: 100%;
+    max-height: 500px;
 }
