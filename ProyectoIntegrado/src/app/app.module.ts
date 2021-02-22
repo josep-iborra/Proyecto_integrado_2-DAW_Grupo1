@@ -24,6 +24,7 @@ import { CategoriasComponent } from './componentes/categorias/categorias.compone
 import { SubcategoriasComponent } from './componentes/subcategorias/subcategorias.component';
 import { FaqsComponent } from './componentes/faqs/faqs.component';
 import { PoliticaComponent } from './componentes/politica/politica.component';
+import { CookiesComponent } from './componentes/cookies/cookies.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { PoliticaComponent } from './componentes/politica/politica.component';
     CategoriasComponent,
     SubcategoriasComponent,
     FaqsComponent,
-    PoliticaComponent
+    PoliticaComponent,
+    CookiesComponent
   ],
   imports: [
     BrowserModule,
