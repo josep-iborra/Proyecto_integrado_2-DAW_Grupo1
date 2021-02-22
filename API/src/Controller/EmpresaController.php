@@ -158,7 +158,7 @@ class EmpresaController
      */
     public function getByCat($id): JsonResponse
     {
-        $vacio = $this->empresaRepository->findOneBy(['subcategoria' => 8.5]);
+        $vacio = $this->empresaRepository->findOneBy(['subcategoria' => 9999]);
         $empresa = $this->empresaRepository->findOneBy(['subcategoria' => $id]);
         if ($empresa != $vacio) {
             $data = [
