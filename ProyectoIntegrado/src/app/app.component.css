@@ -1,13 +1,12 @@
 /* Header */
 
-.navegador {
-    background-color: #acaba8;
+.header {
+    background-color: #364C59;
     padding: 0.75em;
 }
 
-.navegador>a {
-    text-decoration: none;
-    color: black;
+.nav-link {
+    color: #8C8C8C;
 }
 
 .logo-header {
@@ -15,22 +14,6 @@
     margin-left: 1em;
 }
 
-.w-about-us {
-    width: 11em;
-}
-
-.w-servicies {
-    width: 7.5em;
-    margin-left: 1.5em;
-}
-
-.w-contact {
-    width: 8em;
-}
-
-.search {
-    width: 16.5em;
-}
 
 .size-menu-text {
     font-size: 18px;
@@ -46,9 +29,19 @@
 }
 
 /*  Footer */
+footer{
+    background-color: #8C8C8C;
+}
+
+
+li{
+    list-style:none;
+}
+
 .espacio{
     height: 2rem;
 }
+
 .box-footer {
     position: relative;
     bottom: 0;
@@ -59,55 +52,12 @@
    
 }
 
-.logo-footer {
-    width: 2.813em;
-    height: 2.813em;
-    margin-left: 0.75em;
-}
-
 .nav-menu {
     display: flex;
     flex-direction: row;
 }
 
-.m-top-menu-footer {
-    margin-top: 0.75em
-}
-
-.m-left-menu-footer {
-    margin-left: 2em;
-}
-
-.w-about-us-footer, .w-servicies-footer, .w-contact-footer {
-    margin-right: 1.5em;
-}
-
-.mr-left-policy {
-    margin-left: -24em;
-}
-
-.icon-instagram, .icon-facebook, .icon-twitter, .icon-linkedin {
-    font-size: 19px;
-    margin-top: 0.875em;
-}
-
-.icon-linkedin {
-    margin-right: 00.5em;
-}
-/* 
-.navbar{
-    margin-bottom: 1rem;
-} */
-
-footer{
-    background-color: grey;
-}
-
-
 .dropdown-toggle::after {
     display:none;
 }
 
-li{
-    list-style:none;
-}
