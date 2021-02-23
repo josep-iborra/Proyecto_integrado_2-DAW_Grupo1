@@ -60,6 +60,9 @@ export class EditarEmpresaComponent implements OnInit {
       descripcion: [''],
       idUsuario: ['']
     });
+    if (localStorage.getItem('user') == undefined) {
+      this.ngZone.run(() => this.router.navigateByUrl('/aviso'));
+    }
   }
 
   ngOnInit(): void {
