@@ -26,6 +26,7 @@ import { FaqsComponent } from './componentes/faqs/faqs.component';
 import { PoliticaComponent } from './componentes/politica/politica.component';
 import { CookiesComponent } from './componentes/cookies/cookies.component';
 import { LogoutComponent } from './componentes/logout/logout.component';
+import { AvisoComponent } from './componentes/aviso/aviso.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { LogoutComponent } from './componentes/logout/logout.component';
     FaqsComponent,
     PoliticaComponent,
     CookiesComponent,
-    LogoutComponent
+    LogoutComponent,
+    AvisoComponent
   ],
   imports: [
     BrowserModule,
