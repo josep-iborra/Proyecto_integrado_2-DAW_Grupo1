@@ -63,11 +63,27 @@
                     <button class="bg-dark text-white border-0 rounded-lg mt-2 p-2"
                         (click)="open(content)">Responder</button>
                 </div>
+
                 <div class="row justify-content-center mt-3" id="nuevo" style="display: none;">
                     <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 h-100 rounded-lg p-2">
-                        <form>
+                        <form role="form" class="form-auth" [formGroup]="newMessageForm" (ngSubmit)="onSubmit()">
+                            <label for="subject">Para:</label>
+                            <input type="hidden" class="form-control" name="subject" id="subject" formControlName="idReceptor" />
+                            <input type="text" class="form-control" name="receptor" id="receptor" formControlName="Receptor" />
+                            <input type="hidden" class="form-control" name="sender" id="sender" formControlName="idEmisor" />
+                            <input type="hidden" class="form-control" name="fecha" id="fecha" formControlName="fecha"/>
                             <div class="form-group">
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="7"></textarea>
+                                <label for="name">Asunto:</label>
+                                <input type="text" class="form-control" formControlName="asunto" name="subject"
+                                    id="subject" data-rule="minlen:4"
+                                    data-msg="Please enter at least 8 chars of subject" />
+                                <div class="validador"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Mensaje</label>
+                                <textarea class="form-control" formControlName="mensaje" name="message" rows="10"
+                                    data-rule="required" data-msg="El mensaje no puede estar vacio"></textarea>
+                                <div class="validador"></div>
                             </div>
                             <button type="submit" class="btn btn-dark text-white">Envíar</button>
                             <button type="reset" class="btn btn-danger ml-2" (click)="descartar()">Descartar</button>

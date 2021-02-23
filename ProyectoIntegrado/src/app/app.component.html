@@ -6,7 +6,7 @@
 <link href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css%22%3E">
 
-<nav class="navbar navbar-expand-sm navbar navbar-dark bg-dark  ">
+<nav class="navbar navbar-expand-sm navbar navbar-dark header">
   <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -16,7 +16,7 @@
   <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item ">
-        <a class="nav-link " routerLink="contacto">CONTACTO</a>
+        <a class="nav-link" routerLink="contacto">CONTACTO</a>
       </li>
       <li class="nav-item" *ngIf="!checkLogin()">
         <a class="nav-link " routerLink="registrarEmpresa">PUBLICAR</a>
@@ -55,14 +55,14 @@
     <div class="row justify-content-center">
       <div class="col-md-4">
         <div class="mb-5 flex-center">
-          <li class="nav-item font-weight-light text-uppercaser w-about-us-footer">
+          <li class="nav-item font-weight-light text-uppercaser">
             <a class="text-white text-reset text-decoration-none " routerLink="about">QUIENES
               SOMOS</a>
           </li>
-          <li class="nav-item font-weight-light text-uppercase w-contact-footer">
+          <li class="nav-item font-weight-light text-uppercase">
             <a class="text-white text-reset text-decoration-none" routerLink="contacto">CONTACTO</a>
           </li>
-          <li class="nav-item font-weight-light text-uppercase w-publish-footer">
+          <li class="nav-item font-weight-light text-uppercase">
             <a class="text-white text-reset text-decoration-none" routerLink="registrarEmpresa">PUBLICAR</a>
           </li>
 
@@ -83,15 +83,15 @@
             <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
           </a>
 
-          <a class="ins-ic">
-            <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x" href=""> </i>
+          <a class="ins-ic" href="https://www.instagram.com/">
+            <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x" > </i>
           </a>
         </div>
       </div>
 
       <div class="col-md-4">
         <div class="mb-5 flex-center">
-          <li class="nav-item font-weight-light text-uppercase w-servicies-footer">
+          <li class="nav-item font-weight-light text-uppercase">
             <a class="text-white text-reset text-decoration-none" routerLink="politica">Politica de privacidad</a>
           </li>
           <li class="nav-item font-weight-light text-uppercase w-contact-footer">

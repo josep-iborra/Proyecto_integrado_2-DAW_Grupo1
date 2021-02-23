@@ -54,8 +54,11 @@ return [
                         .'|/([^/]++)(*:323)'
                         .'|s/([^/]++)(*:341)'
                     .')'
-                    .'|user/([^/]++)(?'
-                        .'|(*:366)'
+                    .'|us(?'
+                        .'|er/([^/]++)(?'
+                            .'|(*:369)'
+                        .')'
+                        .'|uario/([^/]++)(*:392)'
                     .')'
                 .')'
             .')/?$}sDu',
@@ -90,10 +93,13 @@ return [
         290 => [[['_route' => 'get_all_resenas', '_controller' => 'App\\Controller\\ResenaController::getByVendedor'], ['id'], ['GET' => 0], null, false, true, null]],
         323 => [[['_route' => 'get_one_subcategoria', '_controller' => 'App\\Controller\\SubcategoriasController::get'], ['id'], ['GET' => 0], null, false, true, null]],
         341 => [[['_route' => 'get_one_subcategoria_by_idCategoria', '_controller' => 'App\\Controller\\SubcategoriasController::getByCat'], ['id'], ['GET' => 0], null, false, true, null]],
-        366 => [
+        369 => [
             [['_route' => 'get_one_user', '_controller' => 'App\\Controller\\UserController::get'], ['id'], ['GET' => 0], null, false, true, null],
             [['_route' => 'update_user', '_controller' => 'App\\Controller\\UserController::update'], ['id'], ['PUT' => 0], null, false, true, null],
             [['_route' => 'delete_user', '_controller' => 'App\\Controller\\UserController::delete'], ['id'], ['DELETE' => 0], null, false, true, null],
+        ],
+        392 => [
+            [['_route' => 'get_one_user_by_email', '_controller' => 'App\\Controller\\UserController::getByEmail'], ['email'], ['GET' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],
