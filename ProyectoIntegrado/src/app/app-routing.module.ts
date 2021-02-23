@@ -35,7 +35,7 @@ const routes: Routes = [
   { path: 'vendedor/:id', component: VendedorComponent },
   { path: 'editarPerfil', component: EditarPerfilComponent },
   { path: 'editarEmpresa', component: EditarEmpresaComponent },
-  { path: 'mensaje-nuevo', component: EnvioMensajeComponent },
+  { path: 'mensajeNuevo', component: EnvioMensajeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'categorias', component: CategoriasComponent },
   { path: 'subcategorias/:id', component: SubcategoriasComponent },
