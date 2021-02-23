@@ -1,0 +1,39 @@
+button {
+  background-color: #364C59;
+  color: #BFBFBF;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+form {
+  background-color: #61788C;
+  padding: 1em;
+  border-radius: 1%;
+}
+
+.container {
+  padding: 16px;
+}
+
+.espacio {
+  height: 4rem;
+}
+
+#edit {
+  align-content: center;
+}
+
+.datosDeEmpresa {
+  text-align: center;
+  background-color: #364C59;
+  border-radius: 5px;
+}
+
+.datosDeEmpresa>a {
+  text-decoration: none;
+  color: #BFBFBF;
+}
+

@@ -1,0 +1,29 @@
+.photo-profile-user {
+    width: 3.5em;
+    height: 3.5em;
+}
+
+.icon-search {
+    width: 2em;
+    height: 2em;
+}
+
+.btn-new-message {
+    margin-top: -0.4em;
+}
+
+.box-message {
+    height: 700px;
+}
+
+.box-profile-user {
+    height: 100px;
+}
+
+.box-contacts {
+    margin-top: -38em;
+}
+
+.mano:hover{
+    cursor: pointer;
+}

@@ -1,0 +1,19 @@
+<!-- Events subcategories -->
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12 col-xs-12 col-md-6 col-md-6 col-lg-4 col-xl-4" *ngFor="let subcategoria of subcategorias">
+            <a class="btn-events" routerLink="/productos/{{subcategoria.id}}">
+                <div class="card border-light bg-secondary text-white events-subcategories mt-2 mr-2">
+                    <div class="altura_minima">
+                        <img class="card-img-top"
+                            src="https://rowlend.s3.eu-west-3.amazonaws.com/{{subcategoria.nombre}}1.jpg"
+                            alt="{{subcategoria.nombreVisible}}">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{subcategoria.nombreVisible}}</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

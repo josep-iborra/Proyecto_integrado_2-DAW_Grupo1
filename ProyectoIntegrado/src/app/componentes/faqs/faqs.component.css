@@ -1,0 +1,17 @@
+p{
+    color: blue;
+    margin-top: 18px;
+}
+
+button{
+    border-radius: 10px;
+    border: 0px;
+    background-color: #364C59;
+    color: #BFBFBF;
+    padding: 10px;
+    
+}
+
+button:hover{
+    opacity: 0.8;
+}

@@ -1,0 +1,32 @@
+button {
+    background-color: #364C59;
+    color: #BFBFBF;
+    padding: 14px 20px;
+    margin: 8px 0px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.register-form1 {
+    border-radius: 1%;
+    margin: 1% 0%;
+}
+
+form {
+    background-color: #61788C;
+}
+
+.form-group {
+    display: flex;
+    align-content: center;
+}
+
+input, select {
+    background-color: #BFBFBF;
+    border: #8C8C8C;
+}
+
+.container {
+    padding: 16px;
+}

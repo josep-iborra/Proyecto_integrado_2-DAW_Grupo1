@@ -1,0 +1,61 @@
+/* Header */
+
+.header {
+    background-color: #364C59;
+    padding: 0.75em;
+}
+
+.nav-link {
+    color: #8C8C8C;
+}
+
+.logo-header {
+    width: 65px;
+    margin-left: 1em;
+}
+
+
+.size-menu-text {
+    font-size: 18px;
+}
+
+.btn-user {
+    background-color: transparent;
+    border: 0;
+}
+
+.icon-user {
+    font-size: 35px;
+    color: #8C8C8C;
+}
+
+/*  Footer */
+footer{
+    background-color: #BFBFBF;
+}
+
+
+li{
+    list-style:none;
+}
+
+.espacio{
+    height: 2rem;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: row;
+}
+
+.dropdown-toggle::after {
+    display:none;
+}
+
+.about-us, .contact, .publicate, .policy-privacy, .policy-cookies, .faqs {
+    color: #0D0D0D;
+}
+
+.icon-facebook, .icon-twitter, .icon-linkedin, .icon-instagram {
+    color: #0D0D0D;
+}

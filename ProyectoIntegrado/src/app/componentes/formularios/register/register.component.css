@@ -1,0 +1,43 @@
+button {
+  background-color: #364C59;
+  color: #BFBFBF;
+  padding: 14px 20px;
+  margin: 8px 0px;
+  border: none;
+  cursor: pointer;
+  width: 30%;
+}
+
+.register-form1 {
+  border-radius: 1.5%;
+  margin: 1% 0%;
+}
+
+form {
+  background-color: #61788C;
+  padding-top: 0.0625em;
+}
+
+.form-group {
+  display: flex;
+  align-content: center;
+}
+
+.container {
+  padding: 16px;
+}
+
+.input-group {
+  margin: 0 0 1em 0;
+  width: 100%;
+}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  display: inline-block;
+  border: 1px solid #8C8C8C;
+  box-sizing: border-box;
+  background-color: #BFBFBF;
+}
+

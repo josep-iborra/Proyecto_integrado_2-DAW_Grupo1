@@ -1,0 +1,120 @@
+<ng-template #content let-modal>
+    <div class="modal-title ">
+        <button class="close mt-2 mr-2" aria-label="close" type="button" (click)="modal.dismiss()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <app-envio-mensaje class="new-message"></app-envio-mensaje>
+    </div>
+</ng-template>
+
+<!-- Perfil Vendedor -->
+<div class="container-fluid data-profile col-sm-12">
+    <div class="row">
+        <div class="col-12 col-xs-12 col-sm-6 col-md-6 col-lg-10 col-xl-10 mt-3 mb-3 data-service">
+            <div class="container justify-content-center mt-3">
+                <div class="row">
+                    <div class="col-12 col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+                        <!-- <img src="../../../assets/img/servicies/" alt=""> -->
+                        <img class="profile-photo-seller" src="../../../assets/img/RowLend.png"
+                            alt="Foto perfil vendedor">
+                    </div>
+                    <div class="col-12 col-xs-12 col-sm-6 col-md-6 col-lg-9 col-xl-9 box-seller">
+                        <h2 class="seller-name">{{vendedor.nombre}}</h2>
+                        <p class="font-weight-light">{{empresa.descripcion}}
+                        </p>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class='container mt-4'>
+
+                        <div class="carr">
+                            <div class='col-12'>
+                                <ngb-carousel class="carrousel">
+                                    <ng-template ngbSlide>
+                                        <img src="https://rowlend.s3.eu-west-3.amazonaws.com/slider1.jpg" alt=""
+                                            class="img1">
+                                        <div class="carousel-caption">
+                                            <h3 style="color: yellow"></h3>
+                                        </div>
+                                    </ng-template>
+                                    <ng-template ngbSlide>
+                                        <img src="https://rowlend.s3.eu-west-3.amazonaws.com/slider2.jpg" alt=""
+                                            class="img2">
+                                        <div class="carousel-caption">
+                                            <h3 style="color: yellow"></h3>
+                                        </div>
+                                    </ng-template>
+                                    <ng-template ngbSlide>
+                                        <img src="https://rowlend.s3.eu-west-3.amazonaws.com/slider3.jpg" alt=""
+                                            class="img3">
+                                        <div class="carousel-caption">
+                                            <h3 style="color: yellow"></h3>
+                                        </div>
+                                    </ng-template>
+                                </ngb-carousel>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-6 col-md-4 col-lg-2 col-xl-2 bg-light mt-3 contact-service">
+            <div class="container mt-4">
+                <div class="row justify-content-center mb-2">
+                    <div class="col-12 col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                        <h4 class="info-contact">Información</h4>
+                    </div>
+                </div>
+                <div class="row justify-content-center mb-2">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-12 col-xs-12 col-sm-6 col-md-6 col-lg-1 col-xl-1">
+                                <img class="mt-1 icon-phone" src="../../../assets/img/icons/phone.png"
+                                    alt="Icono teléfono">
+                            </div>
+                            <div class="col-12 col-xs-12 col-sm-6 col-md-6 col-lg-8 col-xl-8">
+                                <p class="ml-1 number-phone ">{{vendedor.telefono}}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row justify-content-center mb-2">
+                    <div class="container ">
+                        <div class="row justify-content-center">
+                            <div class="col-12 col-xs-12 col-sm-6 col-md-6 col-lg-1 col-xl-1">
+                                <img class="mt-1 icon-mail" src="../../../assets/img/icons/mail.png" alt="Icono email">
+                            </div>
+                            <div class="col-12 col-xs-12 col-sm-6 col-md-6 col-lg-8 col-xl-8">
+                                <p class="ml-1 email-address">{{vendedor.email}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center mb-2">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-12 col-xs-12 col-sm-6 col-md-6 col-lg-1 col-xl-1">
+                                <img class="mt-1 icon-location" src="../../../assets/img/icons/location.png"
+                                    alt="Icono localización">
+                            </div>
+                            <div class="col-12 col-xs-12 col-sm-6 col-md-6 col-lg-8 col-xl-8 mt-2">
+                                <p class="ml-1 location-cities">{{empresa.localidad}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center mb-2">
+                    <div class="col-12 col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                        <button class="bg-dark border border-0 text-white send-message rounded-lg" type="button" (click)="open(content)">Envíar
+                            mensaje</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<app-reviews></app-reviews>
+</div>
+<div class="espacio"></div>

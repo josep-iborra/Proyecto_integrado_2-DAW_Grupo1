@@ -1,0 +1,35 @@
+.profile-photo-seller {
+    width: 12.5em;
+    height: 12.5em;
+    margin-top: 0.5em;
+    margin-left: 0.5em;
+}
+
+.icon-phone {
+    width: 1.359em;
+    height: 1.375em;
+}
+
+.icon-mail {
+    width: 1.328em;
+    height: 1.375em;
+}
+
+.icon-location {
+    width: 1.473em;
+    height: 1.758em;
+}
+
+.location-cities {
+    line-height: 0.5;
+}
+
+.photo-profile-user {
+    width: 2.5em;
+    height: 2.5em;
+}
+
+.carousel img {
+    width: 100%;
+    max-height: 500px;
+}

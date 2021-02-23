@@ -1,0 +1,57 @@
+<div class="container my-auto">
+    <div class="signin-form-container  ">
+         <form role="form" id="login-formp" autocomplete="off" class="login-form1 aling-item-center">
+              <div class="form-body">
+                   <div class="row justify-content-center mt-5">
+                        <div class="col-md-5">
+                             <form id="login-form" [formGroup]="userForm" (ngSubmit)="onSubmit()">
+                                  <div class="form-header ">
+                                       <h3 class="form-title"><i class="fa fa-user"></i> Iniciar sesión</h3>
+                                       <div class="pull-right">
+                                            <h3 class="form-title"><span class="glyphicon glyphicon-pencil"></span>
+                                            </h3>
+                                       </div>
+                                  </div>
+
+                                  <div class="form-group">
+                                       <div class="input-group">
+                                            <div class="input-group-addon"><span
+                                                      class="glyphicon glyphicon-envelope"></span></div>
+                                            <label>Email:</label>
+                                            <input class="form-control" type="text" formControlName="email"
+                                                 placeholder="" required>
+                                       </div>
+                                       <span class="help-block" id="error"></span>
+                                  </div>
+
+                                  <div class="form-group">
+                                       <div class="input-group">
+                                            <div class="input-group-addon"><span
+                                                      class="glyphicon glyphicon-lock"></span>
+                                            </div>
+                                            <label>Password:</label>
+                                            <input class="form-control" type="text" formControlName="password"
+                                                 placeholder="" required>
+                                       </div>
+                                       <span class="help-block" id="error"></span>
+                                  </div>
+                                  <div class="form-footer text-center">
+                                       <button type="submit" class="btn btn-info">
+                                            <span class="glyphicon glyphicon-log-in"></span> Login
+                                       </button>
+                                  </div>
+                             </form>
+                        </div>
+                   </div>
+              </div>
+
+
+         </form>
+
+    </div>
+
+</div>
+
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/jquery-1.11.2.min.js"></script>
+<script src="assets/jquery.validate.min.js"></script>

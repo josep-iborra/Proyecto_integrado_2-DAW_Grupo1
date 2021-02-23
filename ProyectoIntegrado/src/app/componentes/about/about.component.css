@@ -1,0 +1,10 @@
+.fotoequipo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+img{
+    width: 750px;
+    height: 450px;
+}
+

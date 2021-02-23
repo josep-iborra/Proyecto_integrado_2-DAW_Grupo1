@@ -1,0 +1,73 @@
+.contact {
+  padding-bottom: 130px;
+}
+
+.contact .info h4 {
+  padding: 0 0 0 60px;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #050d18;
+}
+
+.contact .info p {
+  padding: 0 0 10px 60px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #173b6c;
+}
+
+.contact input {
+  height: 44px;
+  background-color: #BFBFBF;
+  border: 1px solid #8C8C8C;
+}
+
+.contact textarea {
+  padding: 10px 15px;
+  background-color: #BFBFBF;
+  border: 1px solid #8C8C8C;
+}
+
+.contact .form-auth input, .contact .form-auth textarea {
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 14px;
+}
+
+.contact .form-group {
+  margin-bottom: 15px;
+}
+
+.contact label {
+  padding-bottom: 8px;
+}
+
+.contact .form-auth {
+  width: 100%;
+  padding: 30px;
+  background-color: #61788C;
+  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+}
+
+.contact .form-auth .form-group {
+  padding-bottom: 8px;
+}
+
+.contact .form-auth .form-group {
+  margin-bottom: 15px;
+}
+
+.contact .form-auth label {
+  padding-bottom: 8px;
+}
+
+button {
+  background-color: #364C59;
+  color: #BFBFBF;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 35%;
+}
