@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, NgZone } from '@angular/core';
+import { Router } from '@angular/router';
 import { EmpresaService } from 'src/app/servicios/empresa.service';
 import { UsuarioService } from 'src/app/servicios/usuario.service';
 import { ActivatedRoute } from '@angular/router';
@@ -22,8 +22,13 @@ export class VendedorComponent implements OnInit {
     private usuariosService: UsuarioService,
     private empresaService: EmpresaService,
     private activatedRoute: ActivatedRoute,
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    private ngzone: NgZone,
+    private router: Router
   ) {
+    if (localStorage.getItem('user') == undefined) {
+      this.ngzone.run(() => this.router.navigateByUrl('/aviso'));
+    }
     this.getId = this.activatedRoute.snapshot.paramMap.get('id');
     this.empresaService.GetEmpresaByUserId(this.getId).subscribe(res => { console.log('::'); console.log(res); this.empresa = res; });
     this.usuariosService.GetUser(this.getId).subscribe(res => { console.log('::'); console.log(res); this.vendedor = res; });
