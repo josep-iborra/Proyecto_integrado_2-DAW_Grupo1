@@ -36,23 +36,26 @@ return [
                         .'|User/([^/]++)(*:123)'
                         .'|Cat/([^/]++)(*:143)'
                     .')'
-                    .'|mensaje/([^/]++)(?'
-                        .'|(*:171)'
+                    .'|mensaje(?'
+                        .'|/([^/]++)(?'
+                            .'|(*:174)'
+                        .')'
+                        .'|ByReceptor/([^/]++)(*:202)'
                     .')'
                     .'|product/([^/]++)(?'
-                        .'|(*:199)'
-                        .'|(*:207)'
+                        .'|(*:230)'
+                        .'|(*:238)'
                     .')'
                     .'|resena(?'
-                        .'|/([^/]++)(*:234)'
-                        .'|Vendedor/([^/]++)(*:259)'
+                        .'|/([^/]++)(*:265)'
+                        .'|Vendedor/([^/]++)(*:290)'
                     .')'
                     .'|subcategoria(?'
-                        .'|/([^/]++)(*:292)'
-                        .'|s/([^/]++)(*:310)'
+                        .'|/([^/]++)(*:323)'
+                        .'|s/([^/]++)(*:341)'
                     .')'
                     .'|user/([^/]++)(?'
-                        .'|(*:335)'
+                        .'|(*:366)'
                     .')'
                 .')'
             .')/?$}sDu',
@@ -71,22 +74,23 @@ return [
         ],
         123 => [[['_route' => 'get_one_empresa_by_userId', '_controller' => 'App\\Controller\\EmpresaController::getByUID'], ['id'], ['GET' => 0], null, false, true, null]],
         143 => [[['_route' => 'get_empresa_by_categoria', '_controller' => 'App\\Controller\\EmpresaController::getByCat'], ['id'], ['GET' => 0], null, false, true, null]],
-        171 => [
+        174 => [
             [['_route' => 'get_one_mensaje', '_controller' => 'App\\Controller\\MensajesController::get'], ['id'], ['GET' => 0], null, false, true, null],
             [['_route' => 'update_mensaje', '_controller' => 'App\\Controller\\MensajesController::update'], ['id'], ['PUT' => 0], null, false, true, null],
             [['_route' => 'delete_mensaje', '_controller' => 'App\\Controller\\MensajesController::delete'], ['id'], ['DELETE' => 0], null, false, true, null],
         ],
-        199 => [
+        202 => [[['_route' => 'get_mensajes', '_controller' => 'App\\Controller\\MensajesController::getByIdReceptor'], ['id'], ['GET' => 0], null, false, true, null]],
+        230 => [
             [['_route' => 'get_one_product', '_controller' => 'App\\Controller\\ProductosController::get'], ['id'], ['GET' => 0], null, false, true, null],
             [['_route' => 'update_product', '_controller' => 'App\\Controller\\ProductosController::update'], ['id'], ['PUT' => 0], null, false, true, null],
             [['_route' => 'delete_product', '_controller' => 'App\\Controller\\ProductosController::delete'], ['id'], ['DELETE' => 0], null, false, true, null],
         ],
-        207 => [[['_route' => 'get_msg_between_contacts', '_controller' => 'App\\Controller\\ProductosController::getByCategoria'], ['categoria'], ['GET' => 0], null, false, true, null]],
-        234 => [[['_route' => 'get_one_resena', '_controller' => 'App\\Controller\\ResenaController::get'], ['id'], ['GET' => 0], null, false, true, null]],
-        259 => [[['_route' => 'get_all_resenas', '_controller' => 'App\\Controller\\ResenaController::getByVendedor'], ['id'], ['GET' => 0], null, false, true, null]],
-        292 => [[['_route' => 'get_one_subcategoria', '_controller' => 'App\\Controller\\SubcategoriasController::get'], ['id'], ['GET' => 0], null, false, true, null]],
-        310 => [[['_route' => 'get_one_subcategoria_by_idCategoria', '_controller' => 'App\\Controller\\SubcategoriasController::getByCat'], ['id'], ['GET' => 0], null, false, true, null]],
-        335 => [
+        238 => [[['_route' => 'get_msg_between_contacts', '_controller' => 'App\\Controller\\ProductosController::getByCategoria'], ['categoria'], ['GET' => 0], null, false, true, null]],
+        265 => [[['_route' => 'get_one_resena', '_controller' => 'App\\Controller\\ResenaController::get'], ['id'], ['GET' => 0], null, false, true, null]],
+        290 => [[['_route' => 'get_all_resenas', '_controller' => 'App\\Controller\\ResenaController::getByVendedor'], ['id'], ['GET' => 0], null, false, true, null]],
+        323 => [[['_route' => 'get_one_subcategoria', '_controller' => 'App\\Controller\\SubcategoriasController::get'], ['id'], ['GET' => 0], null, false, true, null]],
+        341 => [[['_route' => 'get_one_subcategoria_by_idCategoria', '_controller' => 'App\\Controller\\SubcategoriasController::getByCat'], ['id'], ['GET' => 0], null, false, true, null]],
+        366 => [
             [['_route' => 'get_one_user', '_controller' => 'App\\Controller\\UserController::get'], ['id'], ['GET' => 0], null, false, true, null],
             [['_route' => 'update_user', '_controller' => 'App\\Controller\\UserController::update'], ['id'], ['PUT' => 0], null, false, true, null],
             [['_route' => 'delete_user', '_controller' => 'App\\Controller\\UserController::delete'], ['id'], ['DELETE' => 0], null, false, true, null],

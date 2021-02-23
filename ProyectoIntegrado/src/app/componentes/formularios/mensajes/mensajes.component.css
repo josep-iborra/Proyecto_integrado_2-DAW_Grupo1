@@ -24,3 +24,6 @@
     margin-top: -38em;
 }
 
+.mano:hover{
+    cursor: pointer;
+}

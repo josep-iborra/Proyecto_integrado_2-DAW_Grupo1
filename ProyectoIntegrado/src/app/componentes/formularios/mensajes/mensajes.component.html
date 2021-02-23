@@ -15,7 +15,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-xs-12 col-sm-6 col-md-4 col-lg-2 col-xl-2 p-3 mr-2 ml-2 mt-1">
-                     <!--    <img class="photo-profile-user" src="../../../../assets/img/RowLend.png"
+                        <!--    <img class="photo-profile-user" src="../../../../assets/img/RowLend.png"
                             alt="Foto perfil usuario"> -->
                     </div>
                     <div class="col-12 col-xs-12 col-sm-6 col-md-4 col-lg-2 col-xl-2 p-3 mt-3 ml-3">
@@ -24,7 +24,7 @@
                     </div>
                     <div class="col-12 col-xs-12 col-sm-6 col-md-4 col-lg-6 col-xl-6 p-3 mt-3 ml-3">
                         <button class="bg-white border-0 p-2 rounded-lg btn-new-message" type="button"
-                            (click)="open(content)">Mensaje nuevo</button>
+                            (click)="escribirMsg()">Mensaje nuevo</button>
                     </div>
                 </div>
             </div>
@@ -51,26 +51,26 @@
                 <button type="submit" class="btn btn-primary">Envíar</button>
             </form> -->
             <div class="container mt-4">
-                <div class="row justify-content-center">
+                <div class="row justify-content-center"
+                    *ngFor="let usuario of sender; let i = index; let mensaje of mensajes" id="msg{{i}}"
+                    style="display: none;">
                     <div
                         class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 bg-secondary h-100 rounded-lg p-2">
-                        <h4 class="mt-3 ml-3 text-white">Nombre usuario</h4>
-                        <h5 class="mt-3 ml-3 text-white">Asunto</h5>
-                        <p class="mt-3 ml-3 text-light font-weight-light">Lorem ipsum, dolor sit amet consectetur
-                            adipisicing elit. Eaque ipsa quas fuga exercitationem in? Itaque a iusto fugit debitis
-                            laboriosam possimus dolorum corrupti maxime consequatur repudiandae nisi, nam deserunt
-                            quibusdam?</p>
+                        <h4 class="mt-3 ml-3 text-white">{{usuario.nombre}}</h4>
+                        <h5 class="mt-3 ml-3 text-white">{{mensaje.asunto}}</h5>
+                        <p class="mt-3 ml-3 text-light font-weight-light">{{mensaje.mensaje}}</p>
                     </div>
-                    <button class="bg-dark text-white border-0 rounded-lg mt-2 p-2 ">Responder</button>
+                    <button class="bg-dark text-white border-0 rounded-lg mt-2 p-2"
+                        (click)="open(content)">Responder</button>
                 </div>
-                <div class="row justify-content-center mt-3">
+                <div class="row justify-content-center mt-3" id="nuevo" style="display: none;">
                     <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 h-100 rounded-lg p-2">
                         <form>
                             <div class="form-group">
                                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="7"></textarea>
                             </div>
                             <button type="submit" class="btn btn-dark text-white">Envíar</button>
-                            <button type="button" class="btn btn-danger ml-2">Descartar</button>
+                            <button type="reset" class="btn btn-danger ml-2" (click)="descartar()">Descartar</button>
                         </form>
                     </div>
                 </div>
@@ -79,104 +79,13 @@
     </div>
     <div class="row">
         <div class="col-12 col-xs-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 bg-secondary box-contacts">
-            <!-- Contact 1 -->
-            <div class="row border-bottom border-light">
+            <div class="row border-bottom border-light mano" *ngFor="let usuario of sender; let i = index"
+                (click)="mostrarMsg(i)">
                 <div class="col-12 col-xs-12 col-sm-6 col-md-4 col-lg-2 col-xl-2 p-3 ml-4">
-                    <img class="photo-profile-user" src="../../../../assets/img/RowLend.png"
-                        alt="Foto perfil usuario 1">
+                    <img class="photo-profile-user" src="../../../../assets/img/RowLend.png" alt="Foto perfil usuario">
                 </div>
                 <div class="col-12 col-xs-12 col-sm-6 col-md-4 col-lg-8 col-xl-8 p-3 mt-3 ml-3">
-                    <h5>Nombre contacto 1</h5>
-                </div>
-            </div>
-            <!-- Contact 2 -->
-            <div class="row border-bottom border-light">
-                <div class="col-12 col-xs-12 col-sm-6 col-md-4 col-lg-2 col-xl-2 p-3 ml-4">
-                    <img class="photo-profile-user" src="../../../../assets/img/RowLend.png"
-                        alt="Foto perfil usuario 1">
-                </div>
-                <div class="col-12 col-xs-12 col-sm-6 col-md-4 col-lg-8 col-xl-8 p-3 mt-3 ml-3">
-                    <h5>Nombre contacto 2</h5>
-                </div>
-            </div>
-            <!-- Contact 3 -->
-            <div class="row border-bottom border-light">
-                <div class="col-12 col-xs-12 col-sm-6 col-md-4 col-lg-2 col-xl-2 p-3 ml-4">
-                    <img class="photo-profile-user" src="../../../../assets/img/RowLend.png"
-                        alt="Foto perfil usuario 1">
-                </div>
-                <div class="col-12 col-xs-12 col-sm-6 col-md-4 col-lg-8 col-xl-8 p-3 mt-3 ml-3">
-                    <h5>Nombre contacto 3</h5>
-                </div>
-            </div>
-            <!-- Contact 4 -->
-            <div class="row border-bottom border-light">
-                <div class="col-12 col-xs-12 col-sm-6 col-md-4 col-lg-2 col-xl-2 p-3 ml-4">
-                    <img class="photo-profile-user" src="../../../../assets/img/RowLend.png"
-                        alt="Foto perfil usuario 1">
-                </div>
-                <div class="col-12 col-xs-12 col-sm-6 col-md-4 col-lg-8 col-xl-8 p-3 mt-3 ml-3">
-                    <h5>Nombre contacto 4</h5>
-                </div>
-            </div>
-            <!-- Contact 5 -->
-            <div class="row border-bottom border-light">
-                <div class="col-12 col-xs-12 col-sm-6 col-md-4 col-lg-2 col-xl-2 p-3 ml-4">
-                    <img class="photo-profile-user" src="../../../../assets/img/RowLend.png"
-                        alt="Foto perfil usuario 1">
-                </div>
-                <div class="col-12 col-xs-12 col-sm-6 col-md-4 col-lg-8 col-xl-8 p-3 mt-3 ml-3">
-                    <h5>Nombre contacto 5</h5>
-                </div>
-            </div>
-            <!-- Contact 6 -->
-            <div class="row border-bottom border-light">
-                <div class="col-12 col-xs-12 col-sm-6 col-md-4 col-lg-2 col-xl-2 p-3 ml-4">
-                    <img class="photo-profile-user" src="../../../../assets/img/RowLend.png"
-                        alt="Foto perfil usuario 1">
-                </div>
-                <div class="col-12 col-xs-12 col-sm-6 col-md-4 col-lg-8 col-xl-8 p-3 mt-3 ml-3">
-                    <h5>Nombre contacto 6</h5>
-                </div>
-            </div>
-            <!-- Contact 7 -->
-            <div class="row border-bottom border-light">
-                <div class="col-12 col-xs-12 col-sm-6 col-md-4 col-lg-2 col-xl-2 p-3 ml-4">
-                    <img class="photo-profile-user" src="../../../../assets/img/RowLend.png"
-                        alt="Foto perfil usuario 1">
-                </div>
-                <div class="col-12 col-xs-12 col-sm-6 col-md-4 col-lg-8 col-xl-8 p-3 mt-3 ml-3">
-                    <h5>Nombre contacto 7</h5>
-                </div>
-            </div>
-            <!-- Contact 8 -->
-            <div class="row border-bottom border-light">
-                <div class="col-12 col-xs-12 col-sm-6 col-md-4 col-lg-2 col-xl-2 p-3 ml-4">
-                    <img class="photo-profile-user" src="../../../../assets/img/RowLend.png"
-                        alt="Foto perfil usuario 1">
-                </div>
-                <div class="col-12 col-xs-12 col-sm-6 col-md-4 col-lg-8 col-xl-8 p-3 mt-3 ml-3">
-                    <h5>Nombre contacto 8</h5>
-                </div>
-            </div>
-            <!-- Contact 9 -->
-            <div class="row border-bottom border-light">
-                <div class="col-12 col-xs-12 col-sm-6 col-md-4 col-lg-2 col-xl-2 p-3 ml-4">
-                    <img class="photo-profile-user" src="../../../../assets/img/RowLend.png"
-                        alt="Foto perfil usuario 1">
-                </div>
-                <div class="col-12 col-xs-12 col-sm-6 col-md-4 col-lg-8 col-xl-8 p-3 mt-3 ml-3">
-                    <h5>Nombre contacto 9</h5>
-                </div>
-            </div>
-            <!-- Contact 10 -->
-            <div class="row">
-                <div class="col-12 col-xs-12 col-sm-6 col-md-4 col-lg-2 col-xl-2 p-3 ml-4">
-                    <img class="photo-profile-user" src="../../../../assets/img/RowLend.png"
-                        alt="Foto perfil usuario 1">
-                </div>
-                <div class="col-12 col-xs-12 col-sm-6 col-md-4 col-lg-8 col-xl-8 p-3 mt-3 ml-3">
-                    <h5>Nombre contacto 10</h5>
+                    <h5>{{usuario.nombre}}</h5>
                 </div>
             </div>
         </div>
