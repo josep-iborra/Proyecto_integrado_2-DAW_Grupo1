@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-02-2021 a las 22:06:56
--- Versión del servidor: 10.4.11-MariaDB
--- Versión de PHP: 7.4.5
+-- Tiempo de generación: 23-02-2021 a las 21:15:34
+-- Versión del servidor: 10.4.17-MariaDB
+-- Versión de PHP: 7.4.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -98,7 +98,10 @@ CREATE TABLE `empresa` (
 --
 
 INSERT INTO `empresa` (`ID`, `Nombre`, `categoria`, `localidad`, `codigo_postal`, `descripcion`, `id_usuario`, `subcategoria`) VALUES
-(1, 'test', 2, 'pingoland', '46910', 'A', 2, 7);
+(1, 'test', 2, 'pingoland', '46910', 'A', 2, 7),
+(2, 'David', 3, 'Valencia', '46001', '', 2, 9),
+(3, 'Luis', 2, 'Valencia', '46009', '', 2, 2),
+(5, 'Miguel', 2, 'Valencia', '46008', '', 2, 6);
 
 -- --------------------------------------------------------
 
@@ -114,6 +117,13 @@ CREATE TABLE `mensajes` (
   `IDEmisor` int(100) NOT NULL,
   `IDReceptor` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `mensajes`
+--
+
+INSERT INTO `mensajes` (`ID`, `asunto`, `mensaje`, `fecha`, `IDEmisor`, `IDReceptor`) VALUES
+(1, '1234', 'Hola esto es una prueba', '2021-02-23 00:00:00', 3, 3);
 
 -- --------------------------------------------------------
 
@@ -238,7 +248,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `email`, `roles`, `password`, `apellidos`, `telefono`, `id_empresa`, `api_token`, `nombre`) VALUES
 (1, 'peop@gmail.com', '[]', '$2y$10$0loUoyCLNuWJguxmzrjLROr0w5NRp8HUAwLw/rpZ0rKfEbDyISLwO', 'poep', '6546546545', NULL, NULL, 'peop'),
-(2, 'a@a.a', '[]', '$2y$10$TjbuuCvMNmCTBeQ0zcbqyuGwDKdcU8rKNyt8x15iMHgcAxjlBgzUy', 'TL', '123456789', NULL, NULL, 'Borja');
+(2, 'a@a.a', '[]', '$2y$10$TjbuuCvMNmCTBeQ0zcbqyuGwDKdcU8rKNyt8x15iMHgcAxjlBgzUy', 'TL', '123456789', NULL, NULL, 'Borja'),
+(3, 'pnicolas@gmail.com', '[]', '$2y$10$snXIUKYoTZYx1nvpStYxyevwyIBEJ4OhHb0.FeHl2zfDgJBW7vnkW', 'Nicolas', '963 21 75 82', NULL, NULL, 'Pau');
 
 --
 -- Índices para tablas volcadas
@@ -310,13 +321,13 @@ ALTER TABLE `categorias`
 -- AUTO_INCREMENT de la tabla `empresa`
 --
 ALTER TABLE `empresa`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `mensajes`
 --
 ALTER TABLE `mensajes`
-  MODIFY `ID` int(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`
@@ -334,7 +345,7 @@ ALTER TABLE `subcategorias`
 -- AUTO_INCREMENT de la tabla `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restricciones para tablas volcadas
