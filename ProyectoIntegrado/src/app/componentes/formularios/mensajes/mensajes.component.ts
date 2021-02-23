@@ -49,6 +49,10 @@ export class MensajesComponent implements OnInit {
         mensaje: ['']
       });
     });
+
+    if (localStorage.getItem('user') == undefined) {
+      this.ngZone.run(() => this.router.navigateByUrl('/aviso'));
+    }
   }
 
   mostrarMsg(id: any) {

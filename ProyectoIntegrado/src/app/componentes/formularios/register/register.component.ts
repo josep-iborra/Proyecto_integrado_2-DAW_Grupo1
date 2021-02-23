@@ -24,6 +24,9 @@ export class RegisterComponent implements OnInit {
       email: [''],
       password: ['']
     })
+    if (localStorage.getItem('user') == undefined) {
+      this.ngZone.run(() => this.router.navigateByUrl('/aviso'));
+    }
   }
 
   ngOnInit() { }

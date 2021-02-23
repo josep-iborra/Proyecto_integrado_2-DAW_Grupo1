@@ -37,6 +37,10 @@ export class EditarPerfilComponent implements OnInit {
       password: [''],
       telefono: ['']
     });
+
+    if (localStorage.getItem('user') == undefined) {
+      this.ngZone.run(() => this.router.navigateByUrl('/aviso'));
+    }
   }
 
   ngOnInit(): void {
