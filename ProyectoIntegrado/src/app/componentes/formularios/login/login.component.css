@@ -1,34 +1,39 @@
 button {
-    background-color: #264470              ;
-    color:white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-  }
-  input[type=text], input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-  }
-  form {
-    border: 1px solid #14181b;
-    background-color:#acaba8;
-    padding: 1em;
-    border-radius: 1%;
-  }
-  .container {
-    padding: 16px;
-  }
-
-  .espacio{
-    height: 4rem;
+  background-color: #364C59;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
 }
-.login-form1{
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #8C8C8C;
+  box-sizing: border-box;
+  background-color: #BFBFBF;
+}
+
+
+form {
+  background-color: #61788C;
+  padding: 1em;
+  border-radius: 2.5%;
+}
+
+.container {
+  padding: 16px;
+}
+
+.espacio {
+  height: 4rem;
+}
+
+.login-form1 {
   background-color: white;
   border: none;
 }
