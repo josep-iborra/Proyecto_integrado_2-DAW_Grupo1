@@ -1,47 +1,51 @@
 <section id="contact" class="contact">
-    <div class="container">
-      <div class="section-title">
-        <h2 >Contacto</h2>
-        <p > Si prefiere mandarnos su consulta por escrito, rellene el siguiente formulario y recibira la respuesta en su e-mail con la mayor brevedad posible:  </p>
-      </div>
-<div class="row" data-aos="fade-in">
-  <div class="col-lg-5 d-flex align-items-stretch">
-    <div class="info">
-      <div class="telefono">
-        <i class="telefono"></i>
-        <h4>Telefono:</h4>
-        <p>695231478</p>
-      </div>
+  <div class="container mt-4">
+    <div class="section-title">
+      <h2>Contacto</h2>
+      <p> Si prefiere mandarnos su consulta por escrito, rellene el siguiente formulario y recibira la respuesta en su
+        e-mail con la mayor brevedad posible: </p>
+    </div>
+    <div class="row" data-aos="fade-in">
+      <div class="col-lg-5 d-flex align-items-stretch">
+        <div class="info">
+          <div class="telefono">
+            <i class="telefono"></i>
+            <h4>Telefono:</h4>
+            <p>695231478</p>
+          </div>
 
-      <div class="email">
-        <i class="email1"></i>
-        <h4 >Email:</h4>
-        <p>info@example.com</p>
+          <div class="email">
+            <i class="email1"></i>
+            <h4>Email:</h4>
+            <p>info@example.com</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch col-sm-12">
+        <form method="post" role="form" class="form-auth">
+          <div class="row">
+            <div class="form-group col-md-12">
+              <label for="name">Email</label>
+              <input type="email" class="form-control" name="email" id="email" data-rule="email"
+                data-msg="Introduce un email" />
+              <div class="validador"></div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="name">Asunto</label>
+            <input type="text" class="form-control" name="subject" id="subject" data-rule="minlen:4"
+              data-msg="Please enter at least 8 chars of subject" />
+            <div class="validador"></div>
+          </div>
+          <div class="form-group">
+            <label for="name">Mensaje</label>
+            <textarea class="form-control" name="message" rows="10" data-rule="required"
+              data-msg="Please write something for us"></textarea>
+            <div class="validador"></div>
+          </div>
+          <div class="text-center"><button type="submit">Send Message</button></div>
+        </form>
       </div>
     </div>
   </div>
-<div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch col-sm-12">
-    <form  method="post" role="form" class="form-auth">
-      <div class="row">
-        <div class="form-group col-md-12">
-          <label for="name">Email</label>
-          <input type="email" class="form-control" name="email" id="email" data-rule="email" data-msg="Introduce un email" />
-          <div class="validador"></div>
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="name">Asunto</label>
-        <input type="text" class="form-control" name="subject" id="subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-        <div class="validador"></div>
-      </div>
-      <div class="form-group">
-        <label for="name">Mensaje</label>
-        <textarea class="form-control" name="message" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
-        <div class="validador"></div>
-      </div>
-      <div class="text-center"><button type="submit">Send Message</button></div>
-    </form>
-  </div>
-</div>
-</div>
 </section>
