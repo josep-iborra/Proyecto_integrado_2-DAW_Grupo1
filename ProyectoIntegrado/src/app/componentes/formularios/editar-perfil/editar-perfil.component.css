@@ -1,6 +1,6 @@
 button {
-  background-color: #264470;
-  color: white;
+  background-color: #364C59;
+  color: #BFBFBF;
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
@@ -9,8 +9,7 @@ button {
 }
 
 form {
-  border: 1px solid #14181b;
-  background-color: #acaba8;
+  background-color: #61788C;
   padding: 1em;
   border-radius: 1%;
 }
@@ -29,11 +28,12 @@ form {
 
 .datosDeEmpresa {
   text-align: center;
-  background-color: #264470;
+  background-color: #364C59;
   border-radius: 5px;
 }
 
 .datosDeEmpresa>a {
   text-decoration: none;
-  color: white;
+  color: #BFBFBF;
 }
+
