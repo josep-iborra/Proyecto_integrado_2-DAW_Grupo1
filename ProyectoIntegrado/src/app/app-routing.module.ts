@@ -8,7 +8,6 @@ import { LoginComponent } from './componentes/formularios/login/login.component'
 import { MensajesComponent } from './componentes/formularios/mensajes/mensajes.component';
 import { RegisterComponent } from './componentes/formularios/register/register.component';
 import { IndexComponent } from './componentes/index/index.component';
-import { PerfilComponent } from './componentes/perfil/perfil.component';
 import { ProductosComponent } from './componentes/productos/productos.component';
 import { VendedorComponent } from './componentes/vendedor/vendedor.component';
 import { EditarEmpresaComponent } from './componentes/formularios/editar-empresa/editar-empresa.component';
@@ -24,7 +23,6 @@ import { AvisoComponent } from './componentes/aviso/aviso.component';
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'index' },
   { path: 'index', component: IndexComponent },
-  { path: 'perfil', component: PerfilComponent },
   { path: 'productos/:id', component: ProductosComponent },
   { path: 'contacto', component: ContactoComponent },
   { path: 'login', component: LoginComponent },

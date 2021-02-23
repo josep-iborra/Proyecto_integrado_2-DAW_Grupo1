@@ -1,7 +1,10 @@
+.fotoequipo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 img{
-    width: 710px;
-    height: 400px;
-    margin-left: 510px;
-
+    width: 750px;
+    height: 450px;
 }
 

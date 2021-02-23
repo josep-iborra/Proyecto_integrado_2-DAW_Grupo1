@@ -6,7 +6,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { IndexComponent } from './componentes/index/index.component';
-import { PerfilComponent } from './componentes/perfil/perfil.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProductosComponent } from './componentes/productos/productos.component';
 import { RegisterComponent } from './componentes/formularios/register/register.component';
@@ -31,7 +30,6 @@ import { AvisoComponent } from './componentes/aviso/aviso.component';
   declarations: [
     AppComponent,
     IndexComponent,
-    PerfilComponent,
     ProductosComponent,
     RegisterComponent,
     MensajesComponent,
