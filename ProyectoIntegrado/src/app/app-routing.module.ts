@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent } from './componentes/about/about.component';
-import { AddServicioComponent } from './componentes/add-servicio/add-servicio.component';
 import { ContactoComponent } from './componentes/formularios/contacto/contacto.component';
 import { EditarPerfilComponent } from './componentes/formularios/editar-perfil/editar-perfil.component';
 import { EnvioMensajeComponent } from './componentes/formularios/envio-mensaje/envio-mensaje.component';
@@ -27,7 +26,6 @@ const routes: Routes = [
   { path: 'index', component: IndexComponent },
   { path: 'perfil', component: PerfilComponent },
   { path: 'productos/:id', component: ProductosComponent },
-  { path: 'crear-servicios', component: AddServicioComponent },
   { path: 'contacto', component: ContactoComponent },
   { path: 'login', component: LoginComponent },
   { path: 'logout', component: LogoutComponent },
