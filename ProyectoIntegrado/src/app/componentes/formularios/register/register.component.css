@@ -1,6 +1,6 @@
 button {
-  background-color: #264470;
-  color: white;
+  background-color: #364C59;
+  color: #BFBFBF;
   padding: 14px 20px;
   margin: 8px 0px;
   border: none;
@@ -9,13 +9,13 @@ button {
 }
 
 .register-form1 {
-  border: 1px solid #14181b;
-  border-radius: 1%;
+  border-radius: 1.5%;
   margin: 1% 0%;
 }
 
 form {
-  background-color: #acaba8;
+  background-color: #61788C;
+  padding-top: 0.0625em;
 }
 
 .form-group {
@@ -29,5 +29,16 @@ form {
 
 .input-group {
   margin: 0 0 1em 0;
-  width: 100%;;
+  width: 100%;
 }
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #8C8C8C;
+  box-sizing: border-box;
+  background-color: #BFBFBF;
+}
+
