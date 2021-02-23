@@ -41,6 +41,9 @@ export class RegistrarEmpresaComponent implements OnInit {
       subcategoria: [''],
       idUsuario: [this.user.id]
     });
+    if (localStorage.getItem('user') == undefined) {
+      this.ngZone.run(() => this.router.navigateByUrl('/aviso'));
+    }
   }
 
   ngOnInit() {
