@@ -56,7 +56,7 @@ class MensajesController
             'id' => $mensaje->getId(),
             'asunto' => $mensaje->getAsunto(),
             'mensaje' => $mensaje->getMensaje(),
-            'fecha' => new \Datetime(date("Y/m/d")),
+            'fecha' => $mensaje->getFecha(),
             'idemisor' => $mensaje->getIdemisor(),
             'idreceptor' => $mensaje->getIdreceptor()
         ];
@@ -77,7 +77,7 @@ class MensajesController
                 'id' => $mensaje->getId(),
                 'asunto' => $mensaje->getAsunto(),
                 'mensaje' => $mensaje->getMensaje(),
-                'fecha' => new \Datetime(date("Y/m/d")),
+                'fecha' => $mensaje->getFecha(),
                 'idemisor' => $mensaje->getIdemisor(),
                 'idreceptor' => $mensaje->getIdreceptor()
             ];
@@ -128,5 +128,26 @@ class MensajesController
         echo json_encode(($msgs));
 
         return new JsonResponse(['status' => 'Contacto filtrado'], Response::HTTP_OK);
+    }
+
+    /**
+     * @Route("mensajeByReceptor/{id}", name="get_mensajes", methods={"GET"})
+     */
+    public function getByIdReceptor($id): JsonResponse
+    {
+        $mensajes = $this->mensajeRepository->findBy(['idreceptor' => $id]);
+        $data=[];
+        foreach ($mensajes as $mensaje) {
+            $data[] = [
+                'id' => $mensaje->getId(),
+                'asunto' => $mensaje->getAsunto(),
+                'mensaje' => $mensaje->getMensaje(),
+                'fecha' => $mensaje->getFecha(),
+                'idemisor' => $mensaje->getIdemisor(),
+                'idreceptor' => $mensaje->getIdreceptor()
+            ];
+        }
+
+        return new JsonResponse($data, Response::HTTP_OK);
     }
 }

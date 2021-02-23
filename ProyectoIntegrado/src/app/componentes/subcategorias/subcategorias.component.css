@@ -12,7 +12,13 @@
     border: 0;
     margin-bottom: 1.75em;
 }
+
 .altura_minima{
-    height:120px;
-    overflow:hidden;
+    height: 175px;
+    overflow: hidden;
+}
+
+.card-body {
+    background-color: #61788C;
+    color: #fff;
 }

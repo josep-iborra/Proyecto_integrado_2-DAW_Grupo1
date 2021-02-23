@@ -59,6 +59,19 @@ export class MessagesService {
     )
   }
 
+  GetMsgByReceptor(id: any): Observable<any> {
+    let API_URL = 'http://localhost:8000/api/mensajeByReceptor/' + id;
+    return this.httpClient.get(API_URL);
+  }
+
+  AddNMsg(data: Messages): Observable<any> {
+    let API_URL = 'http://localhost:8000/api/addMensaje';
+    return this.httpClient.post(API_URL, data)
+      .pipe(
+        catchError(this.handleError)
+      )
+  }
+
   handleError(error: HttpErrorResponse) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {

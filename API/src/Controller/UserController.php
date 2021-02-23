@@ -113,4 +113,22 @@ class UserController
 
         return new JsonResponse(['status' => 'Usuario eliminado'], Response::HTTP_OK);
     }
+
+    /**
+     * @Route("usuario/{email}", name="get_one_user_by_email", methods={"GET"})
+     */
+    public function getByEmail($email): JsonResponse
+    {
+        $user = $this->userRepository->findOneBy(['email' => $email]);
+
+        $data = [
+            'id' => $user->getId(),
+            'email' => $user->getEmail(),
+            'nombre' => $user->getNombre(),
+            'password' => $user->getPassword(),
+            'telefono' => $user->getTelefono(),
+        ];
+
+        return new JsonResponse($data, Response::HTTP_OK);
+    }
 }

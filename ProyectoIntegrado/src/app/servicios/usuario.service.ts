@@ -96,6 +96,16 @@ export class UsuarioService {
 
   }
 
+  GetUserByEmail(email: any): Observable<any> {
+    let API_URL = 'http://localhost:8000/api/usuario/' + email;
+    return this.httpClient.get(API_URL, { headers: this.httpHeaders })
+      .pipe(map((res: any) => {
+        return res || {}
+      }),
+        catchError(this.handleError)
+      )
+  }
+
   handleError(error: HttpErrorResponse) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
