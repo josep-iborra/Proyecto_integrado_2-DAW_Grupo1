@@ -1,3 +1,14 @@
+<ng-template #content let-modal>
+    <div class="modal-title ">
+        <button class="close mt-2 mr-2" aria-label="close" type="button" (click)="modal.dismiss()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <app-envio-mensaje class="new-message"></app-envio-mensaje>
+    </div>
+</ng-template>
+
 <!-- Perfil Vendedor -->
 <div class="container-fluid data-profile col-sm-12">
     <div class="row">
@@ -10,22 +21,8 @@
                             alt="Foto perfil vendedor">
                     </div>
                     <div class="col-12 col-xs-12 col-sm-6 col-md-6 col-lg-9 col-xl-9 box-seller">
-                        <h2 class="seller-name">Nombre vendedor</h2>
-                        <p class="font-weight-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Pellentesque dolor neque, feugiat non facilisis non, volutpat sed neque. Interdum et
-                            malesuada fames
-                            ac ante ipsum primis in faucibus. Vestibulum euismod blandit justo, eu vulputate lorem
-                            facilisis et.
-                            Ut massa dui, pretium at lorem nec, vestibulum commodo nisl. Duis fermentum pharetra
-                            aliquam.
-                            Integer sodales elementum ornare. Aenean et dolor ullamcorper sapien sollicitudin maximus.
-                            Nullam
-                            malesuada eget mauris et gravida.
-                            Nullam iaculis augue arcu, eget congue odio sagittis accumsan. Praesent tincidunt orci in
-                            neque
-                            consequat, vel aliquet tortor vulputate. Curabitur lorem orci, feugiat quis dapibus id,
-                            lobortis id
-                            risus.
+                        <h2 class="seller-name">{{vendedor.nombre}}</h2>
+                        <p class="font-weight-light">{{empresa.descripcion}}
                         </p>
                     </div>
                 </div>
@@ -78,7 +75,7 @@
                                     alt="Icono teléfono">
                             </div>
                             <div class="col-12 col-xs-12 col-sm-6 col-md-6 col-lg-8 col-xl-8">
-                                <p class="ml-1 number-phone ">000 00 00 00</p>
+                                <p class="ml-1 number-phone ">{{vendedor.telefono}}</p>
                             </div>
                         </div>
                     </div>
@@ -91,7 +88,7 @@
                                 <img class="mt-1 icon-mail" src="../../../assets/img/icons/mail.png" alt="Icono email">
                             </div>
                             <div class="col-12 col-xs-12 col-sm-6 col-md-6 col-lg-8 col-xl-8">
-                                <p class="ml-1 email-address">rowlend@gmail.com</p>
+                                <p class="ml-1 email-address">{{vendedor.email}}</p>
                             </div>
                         </div>
                     </div>
@@ -104,16 +101,14 @@
                                     alt="Icono localización">
                             </div>
                             <div class="col-12 col-xs-12 col-sm-6 col-md-6 col-lg-8 col-xl-8 mt-2">
-                                <p class="ml-1 location-cities">Lorem ipsum</p>
-                                <p class="ml-1 location-cities">Lorem ipsum</p>
-                                <p class="ml-1 location-cities">Lorem ipsum</p>
+                                <p class="ml-1 location-cities">{{empresa.localidad}}</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="row justify-content-center mb-2">
                     <div class="col-12 col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                        <button class="bg-dark border border-0 text-white send-message rounded-lg" type="button">Envíar
+                        <button class="bg-dark border border-0 text-white send-message rounded-lg" type="button" (click)="open(content)">Envíar
                             mensaje</button>
                     </div>
                 </div>

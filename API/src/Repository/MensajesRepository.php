@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\Mensajes;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\ORM\EntityManagerInterface;
 
 /**
  * @method Mensajes|null find($id, $lockMode = null, $lockVersion = null)
@@ -14,19 +15,32 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class MensajesRepository extends ServiceEntityRepository
 {
-    public function __construct(ManagerRegistry $registry)
+    public function __construct(ManagerRegistry $registry, EntityManagerInterface $manager)
     {
         parent::__construct($registry, Mensajes::class);
-
-        
+        $this->manager = $manager;
     }
-    public function getMsgByUser($idemisor, $idreceptor){
-            
-     
+
+    public function saveMensaje($asunto, $mensaje, $fecha, $idEmisor, $idReceptor)
+    {
+        $newMsg = new Mensajes();
+
+        $newMsg->setIdemisor($idEmisor);
+        $newMsg->setIdreceptor($idReceptor);
+        $newMsg->setFecha($fecha);
+        $newMsg->setAsunto($asunto);
+        $newMsg->setMensaje($mensaje);
+
+        $this->manager->persist($newMsg);
+        $this->manager->flush();
+    }
+
+    public function getMsgByUser($idemisor, $idreceptor)
+    {
         $query = $this->createQueryBuilder('c')
             ->where('c.idemisor == :e AND c.idreceptor == :r')
-            ->setParameter('e',$$idemisor)
-            ->setParameter('r',$$idreceptor)
+            ->setParameter('e', $$idemisor)
+            ->setParameter('r', $$idreceptor)
             ->getQuery();
 
         $contacto = $query->getResult(\Doctrine\ORM\Query::HYDRATE_ARRAY);

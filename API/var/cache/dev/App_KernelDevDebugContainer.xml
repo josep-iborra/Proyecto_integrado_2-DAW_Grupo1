@@ -257,6 +257,7 @@
     <service id="App\Repository\MensajesRepository" class="App\Repository\MensajesRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
+      <argument type="service" id="doctrine.orm.default_entity_manager"/>
     </service>
     <service id="App\Repository\ProductosRepository" class="App\Repository\ProductosRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>

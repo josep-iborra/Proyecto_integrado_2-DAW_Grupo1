@@ -4,10 +4,10 @@
         <div class="col-12 col-xs-12 col-md-6 col-md-6 col-lg-4 col-xl-4">
             <div *ngFor="let producto of productos">
                 <div *ngIf="producto.id != undefined">
-                    <a class="btn-events" routerLink="/vendedor/{{producto.id}}">
+                    <a class="btn-events" routerLink="/vendedor/{{producto.idUsuario}}">
                         <div class="card border-light bg-secondary text-white events mt-5 mr-2 mb-3">
                             <img class="card-img-top"
-                                src="https://rowlend.s3.eu-west-3.amazonaws.com/{{producto.nombre}}.jpg"
+                                src="https://rowlend.s3.eu-west-3.amazonaws.com/{{producto.id}}.jpg"
                                 alt="{{producto.nombre}}">
                             <div class="card-body">
                                 <h5 class="card-title">{{producto.nombre}}</h5>
