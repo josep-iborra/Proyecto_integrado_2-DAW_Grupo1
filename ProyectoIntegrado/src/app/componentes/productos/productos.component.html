@@ -6,9 +6,11 @@
                 <div *ngIf="producto.id != undefined">
                     <a class="btn-events" routerLink="/vendedor/{{producto.idUsuario}}">
                         <div class="card border-light bg-secondary text-white events mt-5 mr-2 mb-3">
-                            <img class="card-img-top"
-                                src="https://rowlend.s3.eu-west-3.amazonaws.com/{{producto.id}}.jpg"
-                                alt="{{producto.nombre}}">
+                            <div class="altura_minima">
+                                <img class="card-img-top"
+                                    src="https://rowlend.s3.eu-west-3.amazonaws.com/{{producto.id}}.jpg"
+                                    alt="{{producto.nombre}}">
+                            </div>
                             <div class="card-body">
                                 <h5 class="card-title">{{producto.nombre}}</h5>
                                 <p class="card-text">{{producto.descripcion}}</p>

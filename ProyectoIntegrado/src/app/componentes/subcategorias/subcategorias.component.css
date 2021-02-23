@@ -12,3 +12,7 @@
     border: 0;
     margin-bottom: 1.75em;
 }
+.altura_minima{
+    height:120px;
+    overflow:hidden;
+}
